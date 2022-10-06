@@ -1,0 +1,234 @@
+15:45:33 **** Rebuild of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hojaServicio.o" "..\\src\\hojaServicio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\vehiculo.o" "..\\src\\vehiculo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\tipo.o" "..\\src\\tipo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\PRIMER-PARCIAL-LABO-1.o" "..\\src\\PRIMER-PARCIAL-LABO-1.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:17:00 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'reportsMenu':
+..\src\informes.c:200:22: warning: passing argument 1 of 'utn_getNumberFloat' from incompatible pointer type [-Wincompatible-pointer-types]
+  200 |   utn_getNumberFloat(&optionReports,
+      |                      ^~~~~~~~~~~~~~
+      |                      |
+      |                      int *
+In file included from ..\src\informes.c:13:
+..\src\validaciones.h:24:31: note: expected 'float *' but argument is of type 'int *'
+   24 | int utn_getNumberFloat(float *pResult, char *message, char *errorMessage,
+      |                        ~~~~~~~^~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\PRIMER-PARCIAL-LABO-1.o" "..\\src\\PRIMER-PARCIAL-LABO-1.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hojaServicio.o" "..\\src\\hojaServicio.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+16:17:22 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:19:17 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:24:48 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:25:24 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:25:52 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:26:17 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:26:44 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:27:10 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:27:23 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:27:39 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:27:51 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:28:07 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:28:36 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:29:01 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:29:15 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:29:25 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:29:53 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\PRIMER-PARCIAL-LABO-1.o" "..\\src\\PRIMER-PARCIAL-LABO-1.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:30:26 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:30:45 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+16:31:22 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+17:21:12 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\vehiculo.o" "..\\src\\vehiculo.c" 
+In file included from ..\src\vehiculo.h:13,
+                 from ..\src\vehiculo.c:12:
+..\src\tipo.h:28:15: error: unknown type name 'vehicle'
+   28 | int listTypes(vehicle vehicles[], type description[], int len);
+      |               ^~~~~~~
+17:21:45 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hojaServicio.o" "..\\src\\hojaServicio.c" 
+In file included from ..\src\vehiculo.h:13,
+                 from ..\src\hojaServicio.h:11,
+                 from ..\src\hojaServicio.c:13:
+..\src\tipo.h:31:15: error: unknown type name 'vehicle'
+   31 | int listTypes(vehicle vehicles[], type description[], int len);
+      |               ^~~~~~~
+17:22:00 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\tipo.o" "..\\src\\tipo.c" 
+In file included from ..\src\vehiculo.h:13,
+                 from ..\src\tipo.c:13:
+..\src\tipo.h:28:15: error: unknown type name 'vehicle'
+   28 | int listTypes(vehicle vehicles[], type description[], int len);
+      |               ^~~~~~~
+17:25:24 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\PRIMER-PARCIAL-LABO-1.o" "..\\src\\PRIMER-PARCIAL-LABO-1.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hojaServicio.o" "..\\src\\hojaServicio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'totalPricePerVehicle':
+..\src\informes.c:238:32: warning: implicit declaration of function 'getIdSheet'; did you mean 'addSheet'? [-Wimplicit-function-declaration]
+  238 |    auxSheet[indexID].idSheet = getIdSheet();
+      |                                ^~~~~~~~~~
+      |                                addSheet
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\tipo.o" "..\\src\\tipo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\vehiculo.o" "..\\src\\vehiculo.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\informes.o: in function `totalPricePerVehicle':
+C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\PRIMER-PARCIAL-LABO-1\Debug/../src/informes.c:238: undefined reference to `getIdSheet'
+collect2.exe: error: ld returned 1 exit status
+17:36:18 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+17:51:28 **** Rebuild of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\vehiculo.o" "..\\src\\vehiculo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\PRIMER-PARCIAL-LABO-1.o" "..\\src\\PRIMER-PARCIAL-LABO-1.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hojaServicio.o" "..\\src\\hojaServicio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\tipo.o" "..\\src\\tipo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+18:09:44 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\PRIMER-PARCIAL-LABO-1.o" "..\\src\\PRIMER-PARCIAL-LABO-1.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file PRIMER-PARCIAL-LABO-1.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:09:50 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+18:12:17 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'totalPricePerVehicle':
+..\src\informes.c:243:37: warning: unknown conversion type character 'F' in format [-Wformat=]
+  243 |   printf("PRECIO $%.2f. SERVICIO %.2F \n", acumulator, oneSheet[indexID].servicePrice);
+      |                                     ^
+..\src\informes.c:243:10: warning: too many arguments for format [-Wformat-extra-args]
+  243 |   printf("PRECIO $%.2f. SERVICIO %.2F \n", acumulator, oneSheet[indexID].servicePrice);
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+18:12:30 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+18:15:32 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+18:21:24 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+18:22:54 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+18:27:27 **** Incremental Build of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+Info: Nothing to build for PRIMER-PARCIAL-LABO-1

@@ -126,7 +126,7 @@ int loadDataSheetId(sheet oneSheet[], int lenSheet) {
 	sheet auxSheetId;
 
 	utn_getNumber(&auxSheetId.vehicleId, "Ingrese Id de vehiculo\n",
-			"Error, no existe tal ID\n", 99, 400);
+			"\n", 99, 400);
 
 	return auxSheetId.vehicleId;
 }

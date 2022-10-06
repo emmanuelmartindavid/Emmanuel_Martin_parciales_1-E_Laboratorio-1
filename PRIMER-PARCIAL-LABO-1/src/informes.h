@@ -25,4 +25,8 @@ date askDate();
 
 int showSheetPerDate(sheet oneSheet[], int lenSheet);
 
+int totalPricePerVehicle(sheet oneSheet[], vehicle vehicles[], type description[], int lenSheet, int len, int lenType);
+
+void reportsMenu(sheet oneSheet[], vehicle vehicles[], type description[], int len,  int lenSheet);
+
 #endif /* INFORMES_H_ */

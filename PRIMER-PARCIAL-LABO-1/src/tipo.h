@@ -4,14 +4,14 @@
  *  Created on: 6 oct. 2022
  *      Author: cuerpos
  */
-
+#include "vehiculo.h"
 #ifndef TIPO_H_
 #define TIPO_H_
 
 
 
 #define MAX_DESCRIPTION_TYPE 31
-#include "vehiculo.h"
+
 
 typedef struct{
 
