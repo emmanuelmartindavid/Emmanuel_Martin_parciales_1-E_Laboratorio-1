@@ -4,207 +4,269 @@
  *  Created on: 6 oct. 2022
  *      Author: cuerpos
  */
-
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
 #include "hojaServicio.h"
 #include "validaciones.h"
-#include "vehiculo.h"
-#include "tipo.h"
 
-#define OK 1
-#define ERROR -1
-#define OCCUPIED 1
-#define FREE 0
-
-void initializeSheet(sheet oneSheet[], int len) {
+/// @brief initializeSheet 		Funcion inicializa en 0 el array de hojas de servicio.
+///
+/// @param arraySheet	   		Array de hojas de servicio a dar de alta.
+/// @param lenSheet		  	    Tamanio de ARRAY de hojas de servicio.
+void initializeSheet(sSheet arraySheet[], int lenSheet) {
 
 	int i;
-	if (oneSheet != NULL) {
-		for (i = 0; i < len; i++) {
+	if (arraySheet != NULL && lenSheet > 0) {
+		for (i = 0; i < lenSheet; i++) {
 
-			oneSheet[i].isEmpty = FREE;
+			arraySheet[i].isEmpty = FREE;
 
 		}
 	}
 
 }
-
-int getFreeIdSheet(sheet oneSheet[], int len) {
+/// @brief getFreeIndexSheet	Funcion obtiene posicion de ARRAY de hojas de servicio libre a dar de alta.
+///
+/// @param arraySheet			Array de hojas de servicio a dar de alta.
+/// @param lenSheet				Tamanio de ARRAY de hojas de servicio.
+/// @return						Retorna la posicion del ARRAY de hojas de servicio libre a dar de alta.
+int getFreeIndexSheet(sSheet arraySheet[], int lenSheet) {
 
 	int i;
-	int ret = ERROR;
+	int rtn = ERROR;
 
-	if (oneSheet != NULL && len > 0) {
-		for (i = 0; i < len; i++) {
-			if (oneSheet[i].isEmpty == FREE) {
-				ret = i;
+	if (arraySheet != NULL && lenSheet > 0) {
+		for (i = 0; i < lenSheet; i++) {
+			if (arraySheet[i].isEmpty == FREE) {
+				rtn = i;
 				break;
 			}
 		}
 	}
-	return ret;
+	return rtn;
 }
-
+/// @brief getId Funcion STATIC para autoincrementar ID de cada hoja de servicio.
+///
+/// @return Retorno ID autoincrementada para cada hoja de servicio dada de alta.
 static int getIdSheet(void) {
 
-	static int getIdSheetIncremental = 2000;
+	static int getIdSheetIncremental = 20000;
 
 	return getIdSheetIncremental++;
 }
+/// @brief listOneSheet			Funcion para listar una hoja de servicio dada de alta.
+///
+/// @param sheet				Una hoja de servicio de estructura sSheet, dada de alta.
+/// @param vehicle				Un vehiculo de estructura sVehicle, dado de alta.
+/// @param arrayType			ARRAY de tipos de vehiculo harcodeado.
+/// @param lenType				Tamanio de ARRAY de tipos de vehiculo harcodeado.
+void listOneSheet(sSheet sheet, sVehicle vehicle, sType arrayType[],
+		int lenType) {
 
-int findByIdSheet(sheet oneSheet[], int idSheet, int len) {
-	int ret = -1;
-	int i;
+	char descriptionType[31];
 
-	if (oneSheet != NULL && idSheet > -1 && len > 0) {
+	if (arrayType != NULL && lenType > 0) {
 
-		for (i = 0; i < len; i++) {
+		getDescriptionType(arrayType, lenType, vehicle.typeId, descriptionType);
 
-			if (oneSheet[i].idSheet
-					== idSheet&& oneSheet[i].isEmpty == OCCUPIED) {
-				ret = i;
-
-				break;
-
-			}
-		}
+		printf("\t\t\t\t\t\t%5d  %20s  %20.2f %10d-%d-%d %20s\n",
+				sheet.vehicleId, sheet.description, sheet.servicePrice,
+				sheet.date.day, sheet.date.month, sheet.date.year,
+				descriptionType);
 	}
 
-	return ret;
 }
+/// @brief listSheets			Funcion lista ARRAY de hojas de servicio dadas de alta.
+///
+/// @param arraySheet			Array de hojas de servicio dada de alta.
+/// @param lenSheet				Tamanio de ARRAY de hojas de servicio.
+/// @param arrayVehicle			Array de vehiculos dados de alta.
+/// @param len					Tamanio de ARRAY de vehiculos.
+/// @param arrayType			ARRAY de tipos de vehiculo harcodeado.
+/// @param lenType				Tamanio de ARRAY de tipos de vehiculo harcodeado.
+/// @return						Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int listSheets(sSheet arraySheet[], int lenSheet, sVehicle arrayVehicle[],
+		int len, sType arrayType[], int lenType) {
 
-void listOneSheet(sheet oneSheet, int len) {
-
-	printf("%5d  %10d  %10s  %10.2f %10d-%d-%d\n", oneSheet.idSheet,
-			oneSheet.vehicleId, oneSheet.description, oneSheet.servicePrice,
-			oneSheet.oneDate.day, oneSheet.oneDate.month,
-			oneSheet.oneDate.year);
-
-}
-
-int listSheets(sheet oneSheet[], int len) {
-
-	int i = 0;
+	int i;
+	int j;
 	int ammount = 0;
-	int ret = ERROR;
+	int rtn = ERROR;
 	printf(
-			"\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
-	printf("\n%5s  %10s  %10s  %10s %15s\n", "ID SERVICIO", "ID VEHICULO",
+			"\t\t\t\t\t-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*--*-*-*-\n");
+	printf("%5s  %10s  %10s  %10s %15s\n", "\t\t\t\t\t\tID VEHICULO",
 			"DESCRIPCION DE SERVICIO", "PRECIO DE SERVICIO",
-			"FECHA DE SERVICIO");
+			"FECHA DE SERVICIO", "TIPO VEHICULO");
 
-	if (oneSheet != NULL && len > 0) {
+	if (arraySheet != NULL && lenSheet > 0 && arrayVehicle != NULL && len > 0
+			&& arrayType != NULL && lenType > 0) {
 
-		for (i = 0; i < len; i++) {
+		for (i = 0; i < lenSheet; i++) {
 
-			if (oneSheet[i].isEmpty == OCCUPIED) {
+			if (arraySheet[i].isEmpty == OCCUPIED) {
 
-				listOneSheet(oneSheet[i], len);
+				for (j = 0; j < len; j++) {
 
-				ammount++;
+					if (arrayVehicle[j].idVehicle == arraySheet[i].vehicleId) {
+
+						listOneSheet(arraySheet[i], arrayVehicle[j], arrayType,
+								lenType);
+
+						ammount++;
+					}
+
+				}
 
 			}
 
 		}
 		if (ammount > 0) {
-			ret = OK;
+			rtn = OK;
 			printf(
-					"\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
+					"\t\t\t\t\t-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*--*-*-*-\n");
 		}
 
 	}
 
-	return ret;
+	return rtn;
 }
+/// @brief loadDataSheetId		Funcion para obtener ID de vehiculo ingresado por usuario a dar de alta en hoja de servicio.
+///
+/// @return						Retorno auxiliar de ID de sSheet(estructura hoja de servicio) ingresado por usuario.
+int loadDataSheetId() {
 
-int loadDataSheetId(sheet oneSheet[], int lenSheet) {
+	sSheet auxSheetId;
 
-	sheet auxSheetId;
-
-	utn_getNumber(&auxSheetId.vehicleId, "Ingrese Id de vehiculo\n",
-			"\n", 99, 400);
+	utn_getNumber(&auxSheetId.vehicleId,
+			"Ingrese Id de vehiculo SOLO dado de alta.\n", "ERROR. REINTENTE\n",
+			-1, 1000);
 
 	return auxSheetId.vehicleId;
 }
+/// @brief loadDataSheet 		Funcion de tipo sSheet(estructura hoja de servicio) para realizar la carga de datos de hoja de servicio.
+///
+/// @return						Retorno auxiliar de sSheet(estructura hoja de servicio) con los datos cargados por el usuario.
+sSheet loadDataSheet(void) {
 
-sheet loadDataSheet(void) {
-
-	sheet auxSheet;
+	sSheet auxSheet;
 
 	utn_getAlfaNumeric(auxSheet.description,
-			"Ingrese descripcion de servicio\n",
-			"Ingrese caracteres validos\n");
+			"Ingrese descripcion de servicio.\n",
+			"Ingrese caracteres validos.\n");
 
 	utn_getNumberFloat(&auxSheet.servicePrice,
-			"Ingrese precio de servicio(desde $ 1000)\n", "Precio invalido\n",
-			1000, 100000);
+			"Ingrese precio de servicio(desde $ 1000).\n", "Precio invalido.\n",
+			999, 9999999);
 
-	utn_getNumber(&auxSheet.oneDate.day, "Ingrese dia", "Dia Invalido", 0, 32);
+	utn_getNumber(&auxSheet.date.day, "Ingrese dia.\n", "Dia Invalido.\n", 0, 32);
 
-	utn_getNumber(&auxSheet.oneDate.month, "Ingrese mes", "Mes invalido", 0,
+	utn_getNumber(&auxSheet.date.month, "Ingrese mes.\n", "Mes invalido.\n", 0,
 			13);
 
-	utn_getNumber(&auxSheet.oneDate.year, "Ingrese anio", "Anio invalido", 2000,
-			2023);
+	utn_getNumber(&auxSheet.date.year, "Ingrese anio (1960-2023).\n",
+			"Anio invalido.\n", 1959, 2023);
 
 	return auxSheet;
 }
+/// @brief registerSheet		Funcion para dar de alta una hoja de servicio.
+///
+/// @param arraySheet			Array de hojas de servicio a dar de alta.
+/// @param arrayVehicle			Array de vehiculos dados de alta.
+/// @param arrayType			ARRAY de tipos de vehiculo harcodeado.
+/// @param len					Tamanio de ARRAY de vehiculos.
+/// @param lenSheet				Tamanio de ARRAY de hojas de servicio.
+/// @param lenType				Tamanio de ARRAY de tipos de vehiculo harcodeado.
+/// @return						Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int registerSheet(sSheet arraySheet[], sVehicle arrayVehicle[], sType arrayType[],
+		int len, int lenSheet, int lenType) {
 
-int addSheet(sheet oneSheet[], vehicle vehicles[], type description[], int len,
-		int lenSheet, int lenType) {
-
-	int ret = ERROR;
+	int rtn = ERROR;
 	int indexID;
 	int index;
-	sheet auxSheet[lenSheet];
+	sSheet auxSheet[lenSheet];
 
-	if (oneSheet != NULL && vehicles != NULL && lenSheet > 0 && len > 0) {
+	if (arraySheet != NULL && lenSheet > 0 && arrayVehicle != NULL && len > 0
+			&& arrayType != NULL && lenType > 0) {
 
-		listVehicles(vehicles, len, description, lenType);
+		listVehicles(arrayVehicle, len, arrayType, lenType);
 
-		indexID = getFreeIdSheet(oneSheet, lenSheet);
+		indexID = getFreeIndexSheet(arraySheet, lenSheet);
 
 		if (indexID != -1) {
 
-			do{
+			do {
 
-				auxSheet[indexID].vehicleId = loadDataSheetId(oneSheet,
-						lenSheet);
-				index = findById(vehicles, auxSheet[indexID].vehicleId, len);
+				auxSheet[indexID].vehicleId = loadDataSheetId();
+				index = findById(arrayVehicle, auxSheet[indexID].vehicleId,
+						len);
 
-			}while(auxSheet[indexID].vehicleId != vehicles[index].idVehicle);
+			} while (auxSheet[indexID].vehicleId
+					!= arrayVehicle[index].idVehicle);
 
 			auxSheet[indexID] = loadDataSheet();
 
-			auxSheet[indexID].vehicleId = vehicles[index].idVehicle;
+			auxSheet[indexID].vehicleId = arrayVehicle[index].idVehicle;
 
 			auxSheet[indexID].idSheet = getIdSheet();
 
 			auxSheet[indexID].isEmpty = OCCUPIED;
 
-			oneSheet[indexID] = auxSheet[indexID];
+			arraySheet[indexID] = auxSheet[indexID];
 
-			printf(
-					"El alta de su hoja de servicio con ID %d y vehiculo con ID %d fue correcta.\n",
-					oneSheet[indexID].idSheet, oneSheet[indexID].vehicleId);
-
-//			printf("PRUEBA %d %d %s %.2f %d-%d-%d\n", oneSheet[index].idSheet,
-//					oneSheet[index].vehicleId, oneSheet[index].description,
-//					oneSheet[index].servicePrice, oneSheet[index].oneDate.day,
-//					oneSheet[index].oneDate.month,
-//					oneSheet[index].oneDate.year);
-
-			ret = OK;
+			rtn = OK;
 
 		}
 	}
 
-	return ret;
+	return rtn;
 }
+/// @brief hardCodeSheets		Funcion para harcodear hojas de servicio de prueba de programa.
+///
+/// @param arraySheet			Array de hojas de servicio a dar de alta.
+/// @param lenSheet				Tamanio de ARRAY de hojas de servicio.
+/// @param pNextId			    Puntero a entero autoincremental a traves de contador.
+/// @return						Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int hardCodeSheets(sSheet arraySheet[], int lenSheet, int *pNextId) {
 
+	int rtn = ERROR;
 
+	sSheet aux[21] =
 
+	{
+
+	{ 0, 80, "Motor", 5000, { 2, 2, 2020 }, 1 }, { 0, 92, "Frenos", 2274, { 2,
+			2, 2020 }, 1 },
+			{ 0, 93, "Tren delantero", 10076, { 4, 5, 2005 }, 1 }, { 0, 91,
+					"Parabrisas", 1261, { 4, 5, 2005 }, 1 }, { 0, 92,
+					"Cambio bujias", 12034, { 3, 4, 2002 }, 1 }, { 0, 99,
+					"Cambio llantas", 19827, { 4, 5, 2020 }, 1 }, { 0, 95,
+					"Ruedas", 1002, { 2, 2, 2020 }, 1 }, { 0, 95,
+					"Chapa-pintura", 2300, { 2, 2, 2020 }, 1 }, { 0, 92,
+					"Llantas", 4064, { 2, 2, 2020 }, 1 }, { 0, 90, "Puertas",
+					12080, { 2, 2, 2020 }, 1 },
+					{ 0, 82, "Motores", 5000, { 2, 2, 2020 }, 1 }, { 0, 93, "Frenos", 2274, { 2,
+							2, 2020 }, 1 },
+							{ 0, 94, "delantero", 10076, { 4, 5, 2005 }, 1 }, { 0, 95,
+									"Parabrisas roto", 1261, { 4, 5, 2005 }, 1 }, { 0, 94,
+									"Cambio bujias", 12034, { 3, 4, 2002 }, 1 }, { 0, 98,
+									"Cambio aceite", 19827, { 4, 5, 2020 }, 1 }, { 0, 99,
+									"Rueda pinchada", 1002, { 2, 2, 2020 }, 1 }, { 0, 96,
+									"Chapa-pintura-tapisado", 2300, { 2, 2, 2020 }, 1 }, { 0, 93,
+									"Llantas", 4064, { 2, 2, 2020 }, 1 }, { 0, 90, "Puertas",
+									12080, { 2, 2, 2020 }, 1 }
+
+	};
+
+	if (arraySheet != NULL && pNextId != NULL && lenSheet > 0) {
+		for (int i = 0; i < lenSheet; i++) {
+			arraySheet[i] = aux[i];
+			arraySheet[i].idSheet = *pNextId;
+
+			(*pNextId)++;
+
+		}
+		rtn = OK;
+	}
+	return rtn;
+
+}

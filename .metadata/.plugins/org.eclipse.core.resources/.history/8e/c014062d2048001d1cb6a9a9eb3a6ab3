@@ -1,0 +1,292 @@
+/*
+ * hojaServicio.c
+ *
+ *  Created on: 6 oct. 2022
+ *      Author: cuerpos
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "hojaServicio.h"
+#include "validaciones.h"
+#include "vehiculo.h"
+#include "tipo.h"
+#include "informes.h"
+
+#define OK 1
+#define ERROR -1
+#define OCCUPIED 1
+#define FREE 0
+
+void initializeSheet(sSheet arraySheet[], int lenSheet) {
+
+	int i;
+	if (arraySheet != NULL) {
+		for (i = 0; i < lenSheet; i++) {
+
+			arraySheet[i].isEmpty = FREE;
+
+		}
+	}
+
+}
+
+int getFreeIdSheet(sSheet arraySheet[], int lenSheet) {
+
+	int i;
+	int rtn = ERROR;
+
+	if (arraySheet != NULL && lenSheet > 0) {
+		for (i = 0; i < lenSheet; i++) {
+			if (arraySheet[i].isEmpty == FREE) {
+				rtn = i;
+				break;
+			}
+		}
+	}
+	return rtn;
+}
+
+static int getIdSheet(void) {
+
+	static int getIdSheetIncremental = 20000;
+
+	return getIdSheetIncremental++;
+}
+
+int findByIdSheet(sSheet arraySheet[], int idSheet, int lenSheet) {
+	int rtn = ERROR;
+	int i;
+
+	if (arraySheet != NULL && idSheet > -1 && lenSheet > 0) {
+
+		for (i = 0; i < lenSheet; i++) {
+
+			if (arraySheet[i].idSheet
+					== idSheet&& arraySheet[i].isEmpty == OCCUPIED) {
+				rtn = i;
+
+				break;
+
+			}
+		}
+	}
+
+	return rtn;
+}
+
+//void listOneVehicle(sVehicle vehicle, sType arrayType[], int lenType) {
+//	char descriptionType[31];
+//
+//	getDescriptionType(arrayType, lenType, vehicle.typeId, descriptionType);
+//
+//	printf("%5d  %10s  %10d  %10s %20s\n", vehicle.idVehicle,
+//			vehicle.description, vehicle.model, vehicle.color,
+//			descriptionType);
+//
+//}
+//
+//int listVehicles(sVehicle arrayVehicle[], int len, sType arrayType[], int lenType) {
+//
+//	int i = 0;
+//	int ammount = 0;
+//	int rtn = ERROR;
+//
+//	printf(
+//			"\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
+//	printf("\n%5s  %10s  %10s  %10s %15s\n", "ID ", "DESCRIPCION", "MODELO",
+//			"COLOR", "TIPO");
+//	if (arrayVehicle != NULL && len > 0) {
+//
+//		for (i = 0; i < len; i++) {
+//
+//			if (arrayVehicle[i].isEmpty == OCCUPIED) {
+//
+//				listOneVehicle(arrayVehicle[i], arrayType, lenType);
+//
+//				ammount++;
+//
+//			}
+//
+//		}
+//		if (ammount > 0) {
+//			rtn = OK;
+//
+//			printf(
+//					"\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
+//		}
+//
+//	}
+//
+//	return rtn;
+//}
+
+void listOneSheet(sSheet sheet, sVehicle vehicle, sType arrayType[],
+		int lenType) {
+
+	char descriptionType[31];
+
+	getDescriptionType(arrayType, lenType, vehicle.typeId, descriptionType);
+
+	printf("%5d  %20s  %20.2f %15d-%d-%d %20s\n",
+			sheet.vehicleId, sheet.description, sheet.servicePrice,
+			sheet.date.day, sheet.date.month, sheet.date.year, descriptionType);
+
+}
+
+int listSheets(sSheet arraySheet[], int lenSheet, sVehicle arrayVehicle[],
+		int len, sType arrayType[], int lenType) {
+
+	int i;
+	int j;
+	int ammount = 0;
+	int rtn = ERROR;
+	printf(
+			"\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
+	printf("\n%5s  %10s  %10s  %10s %15s\n", "ID VEHICULO", "DESCRIPCION DE SERVICIO",
+			"PRECIO DE SERVICIO", "FECHA DE SERVICIO", "TIPO VEHICULO");
+
+	if (arraySheet != NULL && lenSheet > 0) {
+
+		for (i = 0; i < lenSheet; i++) {
+
+			if (arraySheet[i].isEmpty == OCCUPIED) {
+
+				for (j = 0; j < len; j++) {
+
+					if(arrayVehicle[j].idVehicle == arraySheet[i].vehicleId){
+
+					listOneSheet(arraySheet[i], arrayVehicle[j], arrayType,
+							lenType);
+
+					ammount++;
+					}
+
+				}
+
+			}
+
+		}
+		if (ammount > 0) {
+			rtn = OK;
+			printf(
+					"\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
+		}
+
+	}
+
+	return rtn;
+}
+
+int loadDataSheetId() {
+
+	sSheet auxSheetId;
+
+	utn_getNumber(&auxSheetId.vehicleId,
+			"Ingrese Id de vehiculo SOLO dado de alta.\n", "ERROR. REINTENTE\n",
+			99, 1000);
+
+	return auxSheetId.vehicleId;
+}
+
+sSheet loadDataSheet(void) {
+
+	sSheet auxSheet;
+
+	utn_getAlfaNumeric(auxSheet.description,
+			"Ingrese descripcion de servicio\n",
+			"Ingrese caracteres validos\n");
+
+	utn_getNumberFloat(&auxSheet.servicePrice,
+			"Ingrese precio de servicio(desde $ 1000)\n", "Precio invalido\n",
+			999, 100000);
+
+	utn_getNumber(&auxSheet.date.day, "Ingrese dia\n", "Dia Invalido\n", 0, 32);
+
+	utn_getNumber(&auxSheet.date.month, "Ingrese mes\n", "Mes invalido\n", 0,
+			13);
+
+	utn_getNumber(&auxSheet.date.year, "Ingrese anio (1960-2023)\n",
+			"Anio invalido\n", 1959, 2023);
+
+	return auxSheet;
+}
+
+int addSheet(sSheet arraySheet[], sVehicle arrayVehicle[], sType arrayType[],
+		int len, int lenSheet, int lenType) {
+
+	int rtn = ERROR;
+	int indexID;
+	int index;
+	sSheet auxSheet[lenSheet];
+
+	if (arraySheet != NULL && arrayVehicle != NULL && lenSheet > 0 && len > 0) {
+
+		listVehicles(arrayVehicle, len, arrayType, lenType);
+
+		indexID = getFreeIdSheet(arraySheet, lenSheet);
+
+		if (indexID != -1) {
+
+			do {
+
+				auxSheet[indexID].vehicleId = loadDataSheetId();
+				index = findById(arrayVehicle, auxSheet[indexID].vehicleId,
+						len);
+				//	printf("NO EXISTE ID DE VEHICULO.\n");
+
+			} while (auxSheet[indexID].vehicleId
+					!= arrayVehicle[index].idVehicle);
+
+			auxSheet[indexID] = loadDataSheet();
+
+			auxSheet[indexID].vehicleId = arrayVehicle[index].idVehicle;
+
+			auxSheet[indexID].idSheet = getIdSheet();
+
+			auxSheet[indexID].isEmpty = OCCUPIED;
+
+			arraySheet[indexID] = auxSheet[indexID];
+
+			rtn = OK;
+
+		}
+	}
+
+	return rtn;
+}
+
+int hardCodeSheets(sSheet arraySheet[], int len, int ammount, int *pNextId) {
+
+	int rtn = ERROR;
+
+	sSheet aux[11] =
+
+	{
+
+	{ 0, 100, "alpha", 5000, { 2, 2, 2020 }, 1 }, { 0, 100, "beta", 2274, { 2,
+			2, 2020 }, 1 }, { 0, 103, "gamma", 10076, { 4, 5, 2005 }, 1 }, { 0,
+			101, "delta", 1261, { 4, 5, 2005 }, 1 }, { 0, 102, "epsilon", 12034,
+			{ 3, 4, 2002 }, 1 }, { 0, 103, "dseta", 19827, { 4, 5, 2020 }, 1 },
+			{ 0, 102, "eta", 1002, { 2, 2, 2020 }, 1 }, { 0, 101, "zeta", 2300,
+					{ 2, 2, 2020 }, 1 }, { 0, 102, "iota", 4064, { 2, 2, 2020 },
+					1 }, { 0, 101, "kappa", 12080, { 2, 2, 2020 }, 1 },
+
+	};
+
+	if (arraySheet != NULL && pNextId != NULL && len > 0 && len <= 200
+			&& ammount <= len) {
+		for (int i = 0; i < ammount; i++) {
+			arraySheet[i] = aux[i];
+			arraySheet[i].idSheet = *pNextId;
+
+			(*pNextId)++;
+
+		}
+		rtn = OK;
+	}
+	return rtn;
+
+}

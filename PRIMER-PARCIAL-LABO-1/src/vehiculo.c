@@ -8,74 +8,116 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
-#include "vehiculo.h"
+#include "hojaServicio.h"
 #include "validaciones.h"
-#include "tipo.h"
 
-#define OK 1
-#define ERROR -1
-#define OCCUPIED 1
-#define FREE 0
-#define DOWN -1
 
-void initializeVehicles(vehicle vehicles[], int len) {
+/// @brief initializeVehicles   Funcion inicializa en 0 el array de vehiculos.
+///
+/// @param arrayVehicle			Array de vehiculos a dar de alta.
+/// @param len					Tamanio de ARRAY de vehiculos.
+void initializeVehicles(sVehicle arrayVehicle[], int len) {
 
 	int i;
-	if (vehicles != NULL) {
+	if (arrayVehicle != NULL && len > 0) {
 		for (i = 0; i < len; i++) {
 
-			vehicles[i].isEmpty = FREE;
+			arrayVehicle[i].isEmpty = FREE;
 
 		}
 	}
 
 }
-
-int getFreeId(vehicle vehicles[], int len) {
+/// @brief getFreeIndex			Funcion obtiene posicion de ARRAY de vehiculos libre a dar de alta.
+///
+/// @param arrayVehicle			Array de vehiculos a dar de alta.
+/// @param len					Tamanio de ARRAY de vehiculos.
+/// @return						Retorna la posicion del ARRAY de vehiculos libre a dar de alta.
+int getFreeIndex(sVehicle arrayVehicle[], int len) {
 
 	int i;
-	int ret = ERROR;
+	int rtn = ERROR;
 
-	if (vehicles != NULL && len > 0) {
+	if (arrayVehicle != NULL && len > 0) {
 		for (i = 0; i < len; i++) {
-			if (vehicles[i].isEmpty == FREE) {
-				ret = i;
+			if (arrayVehicle[i].isEmpty == FREE) {
+				rtn = i;
 				break;
 			}
 		}
 	}
-	return ret;
+	return rtn;
 }
+/// @brief findById				Funcion obtiene posicion de ARRAY a traves de ID ingresado por parametro.
+///
+/// @param arrayVehicle			Array de vehiculos.
+/// @param idVehicle			ID ingresado por usuario a ser localizado en su posicion del ARRAY.
+/// @param len					Tamanio de ARRAY de vehiculos.
+/// @return						Retorna la posicion del ARRAY buescado a traves del ID ingresado por usuario.
+int findById(sVehicle arrayVehicle[], int idVehicle, int len) {
+	int rtn = ERROR;
+	int i;
 
-void listOneVehicle(vehicle vehicles, type *description, int lenType) {
-	char descriptiones[31];
-
-	getDescriptionType(description, lenType, vehicles.typeId, descriptiones);
-
-	printf("%5d  %10s  %10d  %10s %20s\n", vehicles.idVehicle,
-			vehicles.description, vehicles.model, vehicles.color,
-			descriptiones);
-
-}
-
-int listVehicles(vehicle vehicles[], int len, type description[], int lenType) {
-
-	int i = 0;
-	int ammount = 0;
-	int ret = ERROR;
-	printf(
-			"\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
-	printf("\n%5s  %10s  %10s  %10s %15s\n", "ID ", "DESCRIPCION", "MODELO",
-			"COLOR", "TIPO");
-
-	if (vehicles != NULL && len > 0) {
+	if (arrayVehicle != NULL && idVehicle > 0 && len > 0) {
 
 		for (i = 0; i < len; i++) {
 
-			if (vehicles[i].isEmpty == OCCUPIED) {
+			if (arrayVehicle[i].idVehicle
+					== idVehicle&& arrayVehicle[i].isEmpty == OCCUPIED) {
+				rtn = i;
 
-				listOneVehicle(vehicles[i], description, lenType);
+				break;
+
+			}
+		}
+	}
+
+	return rtn;
+}
+/// @brief listOneVehicle		Funcion para listar un vehiculo.
+///
+/// @param vehicle				Un vehiculo de estructura sVehicle, dado de alta.
+/// @param arrayType			ARRAY de tipos de vehiculos harcodeado.
+/// @param lenType				Tamanio de ARRAY de tipo harcodeado.
+void listOneVehicle(sVehicle vehicle, sType arrayType[], int lenType) {
+	char descriptionType[31];
+
+	if (arrayType != NULL && lenType > 0) {
+
+		getDescriptionType(arrayType, lenType, vehicle.typeId, descriptionType);
+
+		printf("\t\t\t\t\t\t\t%10d  %10s  %10d  %10s %20s\n", vehicle.idVehicle,
+				vehicle.description, vehicle.model, vehicle.color,
+				descriptionType);
+	}
+
+}
+/// @brief listVehicles			Funcion lista ARRAY de vehiculos dados de alta.
+///
+/// @param arrayVehicle			ARRAY de vehiculos dado de alta.
+/// @param len					Tamanio de ARRAY de vehiculos.
+/// @param arrayType			ARRAY de tipos de vehiculos harcodeado.
+/// @param lenType				Tamanio de ARRAY de tipos de vehiculo harcodeado.
+/// @return						Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int listVehicles(sVehicle arrayVehicle[], int len, sType arrayType[],
+		int lenType) {
+
+	int i = 0;
+	int ammount = 0;
+	int rtn = ERROR;
+
+	if (arrayVehicle != NULL && len > 0 && arrayType != NULL && lenType > 0) {
+
+		printf(
+				"\t\t\t\t\t\t\t-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
+		printf("\n%5s  %10s  %10s  %10s %15s\n", "\t\t\t\t\t\t\t\tID ",
+				"DESCRIPCION", "MODELO", "COLOR", "TIPO");
+
+		for (i = 0; i < len; i++) {
+
+			if (arrayVehicle[i].isEmpty == OCCUPIED) {
+
+				listOneVehicle(arrayVehicle[i], arrayType, lenType);
 
 				ammount++;
 
@@ -83,45 +125,57 @@ int listVehicles(vehicle vehicles[], int len, type description[], int lenType) {
 
 		}
 		if (ammount > 0) {
-			ret = OK;
+			rtn = OK;
+
 			printf(
-					"\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
+					"\t\t\t\t\t\t\t-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
 		}
 
 	}
 
-	return ret;
+	return rtn;
 }
-
+/// @brief getId Funcion STATIC para autoincrementar ID de cada vehiculo.
+///
+/// @return Retorno ID autoincrementada para cada vehiculo dado de alta.
 static int getId(void) {
 
 	static int getIdIncremental = 100;
 
 	return getIdIncremental++;
 }
+/// @brief loadData				Funcion de tipo sVehicle(estructura de vehiculo) para realiza la carga de datos de vehiculo.
+///
+/// @return						Retorno auxiliar de sVehicle(estructura de vehiculo) con los datos cargados por el usuario.
+sVehicle loadData(void) {
 
-vehicle loadData(void) {
+	sVehicle aux;
 
-	vehicle aux;
-
-	utn_getAlfaNumeric(aux.description, "Ingrese descripcion alfanumerica\n",
-			"Ingrese caracteres validos\n");
-	utn_getNumber(&aux.model, "Ingrese modelo (anio de fabricacion)\n",
-			"Solo entre 1960 - 2022\n", 1959, 2023);
-	utn_getDescription(aux.color, "Ingrese color: \n", "Solo 10 letras");
+	utn_getAlfaNumeric(aux.description,
+			"Ingrese descripcion. Puede ser alfanumerica.\n",
+			"Ingrese caracteres validos.\n");
+	utn_getNumber(&aux.model,
+			"Ingrese modelo (anio de fabricacion. 1960-2022).\n",
+			"Solo entre 1960 - 2022.\n", 1959, 2023);
+	utn_getDescription(aux.color, "Ingrese color: \n", "Solo 10 letras.\n");
 
 	return aux;
 }
+/// @brief registerVehicle		Funcion para dar de alta un vehiculo.
+///
+/// @param arrayVehicle			ARRAY de vehiculos.
+/// @param len					Tamanio de ARRAY de vehiculos.
+/// @param arrayType			ARRAY de tipos de vehiculo harcodeado.
+/// @return						Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int registerVehicle(sVehicle arrayVehicle[], int len, sType arrayType[]) {
 
-int addVehicle(vehicle vehicles[], int len, type description[], int lenType) {
-
-	int ret = ERROR;
+	int rtn = ERROR;
 	int index;
-	vehicle auxvehicle;
+	sVehicle auxvehicle;
 
-	if (vehicles != NULL && len > 0) {
+	if (arrayVehicle != NULL && len > 0 && arrayType != NULL) {
 
-		index = getFreeId(vehicles, len);
+		index = getFreeIndex(arrayVehicle, len);
 
 		if (index != -1) {
 
@@ -129,96 +183,78 @@ int addVehicle(vehicle vehicles[], int len, type description[], int lenType) {
 
 			auxvehicle.idVehicle = getId();
 
-			auxvehicle.typeId = types(description, lenType);
+			auxvehicle.typeId = getIdtype(arrayType);
 
 			auxvehicle.isEmpty = OCCUPIED;
 
-			vehicles[index] = auxvehicle;
+			arrayVehicle[index] = auxvehicle;
 
-			printf("El alta de su vehiculo con id %d fue correcta.\n",
-					vehicles[index].idVehicle);
-
-			ret = OK;
+			rtn = OK;
 
 		}
 	}
 
-	return ret;
+	return rtn;
 }
-
-int downVehicle(vehicle vehicles[], int len, type description[], int lenType) {
-	int ret = ERROR;
-	char buffer;
+/// @brief downVehicle			Funcion para dar de baja un vehiculo dado de alta, atraves de ID.
+///
+/// @param arrayVehicle			ARRAY de vehiculos.
+/// @param len					Tamanio de ARRAY de vehiculos.
+/// @param arrayType			ARRAY de tipos de vehiculo harcodeado.
+/// @param lenType				Tamanio de ARRAY de tipos de vehiculo harcodeado.
+/// @return						Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int downVehicle(sVehicle arrayVehicle[], int len, sType arrayType[],
+		int lenType) {
+	int rtn = ERROR;
+	char buffer[3];
 	int idVehicleAux;
 	int index;
-	int retList;
 
-	if (vehicles != NULL && len > 0) {
+	if (arrayVehicle != NULL && len > 0 && arrayType != NULL && lenType > 0) {
 
-		retList = listVehicles(vehicles, len, description, lenType);
+		if (listVehicles(arrayVehicle, len, arrayType, lenType) == OK) {
 
-		if (retList == ERROR) {
-
-			printf("\t\tNo hay vehiculos ingresados\n");
-		} else {
-
-			utn_getNumber(&idVehicleAux, "Ingrese el ID del vehiculo\n",
+			utn_getNumber(&idVehicleAux,
+					"Ingrese el ID del vehiculo a dar de baja.\n",
 					"Ingreso numero invalido.\n", -1, 10000);
 
-			while (findById(vehicles, idVehicleAux, len) == -1) {
+			while (findById(arrayVehicle, idVehicleAux, len) == ERROR) {
 
 				printf("NO EXISTE ID.");
 
-				utn_getNumber(&idVehicleAux, "Ingrese el ID del producto",
-						"Ingreso numero invalido.", -1, 10000);
+				utn_getNumber(&idVehicleAux,
+						"Ingrese el ID del vehiculo a dar de baja.\n",
+						"Ingreso numero invalido.\n", -1, 10000);
 			}
 
-			index = findById(vehicles, idVehicleAux, len);
-			printf("SU ID de vehiculo %d", idVehicleAux);
-			fflush(stdin);
-			printf("\nSe dara de baja, continuar? s/n: ");
-			scanf("%c", &buffer);
+			index = findById(arrayVehicle, idVehicleAux, len);
 
-			if (buffer == 's') {
-				vehicles[index].isEmpty = DOWN;
-				printf("La baja del vehiculo con id %d fue correcta.\n",
-						vehicles[index].idVehicle);
-			} else if (buffer == 'n') {
+			utn_getDescriptionExit(buffer,
+					"\t\t\t\t\t\t\tSu vehiculo se dara de baja. Presione si para continuar. Presione no para cancelar baja de vehiculo.\n",
+					"\t\t\t\t\t\t\tError. Solo si o no.\n");
+			if (stricmp(buffer, "si") == 0) {
 
-				printf("No se dio de baja nada");
+				arrayVehicle[index].isEmpty = DOWN;
+				rtn = OK;
+			} else {
+
+				rtn = ERROR;
 			}
-			ret = OK;
+
 		}
 
 	}
-	return ret;
+	return rtn;
 }
+/// @brief modifyOneVehicle	    Funcion de tipo sVehicle(estructura de vehiculo) para realiza la carga de datos de vehiculo a modificar.
+///
+/// @param vehicle				Un vehiculo de estructura sVehicle dado de alta a ser modificado.
+/// @return						Retorno auxiliar de sVehicle(estructura de vehiculo) con los datos modificados por el usuario.
+sVehicle modifyOneVehicle(sVehicle vehicle) {
 
-int findById(vehicle vehicles[], int idVehicle, int len) {
-	int ret = -1;
-	int i;
-
-	if (vehicles != NULL && idVehicle > -1 && len > 0) {
-
-		for (i = 0; i < len; i++) {
-
-			if (vehicles[i].idVehicle
-					== idVehicle&& vehicles[i].isEmpty == OCCUPIED) {
-				ret = i;
-
-				break;
-
-			}
-		}
-	}
-
-	return ret;
-}
-
-vehicle modifyOneVehicle(vehicle vehicles) {
-
-	vehicle auxModify = vehicles;
+	sVehicle auxModify = vehicle;
 	int auxOptionModify;
+	char exit[3];
 
 	do {
 
@@ -232,185 +268,189 @@ vehicle modifyOneVehicle(vehicle vehicles) {
 
 		case 1:
 			utn_getAlfaNumeric(auxModify.description,
-					"Ingrese descripcion alfanumerica\n",
-					"Ingrese caracteres validos\n");
+					"Ingrese descripcion. Puede ser alfanumerica.\n",
+					"Ingrese caracteres validos.\n");
 			break;
 		case 2:
 			utn_getNumber(&auxModify.model,
-					"Ingrese modelo (anio de fabricacion)\n",
-					"Solo entre 1960 - 2022\n", 1959, 2023);
+					"Ingrese modelo (anio de fabricacion. 1960-2022).\n",
+					"Solo entre 1960 - 2022.\n", 1959, 2023);
 			break;
 		case 3:
-			utn_getDescription(auxModify.color, "Ingrese color: \n",
-					"Solo 10 letras");
+			utn_getDescription(auxModify.color, "Ingrese color:\n",
+					"Solo 10 letras.\n");
+			break;
+
+		case 4:
+			utn_getDescriptionExit(exit,
+					"\t\t\t\t\t\t\tPresione si para salir. Presione no para continuar en el menu de modificacion.\n",
+					"\t\t\t\t\t\t\tError. Solo si o no.\n");
 			break;
 
 		}
-	} while (auxOptionModify != 4);
+	} while (stricmp(exit, "si") != 0);
 
 	return auxModify;
 }
+/// @brief modifyVehicles		Funcion para dar de modificar vehiculos dado de alta, atraves de ID.
+///
+/// @param arrayVehicle			ARRAY de vehiculos.
+/// @param len					Tamanio de ARRAY de vehiculos.
+/// @param arrayType			ARRAY de tipos de vehiculo harcodeado.
+/// @param lenType				Tamanio de ARRAY de tipos de vehiculo harcodeado.
+/// @return						Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int modifyVehicles(sVehicle arrayVehicle[], int len, sType arrayType[],
+		int lenType) {
 
-int modifyVehicles(vehicle vehicles[], int len, type description[], int lenType) {
-
-	int ret = ERROR;
+	int rtn = ERROR;
 	int idVehicle;
 	int index;
-	int retListVehicle;
-	vehicle auxVehicle;
+	sVehicle auxVehicle;
 
-	if (vehicles != NULL && len > 0) {
+	if (arrayVehicle != NULL && len > 0 && arrayType != NULL && lenType > 0) {
 
-		retListVehicle = listVehicles(vehicles, len, description, lenType);
+		if (listVehicles(arrayVehicle, len, arrayType, lenType) == OK) {
 
-		if (retListVehicle == ERROR) {
-
-			printf("\t\tNo hay vehiculos ingresados\n");
-		} else {
 			utn_getNumber(&idVehicle,
-					"Ingrese el ID del vehiculo a modificar\n",
+					"Ingrese el ID del vehiculo a modificar.\n",
 					"Ingreso numero invalido.\n", -1, 10000);
 
-			while (findById(vehicles, idVehicle, len) == -1) {
+			while (findById(arrayVehicle, idVehicle, len) == -1) {
 
 				printf("NO EXISTE ID.");
 
 				utn_getNumber(&idVehicle,
-						"Ingrese el ID del vehiculo a modificar\n",
-						"Ingreso numero invalido.", -1, 10000);
+						"Ingrese el ID del vehiculo a modificar.\n",
+						"Ingreso numero invalido.\n", -1, 10000);
 			}
 
-			index = findById(vehicles, idVehicle, len);
+			index = findById(arrayVehicle, idVehicle, len);
 
-			auxVehicle = modifyOneVehicle(vehicles[index]);
-			vehicles[index] = auxVehicle;
-			printf("La modificacion de vehiculo con id %d fue correcta.\n",
-					vehicles[index].idVehicle);
+			auxVehicle = modifyOneVehicle(arrayVehicle[index]);
+			arrayVehicle[index] = auxVehicle;
 
-			ret = OK;
+			rtn = OK;
 
 		}
 	}
 
-	return ret;
+	return rtn;
 }
+/// @brief sortPerTypeAndDescriptionVehicle	 Funcion ordena por tipo de vehiculo(agrupa mismo tipo) y por descripcion(alfabeticamente).
+///
+/// @param arrayVehicle			ARRAY de vehiculos.
+/// @param len					Tamanio de ARRAY de vehiculos.
+/// @return						Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int sortPerTypeAndDescriptionVehicle(sVehicle arrayVehicle[], int len) {
 
-int sortTypeVehicle(vehicle vehicles[], type description[], int len) {
+	int rtn = ERROR;
+	sVehicle auxVehicle;
 
-	int ret = ERROR;
-	vehicle auxVehicle;
-
-	if (vehicles != NULL) {
+	if (arrayVehicle != NULL && len > 0) {
 		for (int i = 0; i < len - 1; i++) {
 			for (int j = i + 1; j < len; j++) {
-				ret = OK;
 
-				if (vehicles[i].isEmpty == OCCUPIED
-						&& vehicles[j].isEmpty == OCCUPIED) {
+				if (arrayVehicle[i].isEmpty == OCCUPIED
+						&& arrayVehicle[j].isEmpty == OCCUPIED) {
 
-					if (vehicles[i].typeId > vehicles[j].typeId
-							|| (vehicles[i].typeId == vehicles[j].typeId
-									&& (strcmp(vehicles[i].description,
-											vehicles[j].description)) > 0)) {
-						auxVehicle = vehicles[i];
-						vehicles[i] = vehicles[j];
-						vehicles[j] = auxVehicle;
+					if (arrayVehicle[i].typeId > arrayVehicle[j].typeId
+							|| (arrayVehicle[i].typeId == arrayVehicle[j].typeId
+									&& (stricmp(arrayVehicle[i].description,
+											arrayVehicle[j].description)) > 0)) {
+						auxVehicle = arrayVehicle[i];
+						arrayVehicle[i] = arrayVehicle[j];
+						arrayVehicle[j] = auxVehicle;
 					}
-
+					rtn = OK;
 				}
 			}
 		}
 
 	}
 
-	return ret;
+	return rtn;
 }
+/// @brief hardCodeVehicles		Funcion para harcodear vehiculos de prueba de programa.
+///
+/// @param arrayVehicle			ARRAY de vehiculos.
+/// @param len					Tamanio de ARRAY de vehiculos.
+/// @param pNextId				Puntero a entero autoincremental a traves de contador.
+/// @return						Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int hardCodeVehicles(sVehicle arrayVehicle[], int len, int *pNextId) {
 
+	int rtn = ERROR;
 
+	sVehicle aux[25] =
+			{
 
+			{ 0, "Toyota", 1970, "Vegro", 1001, 1 }, { 0, "Maserati", 1974,
+					"blanco", 1002, 1 },
+					{ 0, "Porsche", 1976, "verde", 1001, 1 }, { 0, "Benz", 1961,
+							"gris", 1000, 1 }, { 0, "Lamborghini", 1984,
+							"plateado", 1000, 1 }, { 0, "Tesla", 1987, "dorado",
+							1002, 1 }, { 0, "Honda", 1998, "azul", 1001, 1 }, {
+							0, "Hyundai", 2000, "amarillo", 1000, 1 }, { 0,
+							"Ford", 1964, "rojo", 1000, 1 }, { 0, "Alfa Romeo",
+							1980, "marron", 1001, 1 }, { 0, "Audi", 2022,
+							"azul", 1001, 1 }, { 0, "Ferrari", 1990, "gris",
+							1001, 1 }, { 0, "Alpina", 1986, "negro", 1000, 1 },
+					{ 0, "Fiat", 2010, "violeta", 1002, 1 }, { 0, "Cadillac",
+							2019, "negro", 1000, 1 }, { 0, "Chevrolet", 2020,
+							"cosmos", 1002, 1 }, { 0, "Subaru", 2015, "panton",
+							1002, 1 }, { 0, "Dodge", 2013, "blanco", 1001, 1 },
+					{ 0, "Jeep", 1994, "negro", 1002, 1 }, { 0, "Citroën", 2010,
+							"negro", 1000, 1 }, { 0, "Peugeot", 2011, "verde",
+							1001, 1 }, { 0, "Renault", 2013, "azul", 1002, 1 },
+					{ 0, "Suzuki", 2020, "amarillo", 1002, 1 }, { 0, "Pagani",
+							2022, "negro", 1001, 1 } };
 
-//void recorrerArray(vehicle vehicles[], int len) {
-//
-//	for (int i = 0; i < len; i++) {
-//		printf("\n IS EMPTY: %d", vehicles[i].isEmpty);
-//
-//	}
-//
-//}
+	if (arrayVehicle != NULL && pNextId != NULL && len > 0) {
+		for (int i = 0; i < len; i++) {
+			arrayVehicle[i] = aux[i];
+			arrayVehicle[i].idVehicle = *pNextId;
+			(*pNextId)++;
+		}
+		rtn = OK;
+	}
+	return rtn;
 
-//void Vehicles(vehicle vehicles[], int len) {
-//
-//
-//
-//	vehicle aux[25] = { {5, "alpha", 1970, "negro", 1 }, {2, "beta", 1974,
-//			"blanco",2 }, { 3, "gamma", 1976, "verde",2}, {4, "delta",
-//			1961, "gris",3 }, {5, "epsilon", 1984, "plateado",1 }, {6,
-//			"dseta", 1987, "dorado", 1 }, { 7, "eta", 1998, "azul", 2 }, {8,
-//			 "zeta", 2000, "amarillo",3 }, {9, "iota", 1964, "rojo",
-//			2 }, {10, "kappa", 1980, "marron",1 }, { 11, "mu", 1990,
-//			"gris", 2 }, {12, "nu", 1986, "negro",3 }, {13, "xi", 2010,
-//			"violeta",1 }, {14, "omicron", 2019, "negro",1}, {
-//			15, "pi", 2020, "cosmos", 3}, {16, "ro", 2015, "panton", 1},
-//			{17, "sigma", 2013, "blanco",2}, {18, "tau", 1994, "negro",
-//			1 }, { 19, "tau", 2004, "rojo",2 }, {20, "ipsilon", 2010,
-//			"negro", 1 }, {21, "fi", 2011, "verde",3}, {22, "ji",
-//			2013, "azul", 3 }, { 23, "psi", 2020, "amarillo", 2}, {24,
-//			"omega", 2022, "negro",3 } };
-//
-//	for (int i; i < len; i++) {
-//
-//		vehicles[i]=aux[i];
-//	}
-//
-//
-//}
+}
+/// @brief cls			Funcion para limpiar pantalla, debido al no funcionamiento del SYSTEM CLS en consola de ECLIPSE.
+///
+void cls() {
 
-//type TypesHard() {
-//
-//	type aux;
-//
-//	[24] = { 1, 2, 3, 2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2,
-//			2, 3, 3, 2, 1, 2 };
-//
-//	for (int i; i < 24; i++) {
-//
-//		auxType[i];
-//	}
-//
-//	return auxType;
-//
-//}
+	printf(
+			"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
-
-//
-//int listDownvehicles(vehicle vehicles[], int len, type description[],
-//		int lenType) {
-//
-//	int i = 0;
-//	int ammount = 0;
-//	int ret = -1;
-//
-//	if (vehicles != NULL && len > 0) {
-//
-//		for (i = 0; i < len; i++) {
-//
-//			if (vehicles[i].isEmpty == DOWN) {
-//
-//				listOneVehicle(vehicles[i], description, lenType);
-//				ammount++;
-//			}
-//
-//		}
-//
-//		if (ammount > 0) {
-//			ret = 0;
-//
-//		}
-//
-//	}
-//
-//	return ret;
-//}
-
-
+}
 

@@ -1,0 +1,117 @@
+/*
+ * vehiculo.h
+ *
+ *  Created on: 6 oct. 2022
+ *      Author: cuerpos
+ */
+
+#ifndef VEHICULO_H_
+#define VEHICULO_H_
+
+#define MAX_DESCRIPTION 4096
+#define MAX_DESCRIPTION_COLOR 11
+#include "tipo.h"
+
+typedef struct {
+	int idVehicle;
+	char description[MAX_DESCRIPTION];
+	int model;
+	char color[MAX_DESCRIPTION_COLOR];
+	int typeId;
+	int isEmpty;
+
+} sVehicle;
+/// @brief
+///
+/// @param arrayVehicle
+/// @param len
+void initializeVehicles(sVehicle arrayVehicle[], int len);
+/// @brief
+///
+/// @param arrayVehicle
+/// @param len
+/// @return
+int getFreeId(sVehicle arrayVehicle[], int len);
+/// @brief
+///
+/// @param arrayVehicle
+/// @param idVehicle
+/// @param len
+/// @return
+int findById(sVehicle arrayVehicle[], int idVehicle, int len);
+/// @brief
+///
+/// @param vehicle
+/// @param arrayType
+/// @param lenType
+void listOneVehicle(sVehicle vehicle, sType arrayType[], int lenType);
+/// @brief
+///
+/// @param arrayVehicle
+/// @param len
+/// @param arrayType
+/// @param lenType
+/// @return
+int listVehicles(sVehicle arrayVehicle[], int len, sType arrayType[],
+		int lenType);
+/// @brief
+///
+/// @param arrayVehicle
+/// @param arrayType
+/// @param len
+/// @return
+int listTypes(sVehicle arrayVehicle[], sType arrayType[], int len);
+/// @brief
+///
+/// @return
+sVehicle loadData(void);
+/// @brief
+///
+/// @param arrayVehicle
+/// @param len
+/// @param arrayType
+/// @return
+int addVehicle(sVehicle arrayVehicle[], int len, sType arrayType[]);
+/// @brief
+///
+/// @param arrayVehicle
+/// @param len
+/// @param arrayType
+/// @param lenType
+/// @return
+int downVehicle(sVehicle arrayVehicle[], int len, sType arrayType[],
+		int lenType);
+/// @brief
+///
+/// @param vehicles
+/// @return
+sVehicle modifyOneVehicle(sVehicle vehicles);
+/// @brief
+///
+/// @param arrayVehicle
+/// @param len
+/// @param arrayType
+/// @param lenType
+/// @return
+int modifyVehicles(sVehicle arrayVehicle[], int len, sType arrayType[],
+		int lenType);
+/// @brief
+///
+/// @param arrayVehicle
+/// @param len
+/// @return
+int sortTypeVehicle(sVehicle arrayVehicle[], int len);
+/// @brief
+///
+/// @param arrayVehicle
+/// @param len
+/// @param ammount
+/// @param pNextId
+/// @return
+int hardCodeVehicles(sVehicle arrayVehicle[], int len, int ammount,
+		int *pNextId);
+/// @brief
+///
+void cls();
+
+#endif /* VEHICULO_H_ */

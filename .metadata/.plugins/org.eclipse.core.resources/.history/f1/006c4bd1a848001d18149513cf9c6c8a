@@ -1,0 +1,28 @@
+/*
+ * tipo.h
+ *
+ *  Created on: 6 oct. 2022
+ *      Author: cuerpos
+ */
+
+#ifndef TIPO_H_
+#define TIPO_H_
+#include "vehiculo.h"
+#define MAX_DESCRIPTION_TYPE 31
+
+
+typedef struct{
+
+	int idtype;
+	char description[MAX_DESCRIPTION_TYPE];
+
+}sType;
+
+int types(sType arrayType[]);
+
+int getDescriptionType(sType arrayType[], int lenType, int idType, char *pDescription);
+
+
+void hardCode(sType arrayType[]);
+
+#endif /* TIPO_H_ */

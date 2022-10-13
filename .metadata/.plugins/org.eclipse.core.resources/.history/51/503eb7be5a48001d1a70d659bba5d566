@@ -1,0 +1,51 @@
+/*
+ * informes.h
+ *
+ *  Created on: 6 oct. 2022
+ *      Author: cuerpos
+ */
+
+#ifndef INFORMES_H_
+#define INFORMES_H_
+
+
+#include "vehiculo.h"
+#include "tipo.h"
+
+int showOneType3Doors(sVehicle arrayVehicle[], sType arrayType[], int len) ;
+
+int showOneType5Doors(sVehicle arrayVehicle[], sType arrayType[], int len);
+
+int showOneTypeTruck(sVehicle arrayVehicle[], sType arrayType[], int len) ;
+
+int showTypes(sVehicle arrayVehicle[], sType arrayType[], int len);
+
+
+sDate askDate();
+
+
+int showSheetPerDate(sSheet arraySheet[], int lenSheet, sVehicle arrayVehicle[], int len, sType arrayType[], int lenType);
+
+
+
+int loadDataSheetIdReports();
+
+int acumulatorPerVehicle(sSheet arraySheet[], sVehicle arrayVehicle[],
+		int lenSheet, int len, sType arrayType[], int lenType );
+
+
+
+
+
+int askType(sType arrayType[], int lenType);
+
+
+
+
+int pricePerDateOneType(sSheet arraySheet[], sType arrayType[], sVehicle arrayVehicle[], int lenSheet,
+		int lenType, int len);
+
+
+void reportsMenu(sSheet arraySheet[], sVehicle arrayVehicle[], sType arrayType[],
+		int len, int lenSheet, int lenType);
+#endif /* INFORMES_H_ */

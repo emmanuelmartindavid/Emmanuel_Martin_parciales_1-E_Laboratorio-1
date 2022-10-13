@@ -1,0 +1,113 @@
+/*
+ * tipo.c
+ *
+ *  Created on: 6 oct. 2022
+ *      Author: cuerpos
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "vehiculo.h"
+#include "validaciones.h"
+#include "tipo.h"
+
+
+#define OCCUPIED 1
+#define OK 1
+#define ERROR -1
+
+int types(sType arrayType[]) {
+
+	int option;
+	sType auxVehicleTypeId;
+
+	utn_getNumber(&option, "Ingrese tipo.\n"
+			"1-SEDAN 3 PUERTAS\n"
+			"2-SEDAN 5 PUERTAS\n"
+			"3-CAMIONETA\n", "Solo entre 1-3\n", 0, 4);
+	switch (option) {
+
+	case 1:
+		auxVehicleTypeId.idtype = arrayType[0].idtype;
+		break;
+	case 2:
+		auxVehicleTypeId.idtype = arrayType[1].idtype;
+		break;
+	case 3:
+		auxVehicleTypeId.idtype = arrayType[2].idtype;
+		break;
+	}
+	return auxVehicleTypeId.idtype;
+}
+
+int getDescriptionType(sType arrayType[], int lenType, int idType,
+		char *pDescription) {
+	int rtn = ERROR;
+	int i;
+
+	if (arrayType != NULL && idType > -1) {
+
+		for (i = 0; i < lenType; i++) {
+
+			if (arrayType[i].idtype == idType) {
+
+				strncpy(pDescription, arrayType[i].description, 31);
+				rtn = OK;
+
+				break;
+
+			}
+		}
+	}
+
+	return rtn;
+}
+
+int listTypes(sVehicle arrayVehicle[], sType arrayType[], int len) {
+
+	int rtn = ERROR;
+	int ammount = 0;
+	char auxDescription[31];
+	sType auxDescriptions[31];
+	int i;
+
+	for (i = 0; i < len; i++) {
+		if (arrayVehicle[i].isEmpty == OCCUPIED) {
+			getDescriptionType(arrayType, len, arrayVehicle[i].typeId,
+					auxDescription);
+
+			strncpy(auxDescriptions[i].description, auxDescription, 31);
+
+			printf("\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
+			printf("%10s" "%10s", "LISTADO DE TIPOS", "ID\n\n");
+			printf("%10s %10d", auxDescriptions[i].description,
+					arrayVehicle[i].typeId);
+			printf("\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
+
+			ammount++;
+
+		}
+
+	}
+	if (ammount > 0) {
+
+		rtn = OK;
+
+	}
+
+	return rtn;
+}
+
+void hardCode(sType arrayType[], int lenType) {
+
+	arrayType[0].idtype = 1000;
+	strncpy(arrayType[0].description, "SEDAN 3 PUERTAS", 31);
+	arrayType[1].idtype = 1001;
+	strncpy(arrayType[1].description, "SEDAN 5 PUERTAS", 31);
+	arrayType[2].idtype = 1002;
+	strncpy(arrayType[2].description, "CAMIONETA", 31);
+
+}
+

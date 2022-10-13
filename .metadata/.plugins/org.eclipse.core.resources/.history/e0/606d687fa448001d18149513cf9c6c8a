@@ -1,0 +1,51 @@
+/*
+ * vehiculo.h
+ *
+ *  Created on: 6 oct. 2022
+ *      Author: cuerpos
+ */
+
+#ifndef VEHICULO_H_
+#define VEHICULO_H_
+
+#define MAX_DESCRIPTION 4096
+#define MAX_DESCRIPTION_COLOR 11
+#include "tipo.h"
+
+typedef struct {
+	int idVehicle;
+	char description[MAX_DESCRIPTION];
+	int model;
+	char color[MAX_DESCRIPTION_COLOR];
+	int typeId;
+	int isEmpty;
+
+} sVehicle;
+
+void initializeVehicles(sVehicle arrayVehicle[], int len);
+int getFreeId(sVehicle arrayVehicle[], int len);
+int findById(sVehicle arrayVehicle[], int idVehicle, int len);
+
+void listOneVehicle(sVehicle vehicle, sType arrayType[], int lenType);
+int listVehicles(sVehicle arrayVehicle[], int len, sType arrayType[],
+		int lenType);
+
+int listTypes(sVehicle arrayVehicle[], sType arrayType[], int len);
+
+sVehicle loadData(void);
+
+int addVehicle(sVehicle arrayVehicle[], int len, sType arrayType[]);
+int downVehicle(sVehicle arrayVehicle[], int len, sType arrayType[],
+		int lenType);
+sVehicle modifyOneVehicle(sVehicle vehicles);
+int modifyVehicles(sVehicle arrayVehicle[], int len, sType arrayType[],
+		int lenType);
+
+int sortTypeVehicle(sVehicle arrayVehicle[], int len);
+
+int hardCodeVehicles(sVehicle arrayVehicle[], int len, int ammount,
+		int *pNextId);
+
+
+
+#endif /* VEHICULO_H_ */

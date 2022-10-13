@@ -1,0 +1,99 @@
+/*
+ * hojaServicio.h
+ *
+ *  Created on: 6 oct. 2022
+ *      Author: cuerpos
+ */
+
+#ifndef HOJASERVICIO_H_
+#define HOJASERVICIO_H_
+
+
+#include "vehiculo.h"
+#include "tipo.h"
+
+#define MAX_DESCRIPTIONSHEET 4096
+
+
+typedef struct{
+
+	int day;
+	int month;
+	int year;
+
+}sDate;
+
+typedef struct{
+
+	int idSheet;
+	int vehicleId;
+	char description[MAX_DESCRIPTIONSHEET];
+	float servicePrice;
+	sDate date;
+	int isEmpty;
+
+}sSheet;
+/// @brief
+///
+/// @param arraySheet
+/// @param lenSheet
+void initializeSheet(sSheet arraySheet[], int lenSheet);
+/// @brief
+///
+/// @param arraySheet
+/// @param lenSheet
+/// @return
+int getFreeIndexSheet(sSheet arraySheet[], int lenSheet);
+/// @brief
+///
+/// @param arraySheet
+/// @param idSheet
+/// @param lenSheet
+/// @return
+int findByIdSheet(sSheet arraySheet[], int idSheet, int lenSheet);
+/// @brief
+///
+/// @param sheet
+/// @param vehicle
+/// @param arrayType
+/// @param lenType
+void listOneSheet(sSheet sheet, sVehicle vehicle, sType arrayType[], int lenType);
+/// @brief
+///
+/// @param arraySheet
+/// @param lenSheet
+/// @param arrayVehicle
+/// @param len
+/// @param arrayType
+/// @param lenType
+/// @return
+int listSheets(sSheet arraySheet[], int lenSheet, sVehicle arrayVehicle[], int len, sType arrayType[], int lenType);
+/// @brief
+///
+/// @return
+int loadDataSheetId();
+/// @brief
+///
+/// @return
+sSheet loadDataSheet();
+/// @brief
+///
+/// @param arraySheet
+/// @param arrayVehicle
+/// @param arrayType
+/// @param len
+/// @param lenSheet
+/// @param lenType
+/// @return
+int addSheet(sSheet arraySheet[], sVehicle arrayVehicle[], sType arrayType[], int len, int lenSheet, int lenType);
+/// @brief
+///
+/// @param arraySheet
+/// @param len
+/// @param ammount
+/// @param pNextId
+/// @return
+int hardCodeSheets(sSheet arraySheet[], int len, int *pNextId);
+
+
+#endif /* HOJASERVICIO_H_ */

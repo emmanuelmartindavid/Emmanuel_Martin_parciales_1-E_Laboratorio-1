@@ -1,0 +1,369 @@
+/*
+ * vehiculo.c
+ *
+ *  Created on: 6 oct. 2022
+ *      Author: cuerpos
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "vehiculo.h"
+#include "validaciones.h"
+#include "tipo.h"
+
+#define OK 1
+#define ERROR -1
+#define OCCUPIED 1
+#define FREE 0
+#define DOWN -1
+
+void initializeVehicles(sVehicle arrayVehicle[], int len) {
+
+	int i;
+	if (arrayVehicle != NULL && len > 0) {
+		for (i = 0; i < len; i++) {
+
+			arrayVehicle[i].isEmpty = FREE;
+
+		}
+	}
+
+}
+
+int getFreeId(sVehicle arrayVehicle[], int len) {
+
+	int i;
+	int rtn = ERROR;
+
+	if (arrayVehicle != NULL && len > 0) {
+		for (i = 0; i < len; i++) {
+			if (arrayVehicle[i].isEmpty == FREE) {
+				rtn = i;
+				break;
+			}
+		}
+	}
+	return rtn;
+}
+
+void listOneVehicle(sVehicle vehicle, sType arrayType[], int lenType) {
+	char descriptionType[31];
+
+	if(arrayType != NULL && lenType > 0){
+
+	getDescriptionType(arrayType, lenType, vehicle.typeId, descriptionType);
+
+	printf("\t\t\t\t\t\t\t%10d  %10s  %10d  %10s %20s\n", vehicle.idVehicle,
+			vehicle.description, vehicle.model, vehicle.color,
+			descriptionType);
+	}
+
+}
+
+int listVehicles(sVehicle arrayVehicle[], int len, sType arrayType[], int lenType) {
+
+	int i = 0;
+	int ammount = 0;
+	int rtn = ERROR;
+
+
+	if (arrayVehicle != NULL && len > 0 && arrayType != NULL && lenType > 0) {
+
+		printf("\t\t\t\t\t\t\t-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
+		printf("\n%5s  %10s  %10s  %10s %15s\n", "\t\t\t\t\t\t\t\tID ", "DESCRIPCION", "MODELO",
+				"COLOR", "TIPO");
+
+		for (i = 0; i < len; i++) {
+
+			if (arrayVehicle[i].isEmpty == OCCUPIED) {
+
+				listOneVehicle(arrayVehicle[i], arrayType, lenType);
+
+				ammount++;
+
+			}
+
+		}
+		if (ammount > 0) {
+			rtn = OK;
+
+			printf(
+					"\t\t\t\t\t\t\t-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n");
+		}
+
+	}
+
+	return rtn;
+}
+
+static int getId(void) {
+
+	static int getIdIncremental = 100;
+
+	return getIdIncremental++;
+}
+
+sVehicle loadData(void) {
+
+	sVehicle aux;
+
+	utn_getAlfaNumeric(aux.description, "Ingrese descripcion. Puede ser alfanumerica\n",
+			"Ingrese caracteres validos\n");
+	utn_getNumber(&aux.model, "Ingrese modelo (anio de fabricacion. 1960-2022)\n",
+			"Solo entre 1960 - 2022\n", 1959, 2023);
+	utn_getDescription(aux.color, "Ingrese color: \n", "Solo 10 letras");
+
+	return aux;
+}
+
+int addVehicle(sVehicle arrayVehicle[], int len, sType arrayType[], int lenType) {
+
+	int rtn = ERROR;
+	int index;
+	sVehicle auxvehicle;
+
+	if (arrayVehicle != NULL && len > 0 && arrayType != NULL && lenType > 0) {
+
+		index = getFreeId(arrayVehicle, len);
+
+		if (index != -1) {
+
+			auxvehicle = loadData();
+
+			auxvehicle.idVehicle = getId();
+
+			auxvehicle.typeId = types(arrayType, lenType);
+
+			auxvehicle.isEmpty = OCCUPIED;
+
+			arrayVehicle[index] = auxvehicle;
+
+			rtn = OK;
+
+		}
+	}
+
+	return rtn;
+}
+
+int downVehicle(sVehicle arrayVehicle[], int len, sType arrayType[], int lenType) {
+	int rtn = ERROR;
+	char buffer;
+	int idVehicleAux;
+	int index;
+
+	if (arrayVehicle != NULL && len > 0 && arrayType != NULL && lenType > 0) {
+
+		if (listVehicles(arrayVehicle, len, arrayType, lenType) == OK) {
+
+			utn_getNumber(&idVehicleAux, "Ingrese el ID del vehiculo\n",
+					"Ingreso numero invalido.\n", -1, 10000);
+
+			while (findById(arrayVehicle, idVehicleAux, len) == ERROR) {
+
+				printf("NO EXISTE ID.");
+
+				utn_getNumber(&idVehicleAux, "Ingrese el ID del producto",
+						"Ingreso numero invalido.", -1, 10000);
+			}
+
+			index = findById(arrayVehicle, idVehicleAux, len);
+			fflush(stdin);
+			printf(
+					"Su vehiculo de ID %d se dara de baja. Continuar? Presione s: ",
+					idVehicleAux);
+			scanf("%c", &buffer);
+
+			if (buffer == 's') {
+				arrayVehicle[index].isEmpty = DOWN;
+				rtn = OK;
+			} else {
+
+				rtn = ERROR;
+			}
+
+		}
+
+	}
+	return rtn;
+}
+
+int findById(sVehicle arrayVehicle[], int idVehicle, int len) {
+	int rtn = ERROR;
+	int i;
+
+	if (arrayVehicle != NULL && idVehicle > 0 && len > 0) {
+
+		for (i = 0; i < len; i++) {
+
+			if (arrayVehicle[i].idVehicle
+					== idVehicle&& arrayVehicle[i].isEmpty == OCCUPIED) {
+				rtn = i;
+
+				break;
+
+			}
+		}
+	}
+
+	return rtn;
+}
+
+sVehicle modifyOneVehicle(sVehicle vehicle) {
+
+	sVehicle auxModify = vehicle;
+	int auxOptionModify;
+	char exit;
+
+	do {
+
+		printf("\t\t****MODIFICACAR****\n");
+		utn_getNumber(&auxOptionModify, "1- DESCRIPCION.\n"
+				"2- MODELO.\n"
+				"3- COLOR.\n"
+				"4- SALIR", "\nOpcion incorrecta\n", 0, 5);
+
+		switch (auxOptionModify) {
+
+		case 1:
+			utn_getAlfaNumeric(auxModify.description,
+					"Ingrese descripcion. Puede ser alfanumerica\n",
+					"Ingrese caracteres validos\n");
+			break;
+		case 2:
+			utn_getNumber(&auxModify.model,
+					"Ingrese modelo (anio de fabricacion. 1960-2022)\n",
+					"Solo entre 1960 - 2022\n", 1959, 2023);
+			break;
+		case 3:
+			utn_getDescription(auxModify.color, "Ingrese color: \n",
+					"Solo 10 letras");
+			break;
+
+		case 4:
+			fflush(stdin);
+			printf("Presione s para salir");
+			scanf("%c", &exit);
+			break;
+
+		}
+	} while (exit != 's');
+
+	return auxModify;
+}
+
+int modifyVehicles(sVehicle arrayVehicle[], int len, sType arrayType[], int lenType) {
+
+	int rtn = ERROR;
+	int idVehicle;
+	int index;
+	sVehicle auxVehicle;
+
+	if (arrayVehicle != NULL && len > 0 && arrayType != NULL && lenType > 0) {
+
+		if (listVehicles(arrayVehicle, len, arrayType, lenType) == OK) {
+
+			utn_getNumber(&idVehicle,
+					"Ingrese el ID del vehiculo a modificar\n",
+					"Ingreso numero invalido.\n", -1, 10000);
+
+			while (findById(arrayVehicle, idVehicle, len) == -1) {
+
+				printf("NO EXISTE ID.");
+
+				utn_getNumber(&idVehicle,
+						"Ingrese el ID del vehiculo a modificar\n",
+						"Ingreso numero invalido.", -1, 10000);
+			}
+
+			index = findById(arrayVehicle, idVehicle, len);
+
+			auxVehicle = modifyOneVehicle(arrayVehicle[index]);
+			arrayVehicle[index] = auxVehicle;
+
+			rtn = OK;
+
+		}
+	}
+
+	return rtn;
+}
+
+int sortTypeVehicle(sVehicle arrayVehicle[], int len) {
+
+	int rtn = ERROR;
+	sVehicle auxVehicle;
+
+	if (arrayVehicle != NULL && len > 0) {
+		for (int i = 0; i < len - 1; i++) {
+			for (int j = i + 1; j < len; j++) {
+
+				if (arrayVehicle[i].isEmpty == OCCUPIED
+						&& arrayVehicle[j].isEmpty == OCCUPIED) {
+
+					if (arrayVehicle[i].typeId > arrayVehicle[j].typeId
+							|| (arrayVehicle[i].typeId == arrayVehicle[j].typeId
+									&& (strcmp(arrayVehicle[i].description,
+											arrayVehicle[j].description)) > 0)) {
+						auxVehicle = arrayVehicle[i];
+						arrayVehicle[i] = arrayVehicle[j];
+						arrayVehicle[j] = auxVehicle;
+					}
+					rtn = OK;
+				}
+			}
+		}
+
+	}
+
+	return rtn;
+}
+
+int hardCodeVehicles(sVehicle arrayVehicle[], int len, int ammount, int *pNextId) {
+
+	int rtn = ERROR;
+
+	sVehicle aux[25] =
+	{
+
+		{0, "Toyota", 1970, "Vegro", 1001, 1},
+		{0, "Maserati",1974, "blanco", 1002, 1},
+		{0, "Porsche", 1976, "verde", 1001, 1},
+		{0, "Benz", 1961, "gris", 1000, 1},
+		{0, "Lamborghini", 1984,"plateado", 1000, 1},
+		{0, "Tesla", 1987, "dorado", 1002, 1},
+		{0,"Honda", 1998, "azul", 1001, 1},
+		{0, "Hyundai", 2000, "amarillo", 1000,1},
+		{0, "Ford", 1964, "rojo", 1000, 1},
+		{0, "Alfa Romeo", 1980,"marron", 1001, 1},
+		{0, "Audi", 2022, "azul", 1001, 1},
+		{0, "Ferrari", 1990, "gris", 1001, 1},
+		{0, "Alpina", 1986, "negro", 1000, 1},
+		{0, "Fiat", 2010, "violeta", 1002, 1},
+		{0, "Cadillac", 2019,"negro", 1000, 1},
+		{0, "Chevrolet", 2020, "cosmos", 1002, 1},
+		{0, "Subaru", 2015, "panton", 1002, 1},
+		{0, "Dodge", 2013, "blanco", 1001, 1},
+		{0, "Jeep", 1994, "negro", 1002, 1},
+		{0, "Citroën", 2010, "negro", 1000, 1},
+        {0, "Peugeot", 2011, "verde", 1001, 1},
+		{0, "Renault", 2013, "azul", 1002, 1},
+		{0, "Suzuki", 2020, "amarillo", 1002, 1},
+		{0, "Pagani", 2022, "negro", 1001, 1}
+	};
+
+	if (arrayVehicle != NULL && pNextId != NULL && len > 0 && len <= 100
+			&& ammount <= len) {
+		for (int i = 0; i < ammount; i++) {
+			arrayVehicle[i] = aux[i];
+			arrayVehicle[i].idVehicle = *pNextId;
+			(*pNextId)++;
+		}
+		rtn = OK;
+	}
+	return rtn;
+
+}
+

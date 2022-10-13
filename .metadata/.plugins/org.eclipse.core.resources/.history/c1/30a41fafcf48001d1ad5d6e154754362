@@ -1,0 +1,95 @@
+/*
+ * informes.h
+ *
+ *  Created on: 6 oct. 2022
+ *      Author: cuerpos
+ */
+
+#ifndef INFORMES_H_
+#define INFORMES_H_
+#include "vehiculo.h"
+#include "tipo.h"
+/// @brief
+///
+/// @param arrayVehicle
+/// @param arrayType
+/// @param len
+/// @return
+int showOneType3Doors(sVehicle arrayVehicle[], sType arrayType[], int len) ;
+/// @brief
+///
+/// @param arrayVehicle
+/// @param arrayType
+/// @param len
+/// @return
+int showOneType5Doors(sVehicle arrayVehicle[], sType arrayType[], int len);
+/// @brief
+///
+/// @param arrayVehicle
+/// @param arrayType
+/// @param len
+/// @return
+int showOneTypeTruck(sVehicle arrayVehicle[], sType arrayType[], int len) ;
+/// @brief
+///
+/// @param arrayVehicle
+/// @param arrayType
+/// @param len
+/// @return
+int showTypes(sVehicle arrayVehicle[], sType arrayType[], int len);
+/// @brief
+///
+/// @return
+sDate askDate();
+/// @brief
+///
+/// @param arraySheet
+/// @param lenSheet
+/// @param arrayVehicle
+/// @param len
+/// @param arrayType
+/// @param lenType
+/// @return
+int showSheetPerDate(sSheet arraySheet[], int lenSheet, sVehicle arrayVehicle[], int len, sType arrayType[], int lenType);
+/// @brief
+///
+/// @return
+int loadDataSheetIdReports();
+/// @brief
+///
+/// @param arraySheet
+/// @param arrayVehicle
+/// @param lenSheet
+/// @param len
+/// @param arrayType
+/// @param lenType
+/// @return
+int acumulatorPerVehicle(sSheet arraySheet[], sVehicle arrayVehicle[],
+		int lenSheet, int len, sType arrayType[], int lenType );
+/// @brief
+///
+/// @param arrayType
+/// @return
+int askType(sType arrayType[]);
+/// @brief
+///
+/// @param arraySheet
+/// @param arrayType
+/// @param arrayVehicle
+/// @param lenSheet
+/// @param lenType
+/// @param len
+/// @return
+int pricePerDateOneType(sSheet arraySheet[], sType arrayType[], sVehicle arrayVehicle[], int lenSheet,
+		int lenType, int len);
+/// @brief
+///
+/// @param arraySheet
+/// @param arrayVehicle
+/// @param arrayType
+/// @param len
+/// @param lenSheet
+/// @param lenType
+void reportsMenu(sSheet arraySheet[], sVehicle arrayVehicle[], sType arrayType[],
+		int len, int lenSheet, int lenType);
+#endif /* INFORMES_H_ */
