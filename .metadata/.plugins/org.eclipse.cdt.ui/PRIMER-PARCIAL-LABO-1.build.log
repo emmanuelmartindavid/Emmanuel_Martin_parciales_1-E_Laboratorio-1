@@ -1,1 +1,12 @@
-Info: Nothing to build for PRIMER-PARCIAL-LABO-1
+23:03:08 **** Rebuild of configuration Debug for project PRIMER-PARCIAL-LABO-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\PRIMER-PARCIAL-LABO-1.o" "..\\src\\PRIMER-PARCIAL-LABO-1.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\vehiculo.o" "..\\src\\vehiculo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hojaServicio.o" "..\\src\\hojaServicio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\tipo.o" "..\\src\\tipo.c" 
+gcc -o PRIMER-PARCIAL-LABO-1.exe "src\\PRIMER-PARCIAL-LABO-1.o" "src\\hojaServicio.o" "src\\informes.o" "src\\tipo.o" "src\\validaciones.o" "src\\vehiculo.o" 
+
+23:03:10 Build Finished. 0 errors, 0 warnings. (took 1s.344ms)
+

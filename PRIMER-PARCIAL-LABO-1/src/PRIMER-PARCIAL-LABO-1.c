@@ -22,8 +22,8 @@ int main(void) {
 	sVehicle arrayVehicle[LEN_VEHICLES];
 	sSheet arraySheet[LEN_SHEET];
 
-//	int pNextId = 76;
-//	int pNextIdSheet = 20000;
+	int pNextId = 76;
+	int pNextIdSheet = 20000;
 	int option = 0;
 	char exit[3];
 	int flagRegisterVehicle = 0;
@@ -35,11 +35,11 @@ int main(void) {
 
 	initializeSheet(arraySheet, LEN_SHEET);
 
-//	if (hardCodeVehicles(arrayVehicle, LEN_VEHICLES, &pNextId) == OK
-//			&& hardCodeSheets(arraySheet, LEN_SHEET, &pNextIdSheet) == OK) {
-//		flagRegisterVehicle = 1;
-//		flagSheet = 1;
-//	}
+	if (hardCodeVehicles(arrayVehicle, LEN_VEHICLES, &pNextId) == OK
+			&& hardCodeSheets(arraySheet, LEN_SHEET, &pNextIdSheet) == OK) {
+		flagRegisterVehicle = 1;
+		flagSheet = 1;
+	}
 
 	do {
 		utn_getNumber(&option,
