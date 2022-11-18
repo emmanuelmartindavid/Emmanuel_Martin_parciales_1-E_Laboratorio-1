@@ -1,5 +1,485 @@
-15:17:03 **** Rebuild of configuration Debug for project segundo-parcial-labo-1-1E ****
+21:26:17 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'newSale':
+..\src\Venta.c:25:3: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+   25 |   strcpy(newSale->model, " ");
+      |   ^~~~~~
+..\src\Venta.c:25:3: warning: incompatible implicit declaration of built-in function 'strcpy'
+..\src\Venta.c:11:1: note: include '<string.h>' or provide a declaration of 'strcpy'
+   10 | #include "venta.h"
+  +++ |+#include <string.h>
+   11 | 
+..\src\Venta.c: At top level:
+..\src\Venta.c:93:5: error: conflicting types for 'setDaySale'
+   93 | int setDaySale(sSale *this, short day)
+      |     ^~~~~~~~~~
+In file included from ..\src\Venta.c:10:
+..\src\venta.h:61:5: note: previous declaration of 'setDaySale' was here
+   61 | int setDaySale(sSale *this, int day);
+      |     ^~~~~~~~~~
+..\src\Venta.c:108:5: error: conflicting types for 'getDaySale'
+  108 | int getDaySale(sSale *this, short *pDay)
+      |     ^~~~~~~~~~
+In file included from ..\src\Venta.c:10:
+..\src\venta.h:67:5: note: previous declaration of 'getDaySale' was here
+   67 | int getDaySale(sSale *this, int *pDay);
+      |     ^~~~~~~~~~
+..\src\Venta.c:124:5: error: conflicting types for 'setMonthSale'
+  124 | int setMonthSale(sSale *this, short month)
+      |     ^~~~~~~~~~~~
+In file included from ..\src\Venta.c:10:
+..\src\venta.h:73:5: note: previous declaration of 'setMonthSale' was here
+   73 | int setMonthSale(sSale *this, int month);
+      |     ^~~~~~~~~~~~
+..\src\Venta.c:139:5: error: conflicting types for 'getMonthSale'
+  139 | int getMonthSale(sSale *this, short *pMonth)
+      |     ^~~~~~~~~~~~
+In file included from ..\src\Venta.c:10:
+..\src\venta.h:79:5: note: previous declaration of 'getMonthSale' was here
+   79 | int getMonthSale(sSale *this, int *pMonth);
+      |     ^~~~~~~~~~~~
+..\src\Venta.c:154:5: error: conflicting types for 'setYearSale'
+  154 | int setYearSale(sSale *this, short year)
+      |     ^~~~~~~~~~~
+In file included from ..\src\Venta.c:10:
+..\src\venta.h:85:5: note: previous declaration of 'setYearSale' was here
+   85 | int setYearSale(sSale *this, int *pYear);
+      |     ^~~~~~~~~~~
+..\src\Venta.c: In function 'setModelSale':
+..\src\Venta.c:189:3: warning: incompatible implicit declaration of built-in function 'strcpy'
+  189 |   strcpy(this->model, pModel);
+      |   ^~~~~~
+..\src\Venta.c:189:3: note: include '<string.h>' or provide a declaration of 'strcpy'
+..\src\Venta.c: In function 'getModelSale':
+..\src\Venta.c:204:3: warning: incompatible implicit declaration of built-in function 'strcpy'
+  204 |   strcpy(pModel, this->model);
+      |   ^~~~~~
+..\src\Venta.c:204:3: note: include '<string.h>' or provide a declaration of 'strcpy'
+..\src\Venta.c: In function 'getCreditCardNumber':
+..\src\Venta.c:295:1: warning: control reaches end of non-void function [-Wreturn-type]
+  295 | }
+      | ^
+21:27:14 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+..\src\LinkedList.c: In function 'll_newLinkedList':
+..\src\LinkedList.c:21:35: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+   21 |  LinkedList *this = (LinkedList*) malloc(sizeof(LinkedList));
+      |                                   ^~~~~~
+..\src\LinkedList.c:21:35: warning: incompatible implicit declaration of built-in function 'malloc'
+..\src\LinkedList.c:9:1: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+    8 | #include "LinkedList.h"
+  +++ |+#include <stdlib.h>
+    9 | 
+..\src\LinkedList.c: In function 'addNode':
+..\src\LinkedList.c:108:26: warning: incompatible implicit declaration of built-in function 'malloc'
+  108 |  Node *auxNode = (Node*) malloc(sizeof(Node*));
+      |                          ^~~~~~
+..\src\LinkedList.c:108:26: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+..\src\LinkedList.c: In function 'll_remove':
+..\src\LinkedList.c:252:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+  252 |     free(auxNode);
+      |     ^~~~
+..\src\LinkedList.c:252:5: warning: incompatible implicit declaration of built-in function 'free'
+..\src\LinkedList.c:252:5: note: include '<stdlib.h>' or provide a declaration of 'free'
+..\src\LinkedList.c:261:6: warning: incompatible implicit declaration of built-in function 'free'
+  261 |      free(auxNode);
+      |      ^~~~
+..\src\LinkedList.c:261:6: note: include '<stdlib.h>' or provide a declaration of 'free'
+..\src\LinkedList.c: In function 'll_deleteLinkedList':
+..\src\LinkedList.c:307:3: warning: incompatible implicit declaration of built-in function 'free'
+  307 |   free(this);
+      |   ^~~~
+..\src\LinkedList.c:307:3: note: include '<stdlib.h>' or provide a declaration of 'free'
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c:155:5: error: conflicting types for 'setYearSale'
+  155 | int setYearSale(sSale *this, short year)
+      |     ^~~~~~~~~~~
+In file included from ..\src\Venta.c:11:
+..\src\venta.h:85:5: note: previous declaration of 'setYearSale' was here
+   85 | int setYearSale(sSale *this, short *pYear);
+      |     ^~~~~~~~~~~
+..\src\Venta.c:215:5: error: conflicting types for 'setAmmountSale'
+  215 | int setAmmountSale(sSale *this, short ammount)
+      |     ^~~~~~~~~~~~~~
+In file included from ..\src\Venta.c:11:
+..\src\venta.h:109:5: note: previous declaration of 'setAmmountSale' was here
+  109 | int setAmmountSale(sSale *this, int ammount);
+      |     ^~~~~~~~~~~~~~
+21:28:13 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c:155:5: error: conflicting types for 'setYearSale'
+  155 | int setYearSale(sSale *this, short year)
+      |     ^~~~~~~~~~~
+In file included from ..\src\Venta.c:11:
+..\src\venta.h:85:5: note: previous declaration of 'setYearSale' was here
+   85 | int setYearSale(sSale *this, short *pYear);
+      |     ^~~~~~~~~~~
+..\src\Venta.c:215:5: error: conflicting types for 'setAmmountSale'
+  215 | int setAmmountSale(sSale *this, short ammount)
+      |     ^~~~~~~~~~~~~~
+In file included from ..\src\Venta.c:11:
+..\src\venta.h:109:5: note: previous declaration of 'setAmmountSale' was here
+  109 | int setAmmountSale(sSale *this, int ammount);
+      |     ^~~~~~~~~~~~~~
+21:29:24 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c:215:5: error: conflicting types for 'setAmmountSale'
+  215 | int setAmmountSale(sSale *this, short ammount)
+      |     ^~~~~~~~~~~~~~
+In file included from ..\src\Venta.c:11:
+..\src\venta.h:109:5: note: previous declaration of 'setAmmountSale' was here
+  109 | int setAmmountSale(sSale *this, int ammount);
+      |     ^~~~~~~~~~~~~~
+21:29:40 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+21:33:47 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:318:8: warning: implicit declaration of function 'getYeaSale'; did you mean 'getYearSale'? [-Wimplicit-function-declaration]
+  318 |     && getYeaSale(this, pYear) == SUCCESS && getNationalityPlayer(this, auxNationality) == SUCCESS)
+      |        ^~~~~~~~~~
+      |        getYearSale
+..\src\Venta.c:318:25: error: 'pYear' undeclared (first use in this function); did you mean 'auxYear'?
+  318 |     && getYeaSale(this, pYear) == SUCCESS && getNationalityPlayer(this, auxNationality) == SUCCESS)
+      |                         ^~~~~
+      |                         auxYear
+..\src\Venta.c:318:25: note: each undeclared identifier is reported only once for each function it appears in
+..\src\Venta.c:318:46: warning: implicit declaration of function 'getNationalityPlayer' [-Wimplicit-function-declaration]
+  318 |     && getYeaSale(this, pYear) == SUCCESS && getNationalityPlayer(this, auxNationality) == SUCCESS)
+      |                                              ^~~~~~~~~~~~~~~~~~~~
+..\src\Venta.c:318:73: error: 'auxNationality' undeclared (first use in this function)
+  318 |     && getYeaSale(this, pYear) == SUCCESS && getNationalityPlayer(this, auxNationality) == SUCCESS)
+      |                                                                         ^~~~~~~~~~~~~~
+..\src\Venta.c:320:61: error: 'auxFullName' undeclared (first use in this function)
+  320 |    printf("\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
+      |                                                             ^~~~~~~~~~~
+..\src\Venta.c:320:74: error: 'auxAge' undeclared (first use in this function)
+  320 |    printf("\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
+      |                                                                          ^~~~~~
+..\src\Venta.c:320:82: error: 'auxPosition' undeclared (first use in this function)
+  320 |    printf("\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
+      |                                                                                  ^~~~~~~~~~~
+..\src\Venta.c:313:16: warning: unused variable 'auxCreditCardNumber' [-Wunused-variable]
+  313 |  long long int auxCreditCardNumber;
+      |                ^~~~~~~~~~~~~~~~~~~
+..\src\Venta.c:312:8: warning: unused variable 'auxUnitPrice' [-Wunused-variable]
+  312 |  float auxUnitPrice;
+      |        ^~~~~~~~~~~~
+..\src\Venta.c:311:8: warning: unused variable 'ammount' [-Wunused-variable]
+  311 |  short ammount;
+      |        ^~~~~~~
+..\src\Venta.c:310:7: warning: unused variable 'model' [-Wunused-variable]
+  310 |  char model[100];
+      |       ^~~~~
+..\src\Venta.c:309:8: warning: unused variable 'auxYear' [-Wunused-variable]
+  309 |  short auxYear;
+      |        ^~~~~~~
+21:40:26 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:320:61: error: 'auxFullName' undeclared (first use in this function)
+  320 |    printf("\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
+      |                                                             ^~~~~~~~~~~
+..\src\Venta.c:320:61: note: each undeclared identifier is reported only once for each function it appears in
+..\src\Venta.c:320:74: error: 'auxAge' undeclared (first use in this function)
+  320 |    printf("\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
+      |                                                                          ^~~~~~
+..\src\Venta.c:320:82: error: 'auxPosition' undeclared (first use in this function)
+  320 |    printf("\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
+      |                                                                                  ^~~~~~~~~~~
+..\src\Venta.c:320:95: error: 'auxNationality' undeclared (first use in this function)
+  320 |    printf("\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
+      |                                                                                               ^~~~~~~~~~~~~~
+21:44:25 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:320:65: warning: unknown conversion type character 'l' in format [-Wformat=]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%-.2f|%-lld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |                                                                 ^
+..\src\Venta.c:320:11: warning: too many arguments for format [-Wformat-extra-args]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%-.2f|%-lld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+21:45:06 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:320:64: warning: unknown conversion type character 'l' in format [-Wformat=]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%-lld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |                                                                ^
+..\src\Venta.c:320:11: warning: too many arguments for format [-Wformat-extra-args]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%-lld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+21:45:20 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:320:65: warning: unknown conversion type character 'l' in format [-Wformat=]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%-5lld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |                                                                 ^
+..\src\Venta.c:320:11: warning: too many arguments for format [-Wformat-extra-args]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%-5lld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+21:45:49 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:320:64: warning: format '%d' expects argument of type 'int', but argument 9 has type 'long long int' [-Wformat=]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%-5d\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |                                                             ~~~^                                                                           ~~~~~~~~~~~~~~~~~~~
+      |                                                                |                                                                           |
+      |                                                                int                                                                         long long int
+      |                                                             %-5I64d
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+21:46:04 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:320:65: warning: unknown conversion type character 'l' in format [-Wformat=]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%-5lld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |                                                                 ^
+..\src\Venta.c:320:11: warning: too many arguments for format [-Wformat-extra-args]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%-5lld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+21:46:14 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:320:65: warning: format '%ld' expects argument of type 'long int', but argument 9 has type 'long long int' [-Wformat=]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%-5ld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |                                                             ~~~~^                                                                           ~~~~~~~~~~~~~~~~~~~
+      |                                                                 |                                                                           |
+      |                                                                 long int                                                                    long long int
+      |                                                             %-5I64d
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+21:46:33 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:320:65: warning: unknown conversion type character 'l' in format [-Wformat=]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%-5lld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |                                                                 ^
+..\src\Venta.c:320:11: warning: too many arguments for format [-Wformat-extra-args]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%-5lld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+21:46:43 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:320:65: warning: unknown conversion type character 'l' in format [-Wformat=]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%-5llu\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |                                                                 ^
+..\src\Venta.c:320:11: warning: too many arguments for format [-Wformat-extra-args]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%-5llu\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+21:47:05 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:320:63: warning: unknown conversion type character 'l' in format [-Wformat=]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%lld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |                                                               ^
+..\src\Venta.c:320:11: warning: too many arguments for format [-Wformat-extra-args]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%lld\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+21:47:17 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:320:63: warning: unknown conversion type character 'l' in format [-Wformat=]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%lld|\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |                                                               ^
+..\src\Venta.c:320:11: warning: too many arguments for format [-Wformat-extra-args]
+  320 |    printf("\t\t|%-5d| %-5hd| %-5hd| %-5hd| %-24s|%-5hd|%.2f|%lld|\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+21:54:56 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'listOneSale':
+..\src\Venta.c:318:34: warning: passing argument 2 of 'getCreditCardNumber' from incompatible pointer type [-Wincompatible-pointer-types]
+  318 |     && getCreditCardNumber(this, &auxCreditCardNumber) == SUCCESS)
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+      |                                  |
+      |                                  long int *
+..\src\Venta.c:290:53: note: expected 'long long int *' but argument is of type 'long int *'
+  290 | int getCreditCardNumber(sSale *this, long long int *pCreditCardNumber)
+      |                                      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+21:55:31 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+22:30:10 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+..\src\Parser.c: In function 'parserSaleFromText':
+..\src\Parser.c:37:7: warning: 'returnFscanf' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   37 |    if (returnFscanf == 6)
+      |       ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'newSaleParameters':
+..\src\Venta.c:52:72: warning: passing argument 2 of 'getDaySale' makes pointer from integer without a cast [-Wint-conversion]
+   52 |    if (!(setIdSale(auxNewSale, atoi(pIdStr)) && getDaySale(auxNewSale, atoi(pDayStr)) && getMonthSale(auxNewSale, atoi(pMonthStr)) && getYearSale(auxNewSale, atoi(pYearStr)) && getModelSale(auxNewSale, pModelStr) && getAmmountSale(auxNewSale, atoi(pAmmountStr))
+      |                                                                        ^~~~~~~~~~~~~
+      |                                                                        |
+      |                                                                        int
+In file included from ..\src\Venta.c:11:
+..\src\venta.h:67:36: note: expected 'short int *' but argument is of type 'int'
+   67 | int getDaySale(sSale *this, short *pDay);
+      |                             ~~~~~~~^~~~
+..\src\Venta.c:52:115: warning: passing argument 2 of 'getMonthSale' makes pointer from integer without a cast [-Wint-conversion]
+   52 |    if (!(setIdSale(auxNewSale, atoi(pIdStr)) && getDaySale(auxNewSale, atoi(pDayStr)) && getMonthSale(auxNewSale, atoi(pMonthStr)) && getYearSale(auxNewSale, atoi(pYearStr)) && getModelSale(auxNewSale, pModelStr) && getAmmountSale(auxNewSale, atoi(pAmmountStr))
+      |                                                                                                                   ^~~~~~~~~~~~~~~
+      |                                                                                                                   |
+      |                                                                                                                   int
+In file included from ..\src\Venta.c:11:
+..\src\venta.h:79:38: note: expected 'short int *' but argument is of type 'int'
+   79 | int getMonthSale(sSale *this, short *pMonth);
+      |                               ~~~~~~~^~~~~~
+..\src\Venta.c:52:159: warning: passing argument 2 of 'getYearSale' makes pointer from integer without a cast [-Wint-conversion]
+   52 |    if (!(setIdSale(auxNewSale, atoi(pIdStr)) && getDaySale(auxNewSale, atoi(pDayStr)) && getMonthSale(auxNewSale, atoi(pMonthStr)) && getYearSale(auxNewSale, atoi(pYearStr)) && getModelSale(auxNewSale, pModelStr) && getAmmountSale(auxNewSale, atoi(pAmmountStr))
+      |                                                                                                                                                               ^~~~~~~~~~~~~~
+      |                                                                                                                                                               |
+      |                                                                                                                                                               int
+In file included from ..\src\Venta.c:11:
+..\src\venta.h:91:37: note: expected 'short int *' but argument is of type 'int'
+   91 | int getYearSale(sSale *this, short *pYear);
+      |                              ~~~~~~~^~~~~
+..\src\Venta.c:52:244: warning: passing argument 2 of 'getAmmountSale' makes pointer from integer without a cast [-Wint-conversion]
+   52 |    if (!(setIdSale(auxNewSale, atoi(pIdStr)) && getDaySale(auxNewSale, atoi(pDayStr)) && getMonthSale(auxNewSale, atoi(pMonthStr)) && getYearSale(auxNewSale, atoi(pYearStr)) && getModelSale(auxNewSale, pModelStr) && getAmmountSale(auxNewSale, atoi(pAmmountStr))
+      |                                                                                                                                                                                                                                                    ^~~~~~~~~~~~~~~~~
+      |                                                                                                                                                                                                                                                    |
+      |                                                                                                                                                                                                                                                    int
+In file included from ..\src\Venta.c:11:
+..\src\venta.h:115:40: note: expected 'short int *' but argument is of type 'int'
+  115 | int getAmmountSale(sSale *this, short *pAmmount);
+      |                                 ~~~~~~~^~~~~~~~
+..\src\Venta.c:53:38: error: incompatible type for argument 2 of 'getUnitPriceSale'
+   53 |      && getUnitPriceSale(auxNewSale, atof(pUnitPriceStr)) && getCreditCardNumber(auxNewSale, atol(pCreditCardNumberStr))))
+      |                                      ^~~~~~~~~~~~~~~~~~~
+      |                                      |
+      |                                      double
+In file included from ..\src\Venta.c:11:
+..\src\venta.h:127:42: note: expected 'float *' but argument is of type 'double'
+  127 | int getUnitPriceSale(sSale *this, float *pUnitPrice);
+      |                                   ~~~~~~~^~~~~~~~~~
+..\src\Venta.c:53:94: warning: passing argument 2 of 'getCreditCardNumber' makes pointer from integer without a cast [-Wint-conversion]
+   53 |      && getUnitPriceSale(auxNewSale, atof(pUnitPriceStr)) && getCreditCardNumber(auxNewSale, atol(pCreditCardNumberStr))))
+      |                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                              |
+      |                                                                                              long int
+In file included from ..\src\Venta.c:11:
+..\src\venta.h:139:48: note: expected 'long int *' but argument is of type 'long int'
+  139 | int getCreditCardNumber(sSale *this, long int *pCreditCardNumber);
+      |                                      ~~~~~~~~~~^~~~~~~~~~~~~~~~~
+22:30:59 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+22:37:16 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
-gcc -o segundo-parcial-labo-1-1E.exe "src\\segundo-parcial-labo-1-1E.o" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:22:2: warning: implicit declaration of function 'controllerLoadSaleFromText' [-Wimplicit-function-declaration]
+   22 |  controllerLoadSaleFromText("Autos.csv", listSale);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c:24:2: warning: implicit declaration of function 'controllerListSales' [-Wimplicit-function-declaration]
+   24 |  controllerListSales(listSale);
+      |  ^~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerLoadSaleFromText':
+..\src\Controller.c:27:8: warning: implicit declaration of function 'parserPlayerFromText'; did you mean 'parserSaleFromText'? [-Wimplicit-function-declaration]
+   27 |    if (parserPlayerFromText(pFile, pListSale) == SUCCESS)
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        parserSaleFromText
+..\src\Controller.c: In function 'controllerListSales':
+..\src\Controller.c:52:4: warning: implicit declaration of function 'showPlayerData' [-Wimplicit-function-declaration]
+   52 |    showPlayerData();
+      |    ^~~~~~~~~~~~~~
+..\src\Controller.c:64:4: warning: implicit declaration of function 'showLine' [-Wimplicit-function-declaration]
+   64 |    showLine();
+      |    ^~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\Controller.o: in function `controllerLoadSaleFromText':
+C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/Controller.c:27: undefined reference to `parserPlayerFromText'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\Controller.o: in function `controllerListSales':
+C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/Controller.c:52: undefined reference to `showPlayerData'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/Controller.c:58: undefined reference to `listOnePlayer'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/Controller.c:64: undefined reference to `showLine'
+collect2.exe: error: ld returned 1 exit status
+22:38:01 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerListSales':
+..\src\Controller.c:64:4: warning: implicit declaration of function 'showLine' [-Wimplicit-function-declaration]
+   64 |    showLine();
+      |    ^~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\Controller.o: in function `controllerListSales':
+C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/Controller.c:58: undefined reference to `listOnePlayer'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/Controller.c:64: undefined reference to `showLine'
+collect2.exe: error: ld returned 1 exit status
+22:38:23 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerListSales':
+..\src\Controller.c:57:10: warning: implicit declaration of function 'listOneSale'; did you mean 'listOnePlayer'? [-Wimplicit-function-declaration]
+   57 |      if (listOneSale(pSale) == SUCCESS)
+      |          ^~~~~~~~~~~
+      |          listOnePlayer
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+22:38:47 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+..\src\Parser.c: In function 'parserSaleFromText':
+..\src\Parser.c:37:7: warning: 'returnFscanf' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   37 |    if (returnFscanf == 6)
+      |       ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+22:39:03 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+..\src\Parser.c: In function 'parserSaleFromText':
+..\src\Parser.c:37:7: warning: 'returnFscanf' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   37 |    if (returnFscanf == 8)
+      |       ^
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+22:39:19 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+22:39:43 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
+22:39:50 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\segundo-parcial-labo-1-1E.o" 
 Info: Nothing to build for segundo-parcial-labo-1-1E

@@ -1,21 +1,25 @@
 /*
- * linkedList.h
+ * LinkedList.h
  *
  *  Created on: 16 nov. 2022
  *      Author: cuerpos
  */
+
 #ifndef LINKEDLIST_H_
 #define LINKEDLIST_H_
+
 struct Node
 {
     void* pElement;
     struct Node* pNextNode;
 }typedef Node;
+
 struct LinkedList
 {
     Node* pFirstNode;
     int size;
 }typedef LinkedList;
+
 LinkedList* ll_newLinkedList(void);
 int ll_len(LinkedList* this);
 int ll_add(LinkedList* this, void* pElement);
@@ -33,4 +37,5 @@ int ll_containsAll(LinkedList* this,LinkedList* this2);
 LinkedList* ll_subList(LinkedList* this,int from,int to);
 LinkedList* ll_clone(LinkedList* this);
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);
+
 #endif /* LINKEDLIST_H_ */

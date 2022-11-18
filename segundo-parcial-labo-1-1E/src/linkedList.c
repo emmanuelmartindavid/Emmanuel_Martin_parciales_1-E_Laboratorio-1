@@ -1,13 +1,12 @@
 /*
- * linkedList.c
+ * LinkedList.c
  *
  *  Created on: 16 nov. 2022
  *      Author: cuerpos
  */
-
 #include <stdio.h>
 #include <stdlib.h>
-#include "linkedList.h"
+#include "LinkedList.h"
 
 static Node* getNode(LinkedList *this, int nodeIndex);
 static int addNode(LinkedList *this, int nodeIndex, void *pElement);
@@ -566,4 +565,21 @@ int ll_sort(LinkedList *this, int (*pFunc)(void*, void*), int order)
 	return returnAux;
 
 }
+/// @brief
+///
+/// @param this
+/// @param pFunc
+/// @return
+int ll_count(LinkedList* this, int (*pFunc)(void*))
+{
+	int returnAux=-1;
 
+	if(this != NULL && pFunc != NULL)
+	{
+
+
+
+
+	}
+	return returnAux;
+}
