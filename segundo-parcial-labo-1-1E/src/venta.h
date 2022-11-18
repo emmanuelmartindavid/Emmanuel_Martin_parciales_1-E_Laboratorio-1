@@ -4,22 +4,27 @@
  *  Created on: 16 nov. 2022
  *      Author: cuerpos
  */
-
 #ifndef VENTA_H_
 #define VENTA_H_
 #define ERROR -1
 #define SUCCESS 1
+#define NOEDIT 3
+
+typedef struct
+{
+	short day;
+	short month;
+	short year;
+} sDate;
 
 typedef struct
 {
 	int id;
-	short day;
-	short month;
-	short year;
 	char model[50];
-	short ammount;
+	short amount;
 	float unitPrice;
-	long int creditCardNumber;
+	char creditCardNumber[17];
+	sDate date;
 } sSale;
 /// @brief	newSale 						    		CONTRSTRUCTOR DE ENTIDAD VENTA EN MEMORIA DINAMICA.
 ///
@@ -32,11 +37,11 @@ sSale* newSale();
 /// @param pMonthStr									PUNTERO STRING.
 /// @param pYearStr										PUNTERO STRING.
 /// @param pModelStr									PUNTERO STRING.
-/// @param pAmmountStr									PUNTERO STRING.
+/// @param pAmountStr									PUNTERO STRING.
 /// @param pUnitPriceStr								PUNTERO STRING.
 /// @param pCreditCardNumberStr							PUNTERO STRING.
 /// @return												RETORNA PUNTERO DE ENTIDAD CREADO CON SUS PARAMETROS SETEADOS EN CASO CORRECTO. RETORNA NULL EN CASO CONTRARIO.
-sSale* newSaleParameters(char *pIdStr, char *pDayStr, char *pMonthStr, char *pYearStr, char *pModelStr, char *pAmmountStr, char *pUnitPriceStr, char *pCreditCardNumberStr);
+sSale* newSaleParameters(char *pIdStr, char *pDayStr, char *pMonthStr, char *pYearStr, char *pModelStr, char *pAmountStr, char *pUnitPriceStr, char *pCreditCardNumberStr);
 /// @brief	deleteSale									LIBERA ESPACIO EN MEMORIA DINAMICA DEL TIPO PUNTERO POR PARAMETRO EN CASO DE SER NECESARIO.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
@@ -104,15 +109,15 @@ int getModelSale(sSale *this, char *pModel);
 /// @brief	setAmmountSale								SETEA CANTIDAD DE VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param ammount										ENTERO
+/// @param amount										ENTERO
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int setAmmountSale(sSale *this, short ammount);
+int setAmountSale(sSale *this, short amount);
 /// @brief getIdNationalTeamPLayer						OBTIENE CANTIDAD DE VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param pAmmount										PUNTERO ENTERO.
+/// @param pAmount										PUNTERO ENTERO.
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int getAmmountSale(sSale *this, short *pAmmount);
+int getAmountSale(sSale *this, short *pAmount);
 /// @brief	setUnitPriceSale							SETEA PRECIO UNITARIO DE VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
@@ -130,22 +135,57 @@ int getUnitPriceSale(sSale *this, float *pUnitPrice);
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @param creditCardNumber								ENTERO
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int setCreditCardNumber(sSale *this, long int creditCardNumber);
+int setCreditCardNumber(sSale *this, char *pCreditCardNumber);
 /// @brief getIdNationalTeamPLayer						OBTIENE NUMERO DE TARJETA DE CREDITO DE VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @param pCreditCardNumber							PUNTERO ENTERO.
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int getCreditCardNumber(sSale *this, long int *pCreditCardNumber);
-
-/// @brief	listOnePlayer								LISTA UN JUGADOR.
+int getCreditCardNumber(sSale *this, char *pCreditCardNumber);
+/// @brief editDaySale							EDICION DE CANTIDAD DE VENTA.
 ///
-/// @param this											PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int editDaySale(sSale *this);
+/// @brief editMonthSale						EDICION DE MES DE VENTA.
+///
+/// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int editMonthSale(sSale *this);
+/// @brief editYearSale							EDICION DE ANIO DE VENTA.
+///
+/// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int editYearSale(sSale *this);
+/// @brief editModel								EDICION DE MODELO DE VEHICULO.
+///
+/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int editModel(sSale *this);
+/// @brief editAmountSale						EDICION DE CANTIDAD DE VENTA.
+///
+/// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int editAmountSale(sSale *this);
+/// @brief editUnitPriceSale					EDICION DE PRECIO UNITARIO DE VENTA.
+///
+/// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int editUnitPriceSale(sSale *this);
+/// @brief editCreditCardNumber					EDICION DE NUMERO DE TARJETA DE CREDITO.
+///
+/// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int editCreditCardNumber(sSale *this);
+/// @brief	listOneSale								LISTA UNA VENTA.
+///
+/// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int listOneSale(sSale *this);
-/// @brief editFullNamePlayer						EDICION DE NOMBRE DE JUGADOR.
+/// @brief
 ///
-/// @param this										PUNTERO DE TIPO ESTRUCTURA JUGADOR.
-/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-
+void showSaleData();
+/// @brief
+///
+void showLine();
 #endif /* VENTA_H_ */

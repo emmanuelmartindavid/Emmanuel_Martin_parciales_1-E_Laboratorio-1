@@ -25,15 +25,16 @@ int parserSaleFromText(FILE *pFile, LinkedList *pListSale)
 	char auxAmmount[2000];
 	char auxUnitPrice[2000];
 	char auxCreditCardNumber[2000];
+	char auxHeader[2000];
 	sSale *pSale;
 	int returnFscanf;
 
 	if (pFile != NULL && pListSale != NULL)
 	{
-		fscanf(pFile, "%[^,],%[^/]/%[^/]/%[^,],%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+		fscanf(pFile,"%[^\n]\n", auxHeader);
 		do
 		{
-			returnFscanf = fscanf(pFile, "%[^,],%[^/]/%[^/]/%[^,],%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
+			returnFscanf = fscanf(pFile, "%[^,],%[^/]/%[^/]/%[^,],%[^,],%[^,],$%[^,],%[^\n]\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
 			if (returnFscanf == 8)
 			{
 				pSale = newSaleParameters(auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
