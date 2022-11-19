@@ -177,11 +177,36 @@ int editUnitPriceSale(sSale *this);
 /// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editCreditCardNumber(sSale *this);
+/// @brief GetTotalAmountSaleCriteria				OBTIENE CRITERIO CANTIDAD
+///
+/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int GetTotalAmountSaleCriteria(void *this);
+/// @brief getAmountSalesFirstCriteria			OBTIENE CRITERIO DE PRECIOS POR VENTA MAYORES $10000
+///
+/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int getAmountSalesFirstCriteria(void *this);
+/// @brief getGetAmountSalesSecondtCriteria			OBTIENE CRITERIO DE PRECIOS POR VENTA MAYORES $20000
+///
+/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int getAmountSalesSecondCriteria(void *this);
+/// @brief getModelCarCriteria						OBTIENE CRITERIO DE MODELO DE AUTO TIPO MATRIX.
+///
+/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int getModelCarCriteria(void *this);
 /// @brief	listOneSale								LISTA UNA VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int listOneSale(sSale *this);
+/// @brief editOneSale				EDICION DE UNA VENTA.
+///
+/// @param this						PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return							RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO. RETORNO 3 EN CASO DE NO HABER REALIZADO MODIFICACIONES EN LA VENTA.
+int editOneSale(sSale *this);
 /// @brief
 ///
 void showSaleData();

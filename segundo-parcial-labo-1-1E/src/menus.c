@@ -24,12 +24,8 @@ void showMainMenu()
 			"\n\t\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
 			"\t\t\t\t\t\t\t\t=========================================================================\n\n\n");
 }
-
-
-
-
-
-
+/// @brief 					MENU MODELOS DE AUTOS.
+///
 void showModelsMenu()
 {
 	printf("\t\t\t\t\t\t\t\t\t======================MODELOS===================="
@@ -54,4 +50,20 @@ void showModelsMenu()
 			"\n\t\t\t\t\t\t\t\t\t|\t\t 18. ELECTRA.\t\t\t|"
 			"\n\t\t\t\t\t\t\t\t\t|\t\t\t\t\t\t|\n"
 			"\t\t\t\t\t\t\t\t\t=================================================\n");
+}
+
+/// @brief 						MENU EDITAR VENTA.
+///
+void showEditSaleMenu()
+{
+	printf("\n\n\n\t\t\t\t\t\t\t\t===========================MENU-EDITAR-VENTA============================="
+			"\n\t\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t\t|\t\t\t 1. FECHA:\t\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t\t|\t\t\t 2. MODELO:\t\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t\t|\t\t\t 3. CANTIDAD:\t\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t\t|\t\t\t 4. PRECIO:\t\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t\t|\t\t\t 5. NUMERO TARJETA DE CREDITO:\t\t\t|"
+			"\n\t\t\t\t\t\t\t\t|\t\t\t 6. SALIR.\t\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t\t=========================================================================\n\n");
 }

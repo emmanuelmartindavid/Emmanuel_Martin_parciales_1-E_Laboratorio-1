@@ -21,5 +21,11 @@ int parserSaleFromText(FILE *pFile, LinkedList *pListSale);
 /// @param pArrayListPlayer		LINKEDLIST VENTAS.
 /// @return						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int parserSaleFromBinary(FILE *pFile, LinkedList *pListSale);
+/// @brief parserIdSaleFromText 	PARSEA DATO DE ID VENTA A DAR DE ALTA DESDE ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param pFile					PUNTERO A FILE.
+/// @param pIdSale				PUNTERO ENTERO.
+/// @return							RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int parserIdSaleFromText(FILE *pFile, int *pIdSale);
 
 #endif /* PARSER_H_ */

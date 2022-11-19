@@ -22,10 +22,13 @@ int main(void)
 	setbuf(stdout, NULL);
 
 	LinkedList *listSale = ll_newLinkedList();
+	LinkedList *otra = ll_newLinkedList();
 
 	int optionMainMenu;
 	int flagExit = 2;
 	int returnRemoveSale;
+	int returnEditSale;
+	int idSale;
 	char exit[3];
 
 	do
@@ -33,15 +36,12 @@ int main(void)
 		showMainMenu();
 		if (utn_getNumber(&optionMainMenu, "\nINGRESE OPCION.\n", "ERROR. REINTENTE.\n", 1, 8, 3) == 0)
 		{
-
 			switch (optionMainMenu)
 			{
-
 			case 1:
-
 				if (ll_isEmpty(listSale) == 1)
 				{
-					if (controllerLoadSaleFromText("Autos-3.csv", listSale) == SUCCESS && controllerListSales(listSale) == SUCCESS)
+					if (controllerLoadSaleFromText("Autos-3.csv", listSale) == SUCCESS && controllerLoadIdSaleFromText("idAutoincremental.txt", &idSale) == SUCCESS && controllerListSales(listSale) == SUCCESS)
 					{
 						printf("\n\t\t\t\t\t\t\tSE HA CARGADO EXITOSAMENTE SU ARCHIVO DE TEXTO. EL CUAL CONTIENE LOS ELEMENTOS LISTADOS.\n");
 					}
@@ -58,13 +58,13 @@ int main(void)
 			case 2:
 				if (ll_isEmpty(listSale) == 0)
 				{
-					if (controllerAddSale(listSale) == SUCCESS)
+					if (controllerAddSale(listSale, &idSale) == SUCCESS)
 					{
 						printf("\n\t\t\t\t\t\t\t\t\t\t\tALTA DE VENTA EXITOSA.\n");
 					}
 					else
 					{
-						printf("\n\t\t\t\t\t\t\t\t\t\t\tDATOS INVALIDOS. REINTENTE\n");
+						printf("\n\t\t\t\t\t\t\t\t\t\t\tDATOS INVALIDOS. REINTENTE.\n");
 					}
 				}
 				else
@@ -73,20 +73,41 @@ int main(void)
 				}
 				break;
 			case 3:
+				if (ll_isEmpty(listSale) == 0)
+				{
+					returnEditSale = controllerEditSale(listSale);
+					if (returnEditSale == SUCCESS)
+					{
+						printf("\n\t\t\t\t\t\t\t\t\t\tVENTA MODIFICADA EXITOSAMENTE.\n");
+					}
+					else if (returnEditSale == ERROR)
+					{
+						printf("\n\t\t\t\t\t\t\t\t\t\tERROR. REINTENTE\n");
+					}
+					else if (returnEditSale == NOEDIT)
+					{
+						printf("\n\t\t\t\t\t\t\t\t\t\t\tNO REALIZO MODIFICACIONES.\n");
+					}
+				}
+				else
+				{
+					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO.\n");
+				}
 				break;
 			case 4:
 				if (ll_isEmpty(listSale) == 0)
 				{
 					returnRemoveSale = controllerRemoveSale(listSale);
-					if(returnRemoveSale==SUCCESS)
+					if (returnRemoveSale == SUCCESS)
 					{
 						printf("\n\t\t\t\t\t\t\t\t\tVENTA DADA DE BAJA EXITOSAMENTE.\n");
 
-					}else if(returnRemoveSale==ERROR)
+					}
+					else if (returnRemoveSale == ERROR)
 					{
 						printf("\n\t\t\t\t\t\t\t\t\tERROR. REINTENTE\n");
 					}
-					else if(returnRemoveSale == REMOVECANCEL)
+					else if (returnRemoveSale == REMOVECANCEL)
 					{
 						printf("\n\t\t\t\t\t\t\t\t\tBAJA CANCELADA.\n");
 					}
@@ -118,8 +139,23 @@ int main(void)
 				}
 				break;
 			case 6:
+//				controllerGetTotalAmountSale(listSale, &cantidad);
+//				printf("CANTIDAD EN MAIN %d\n", cantidad);
+//				retcount = ll_count(listSale, getAmountSalesFirstCriteria);
+//				printf("CANTIDAD EN MAIN LL_COUNT %d\n", retcount);
+				controllerReportSale("Informes.txt", listSale);
+//				otra = ll_filter(listSale, getAmountSalesFirstCriteria);
+//				controllerListSales(otra);
+//				otra = ll_filter(listSale, getAmountSalesSecondCriteria);
+//				controllerListSales(otra);
+//				otra = ll_filter(listSale, getModelCarCriteria);
+//				controllerListSales(otra);
+
 				break;
 			case 7:
+				controllerSaveSalesTextMode("Autos-3.csv", listSale);
+				controllerSaveIdSaleTextMode("idAutoincremental.txt", &idSale);
+
 				break;
 			case 8:
 				if (flagExit != 2)
@@ -131,12 +167,7 @@ int main(void)
 					{
 						if ((stricmp(exit, "si") == 0))
 						{
-							remove("AFC.bin");
-							remove("CAF.bin");
-							remove("CONCACAF.bin");
-							remove("CONMEBOL.bin");
-							remove("UEFA.bin");
-							printf("\n\t\t\t\t\t\t\tSE HAN REMOVIDO TODOS LOS ARCHIVOS BINARIOS QUE HAYA CREADO AL NO GUARDAR SUS ARCHIVOS DE TEXTO DEL PROGRAMA.\n");
+
 						}
 					}
 					else

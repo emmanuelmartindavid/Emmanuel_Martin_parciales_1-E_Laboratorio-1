@@ -55,3 +55,27 @@ int parserSaleFromText(FILE *pFile, LinkedList *pListSale)
 	}
 	return returnParserSaleFromText;
 }
+
+/// @brief parserIdSaleFromText 	PARSEA DATO DE ID VENTA A DAR DE ALTA DESDE ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param pFile					PUNTERO A FILE.
+/// @param pIdSale				PUNTERO ENTERO.
+/// @return							RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int parserIdSaleFromText(FILE *pFile, int *pIdSale)
+{
+	int returnparserIdSaleFromText = ERROR;
+	int returnFscanf;
+	char auxId[1000];
+
+	if (pFile != NULL && pIdSale != NULL)
+	{
+		returnFscanf = fscanf(pFile, "%[^\n]\n", auxId);
+		if (returnFscanf == 1)
+		{
+			*pIdSale = atoi(auxId);
+			returnparserIdSaleFromText = SUCCESS;
+		}
+	}
+	return returnparserIdSaleFromText;
+}
+

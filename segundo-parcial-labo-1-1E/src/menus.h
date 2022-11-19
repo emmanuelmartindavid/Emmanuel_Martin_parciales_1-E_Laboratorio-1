@@ -13,5 +13,7 @@ void showMainMenu();
 /// @brief showModelsMenu	  MENU DE MODELOS DE AUTOS.
 ///
 void showModelsMenu();
-
+/// @brief 						MENU EDITAR VENTA.
+///
+void showEditSaleMenu();
 #endif /* MENUS_H_ */

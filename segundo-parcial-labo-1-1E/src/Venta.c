@@ -9,6 +9,7 @@
 #include <string.h>
 #include "venta.h"
 #include "validaciones.h"
+#include "menus.h"
 /// @brief	newSale 						    		CONTRSTRUCTOR DE ENTIDAD VENTA EN MEMORIA DINAMICA.
 ///
 /// @return			 						 			RETORNA PUNTERO DE ENTIDAD CREADO EN MEMORIA DINAMICA EN CASO CORRECTO. RETORNA NULL EN CASO CONTRARIO.
@@ -315,6 +316,7 @@ int getCreditCardNumber(sSale *this, char *pCreditCardNumber)
 	if (this != NULL && pCreditCardNumber != NULL)
 	{
 		strcpy(pCreditCardNumber, this->creditCardNumber);
+		returnGetCreditCard = SUCCESS;
 	}
 
 	return returnGetCreditCard;
@@ -475,18 +477,20 @@ int editOneSale(sSale *this)
 	{
 		do
 		{
+
+			showEditSaleMenu();
 			showSaleData();
 			listOneSale(this);
 			showLine();
-			showEditPlayerMenu();
-			if (utn_getNumber(&optionEditMenu, "INGRESE OPCION.\n", "ERROR. REINTENTE.\n", 1, 5, 3) == 0)
+			if (utn_getNumber(&optionEditMenu, "\n\t\t\t\t\t\t\t\t\t\t\tINGRESE OPCION.\n", "\n\t\t\t\t\t\t\t\tERROR. REINTENTE.\n", 1, 6, 3) == 0)
 			{
 				switch (optionEditMenu)
 				{
 				case 1:
-					if (editFullNamePlayer(this) == SUCCESS)
+					if (editDaySale(this) == SUCCESS && editMonthSale(this) == SUCCESS && editYearSale(this) == SUCCESS)
 					{
 						flagEditPlayer = SUCCESS;
+
 					}
 					else
 					{
@@ -494,7 +498,7 @@ int editOneSale(sSale *this)
 					}
 					break;
 				case 2:
-					if (editAgePlayer(this) == SUCCESS)
+					if (editModel(this) == SUCCESS)
 					{
 						flagEditPlayer = SUCCESS;
 					}
@@ -504,7 +508,7 @@ int editOneSale(sSale *this)
 					}
 					break;
 				case 3:
-					if (editPositionPlayer(this) == SUCCESS)
+					if (editAmountSale(this) == SUCCESS)
 					{
 						flagEditPlayer = SUCCESS;
 					}
@@ -514,7 +518,17 @@ int editOneSale(sSale *this)
 					}
 					break;
 				case 4:
-					if (editNationalityPlayer(this) == SUCCESS)
+					if (editUnitPriceSale(this) == SUCCESS)
+					{
+						flagEditPlayer = SUCCESS;
+					}
+					else
+					{
+						flagEditPlayer = NOEDIT;
+					}
+					break;
+				case 5:
+					if (editCreditCardNumber(this) == SUCCESS)
 					{
 						flagEditPlayer = SUCCESS;
 					}
@@ -530,14 +544,90 @@ int editOneSale(sSale *this)
 				returnrEditOnePlayer = ERROR;
 				break;
 			}
-		} while (optionEditMenu != 5);
+		} while (optionEditMenu != 6);
 		returnrEditOnePlayer = flagEditPlayer;
 	}
-
 	return returnrEditOnePlayer;
-
 }
 
+/// @brief getAmountSalesFirstCriteria			OBTIENE CRITERIO DE PRECIOS POR VENTA MAYORES $10000
+///
+/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int getAmountSalesFirstCriteria(void *this)
+{
+	int returnGetAmountSalesFirstCriteria = ERROR;
+	sSale *pSale = NULL;
+	short auxAmount;
+	float auxUnitPrice;
+	if (this != NULL)
+	{
+		pSale = (sSale*) this;
+		if (pSale != NULL)
+		{
+			if (getAmountSale(pSale, &auxAmount) == SUCCESS && getUnitPriceSale(pSale, &auxUnitPrice) == SUCCESS)
+			{
+				if (auxAmount * auxUnitPrice > 10000)
+				{
+					returnGetAmountSalesFirstCriteria = SUCCESS;
+				}
+			}
+		}
+	}
+	return returnGetAmountSalesFirstCriteria;
+}
+/// @brief getAmountSalesSecondtCriteria			OBTIENE CRITERIO DE PRECIOS POR VENTA MAYORES $20000
+///
+/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int getAmountSalesSecondCriteria(void *this)
+{
+	int returnGetAmountSalesSecondCriteria = ERROR;
+	sSale *pSale = NULL;
+	short auxAmount;
+	float auxUnitPrice;
+	if (this != NULL)
+	{
+		pSale = (sSale*) this;
+		if (pSale != NULL)
+		{
+			if (getAmountSale(pSale, &auxAmount) == SUCCESS && getUnitPriceSale(pSale, &auxUnitPrice) == SUCCESS)
+			{
+				if (auxAmount * auxUnitPrice > 20000)
+				{
+					returnGetAmountSalesSecondCriteria = SUCCESS;
+				}
+			}
+		}
+	}
+	return returnGetAmountSalesSecondCriteria;
+}
+/// @brief getModelCarCriteria						OBTIENE CRITERIO DE MODELO DE AUTO TIPO MATRIX.
+///
+/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int getModelCarCriteria(void *this)
+{
+	int returnGetAmountSalesSecondCriteria = ERROR;
+	char auxModel[50];
+	sSale *pSale = NULL;
+
+	if (this != NULL)
+	{
+		pSale = (sSale*) this;
+		if (pSale != NULL)
+		{
+			if (getModelSale(this, auxModel))
+			{
+				if (stricmp(auxModel, "Matrix") == 0)
+				{
+					returnGetAmountSalesSecondCriteria = SUCCESS;
+				}
+			}
+		}
+	}
+	return returnGetAmountSalesSecondCriteria;
+}
 /// @brief	listOneSale									LISTA UNA VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
@@ -552,12 +642,12 @@ int listOneSale(sSale *this)
 	char auxModel[100];
 	short auxAmmount;
 	float auxUnitPrice;
-	char auxCreditCardNumber[30];
+	char auxCreditCardNumber[17];
 
 	if (this != NULL)
 	{
 		if (getIdSale(this, &auxId) == SUCCESS && getDaySale(this, &auxDay) == SUCCESS && getMonthSale(this, &auxMonth) == SUCCESS && getYearSale(this, &auxYear) == SUCCESS && getModelSale(this, auxModel) == SUCCESS && getAmountSale(this, &auxAmmount) == SUCCESS && getUnitPriceSale(this, &auxUnitPrice) == SUCCESS
-				&& getCreditCardNumber(this, auxCreditCardNumber))
+				&& getCreditCardNumber(this, auxCreditCardNumber) == SUCCESS)
 		{
 			printf("\t\t\t\t\t\t|%-5d| %-.2hd / %-.2hd / %-2hd | %-24s|%-10hd|$%-20.2f|%-30s|\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmmount, auxUnitPrice, auxCreditCardNumber);
 			returnListOneSale = SUCCESS;

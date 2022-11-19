@@ -570,16 +570,59 @@ int ll_sort(LinkedList *this, int (*pFunc)(void*, void*), int order)
 /// @param this
 /// @param pFunc
 /// @return
-int ll_count(LinkedList* this, int (*pFunc)(void*))
+LinkedList* ll_filter(LinkedList *this, int (*pFunc)(void*))
 {
-	int returnAux=-1;
-
-	if(this != NULL && pFunc != NULL)
+	LinkedList *filterList = NULL;
+	int lenList;
+	void *auxElement;
+	if (this != NULL && pFunc != NULL)
 	{
+		filterList = ll_newLinkedList();
 
+		lenList = ll_len(this);  //INDEX DE ULTIMO ELEMENTO VA A SER MENOR AL TOTAL DE LOS ELEMENTOS.N-1
+		if (filterList != NULL && lenList > 0)
+		{
+			for (int i = 0; i < lenList; i++)
+			{
+				auxElement = ll_get(this, i);
 
-
-
+				if (auxElement != NULL && pFunc(auxElement) == 1)
+				{
+					ll_add(filterList, auxElement);
+				}
+			}
+		}
 	}
-	return returnAux;
+
+	return filterList;
+}
+
+/// @brief
+///
+/// @param this
+/// @param pFunc
+/// @return
+int ll_count(LinkedList *this, int (*pFunc)(void*))
+{
+	int counter = 0;
+	int lenList;
+	void *auxElement;
+
+	if (this != NULL && pFunc != NULL)
+	{
+		lenList = ll_len(this);  //INDEX DE ULTIMO ELEMENTO VA A SER MENOR AL TOTAL DE LOS ELEMENTOS.N-1
+		if (lenList > 0)
+		{
+			for (int i = 0; i < lenList; i++)
+			{
+				auxElement = ll_get(this, i);
+
+				if (auxElement != NULL && pFunc(auxElement) == 1)
+				{
+					counter++;
+				}
+			}
+		}
+	}
+	return counter;
 }

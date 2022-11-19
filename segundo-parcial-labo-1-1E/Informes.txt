@@ -1,0 +1,10 @@
+==========================INFORME-DE-VENTAS==========================
+- Cantidad de unidades vendidas totales: 79
+- Cantidad de ventas por un monto mayor a $10000: 16
+- Cantidad de ventas por un monto mayor a $20000: 8
+- Cantidad de modelos Matrix vendidos: 3
+=====================================================================
+ID_Venta ,Fecha_Venta,Modelo_Auto,Cantidad,Precio_Unitario,Tarjeta_De_Credito
+10,17/08/2021,Matrix,4,$7255.14,4041596858332
+24,02/06/2020,Matrix,1,$4088.32,4041595251182
+27,07/07/2022,Matrix,4,$5656.19,4041599073343
