@@ -242,7 +242,7 @@ int setAmountSale(sSale *this, short amount)
 
 	return returnSetAmmountSale;
 }
-/// @brief getAmmountSale						OBTIENE CANTIDAD DE VENTA.
+/// @brief getAmmountSale								OBTIENE CANTIDAD DE VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @param pAmmount										PUNTERO ENTERO.
@@ -321,7 +321,6 @@ int getCreditCardNumber(sSale *this, char *pCreditCardNumber)
 
 	return returnGetCreditCard;
 }
-
 /// @brief editDaySale							EDICION DE DIA DE VENTA.
 ///
 /// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
@@ -419,7 +418,6 @@ int editAmountSale(sSale *this)
 				returnEditAmountSale = SUCCESS;
 			}
 		}
-
 	}
 	return returnEditAmountSale;
 }
@@ -477,7 +475,6 @@ int editOneSale(sSale *this)
 	{
 		do
 		{
-
 			showEditSaleMenu();
 			showSaleData();
 			listOneSale(this);
@@ -549,14 +546,37 @@ int editOneSale(sSale *this)
 	}
 	return returnrEditOnePlayer;
 }
+/// @brief gtTotalAmountSaleCriteria				OBTIENE CRITERIO PARA OBTENER TOTAL DE  UNIDADES DE VENTA.
+///
+/// @param pListSale								LINKEDLIST VENTAS.
+/// @param pTotalAmount								PUNTERO ENTERO
+/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int getTotalAmountSaleCriteria(void *this)
+{
+	int returnControllerGetTotalAmountSale=0;
+	sSale *pSale = NULL;
+	short auxAmount=0;
+	if (this != NULL)
+	{
+		pSale = (sSale*) this;
+		if (pSale != NULL)
+		{
+				if (getAmountSale(pSale, &auxAmount) == SUCCESS)
+				{
+					returnControllerGetTotalAmountSale+= auxAmount;
 
-/// @brief getAmountSalesFirstCriteria			OBTIENE CRITERIO DE PRECIOS POR VENTA MAYORES $10000
+				}
+		}
+	}
+	return returnControllerGetTotalAmountSale;
+}
+/// @brief getAmountSalesFirstCriteria				OBTIENE CRITERIO PARA OBTENER CANTIDAD DE VENTAS MAYORES A $10000
 ///
 /// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getAmountSalesFirstCriteria(void *this)
 {
-	int returnGetAmountSalesFirstCriteria = ERROR;
+	int returnGetAmountSalesFirstCriteria = 0;
 	sSale *pSale = NULL;
 	short auxAmount;
 	float auxUnitPrice;
@@ -569,20 +589,20 @@ int getAmountSalesFirstCriteria(void *this)
 			{
 				if (auxAmount * auxUnitPrice > 10000)
 				{
-					returnGetAmountSalesFirstCriteria = SUCCESS;
+					returnGetAmountSalesFirstCriteria++;
 				}
 			}
 		}
 	}
 	return returnGetAmountSalesFirstCriteria;
 }
-/// @brief getAmountSalesSecondtCriteria			OBTIENE CRITERIO DE PRECIOS POR VENTA MAYORES $20000
+/// @brief getAmountSalesSecondtCriteria			OBTIENE CRITERIO PARA OBTENER CANTIDAD DE VENTAS MAYORES A  $20000
 ///
 /// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getAmountSalesSecondCriteria(void *this)
 {
-	int returnGetAmountSalesSecondCriteria = ERROR;
+	int returnGetAmountSalesSecondCriteria = 0;
 	sSale *pSale = NULL;
 	short auxAmount;
 	float auxUnitPrice;
@@ -595,18 +615,45 @@ int getAmountSalesSecondCriteria(void *this)
 			{
 				if (auxAmount * auxUnitPrice > 20000)
 				{
-					returnGetAmountSalesSecondCriteria = SUCCESS;
+					returnGetAmountSalesSecondCriteria++;
 				}
 			}
 		}
 	}
 	return returnGetAmountSalesSecondCriteria;
 }
-/// @brief getModelCarCriteria						OBTIENE CRITERIO DE MODELO DE AUTO TIPO MATRIX.
+
+/// @brief getModelCarCriteria						OBTIENE CRITERIO PARA OBTENER CANTIDAD DE AUTO TIPO MATRIX.
 ///
 /// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getModelCarCriteria(void *this)
+{
+	int returnGetAmountSalesSecondCriteria = 0;
+	char auxModel[50];
+	short auxAmount;
+	sSale *pSale = NULL;
+	if (this != NULL)
+	{
+		pSale = (sSale*) this;
+		if (pSale != NULL)
+		{
+			if (getModelSale(this, auxModel) && getAmountSale(this, &auxAmount)==SUCCESS)
+			{
+				if (stricmp(auxModel, "Matrix") == 0)
+				{
+					returnGetAmountSalesSecondCriteria += auxAmount;
+				}
+			}
+		}
+	}
+	return returnGetAmountSalesSecondCriteria;
+}
+/// @brief getModelCarCriteria						OBTIENE CRITERIO PARA OBTENER VENTAS DE TIPO DE MODELO MATRIX.
+///
+/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int getModelCarCriteriaMatrix(void *this)
 {
 	int returnGetAmountSalesSecondCriteria = ERROR;
 	char auxModel[50];
@@ -617,11 +664,11 @@ int getModelCarCriteria(void *this)
 		pSale = (sSale*) this;
 		if (pSale != NULL)
 		{
-			if (getModelSale(this, auxModel))
+			if (getModelSale(this, auxModel)==SUCCESS)
 			{
 				if (stricmp(auxModel, "Matrix") == 0)
 				{
-					returnGetAmountSalesSecondCriteria = SUCCESS;
+					returnGetAmountSalesSecondCriteria=SUCCESS;
 				}
 			}
 		}

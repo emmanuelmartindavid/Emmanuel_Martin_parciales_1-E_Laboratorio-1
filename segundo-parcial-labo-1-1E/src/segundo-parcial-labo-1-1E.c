@@ -1,13 +1,12 @@
 /*
  ============================================================================
  Name        : segundo-parcial-labo-1-1E.c
- Author      : 
+ Author      : EMMANUEL MARTIN 1.E
  Version     :
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
  ============================================================================
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,13 +21,13 @@ int main(void)
 	setbuf(stdout, NULL);
 
 	LinkedList *listSale = ll_newLinkedList();
-
 	int optionMainMenu;
-	int flagExit = 2;
+	int flagExit = 0;
 	int returnRemoveSale;
 	int returnEditSale;
 	int idSale;
 	char exit[3];
+	int returnExit=0;
 
 	do
 	{
@@ -40,7 +39,7 @@ int main(void)
 			case 1:
 				if (ll_isEmpty(listSale) == 1)
 				{
-					if (controllerLoadSaleFromText("Autos.csv", listSale) == SUCCESS && controllerLoadIdSaleFromText("idAutoincremental.txt", &idSale) == SUCCESS && controllerListSales(listSale) == SUCCESS)
+					if (controllerLoadSaleFromText("data.csv", listSale) == SUCCESS && controllerLoadIdSaleFromText("idAutoincremental.txt", &idSale) == SUCCESS && controllerListSales(listSale) == SUCCESS)
 					{
 						printf("\n\t\t\t\t\t\t\tSE HA CARGADO EXITOSAMENTE SU ARCHIVO DE TEXTO. EL CUAL CONTIENE LOS ELEMENTOS LISTADOS.\n");
 					}
@@ -123,13 +122,10 @@ int main(void)
 			case 5:
 				if (ll_isEmpty(listSale) == 0)
 				{
-					if (controllerListSales(listSale) == SUCCESS)
+
+					if (controllerListReportFirstCriteria(listSale) == SUCCESS && controllerListReportSecondtCriteria(listSale) == SUCCESS && controllerListReporthirdCriteria(listSale) == SUCCESS && controllerListModelCarCriteria(listSale) == SUCCESS)
 					{
-						printf("\n\t\t\t\t\t\t\t\t\t\t\tLISTADO VEHICULOS.\n");
-					}
-					else
-					{
-						printf("\n\t\t\t\t\t\t\t\t\t\t\tNADA PARA MOSTRAR.\n");
+						printf("\n\t\t\t\t\t\t\t\t\t\t\tINFORMES.\n");
 					}
 				}
 				else
@@ -138,39 +134,40 @@ int main(void)
 				}
 				break;
 			case 6:
-
-				controllerReportSale("Informes.txt", listSale);
+				if (controllerGeneratesReportSale("Informes.txt", listSale) == SUCCESS)
+				{
+					printf("\n\t\t\t\t\t\t\t\t\t\tINFORME TXT GENERADO EXITOSAMENTE.\n");
+				}
+				else
+				{
+					printf("\n\t\t\t\t\t\t\t\t\t\tHA OCURRIDO UN PROBLEMA AL GENERAR EL INFORME TXT.\n");
+				}
 				break;
 			case 7:
-				controllerSaveSalesTextMode("Autos.csv", listSale);
-				controllerSaveIdSaleTextMode("idAutoincremental.txt", &idSale);
-
+				if (controllerSaveSalesTextMode("data.csv", listSale) == SUCCESS && controllerSaveIdSaleTextMode("idAutoincremental.txt", &idSale) == SUCCESS && controllerSaveSalesBinarytMode("data-binario.bin", listSale) == SUCCESS)
+				{
+					flagExit=2;
+					printf("\n\t\t\t\t\t\t\t\t\t\tARCHIVO .CSV Y .BIN GUARDADOS CORRECTAMENTE.\n");
+				}
+				else
+				{
+					printf("\n\t\t\t\t\t\t\t\t\t\tHA OCURRIDO UN PROBLEMA AL GUARDAR LOS ARCHIVOS.\n");
+				}
 				break;
 			case 8:
 				if (flagExit != 2)
 				{
-					if (utn_getDescriptionExit(exit, "VA A SALIR SIN GUARDAR CAMBIOS.\n"
-							"\t\t\t\t\t\t\tTENGA EN CUENTA. SI GENERO ARCHIVOS BINARIOS, LOS MISMOS SERAN ELIMINADOS AL CERRAR EL PROGRAMA.\n"
-							"INGRESE SI PARA SALIR SIN GUARDAR.\n"
-							"INGRESE NO PARA SEGUIR EN EL MENU.\n", "Error. Solo si o no.\n", 3) == 0)
-					{
-						if ((stricmp(exit, "si") == 0))
-						{
+					returnExit=utn_getDescriptionExit(exit, "\t\t\t\t\t\t\tVA A SALIR SIN GUARDAR CAMBIOS.\n"
+							"\t\t\t\t\t\t\tINGRESE SI PARA SALIR SIN GUARDAR.\n"
+							"\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
 
-						}
-					}
-					else
-					{
-						printf("\n\t\t\t\t ERROR. REINTENTE.\n");
-					}
 				}
 				else if (flagExit == 2)
 				{
-					utn_getDescriptionExit(exit, "INGRESE SI PARA SALIR.\n"
-							"INGRESE NO PARA SEGUIR EN EL MENU.\n", "Error. Solo si o no.\n", 3);
+					returnExit=utn_getDescriptionExit(exit, "\t\t\t\t\t\t\tINGRESE SI PARA SALIR.\n"
+							"\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
 				}
 				break;
-
 			}
 		}
 		else
@@ -178,7 +175,8 @@ int main(void)
 			printf("\t\t\t\t\t\t\t\t\t\tALGO SALIO MAL.\n");
 			break;
 		}
-	} while (stricmp(exit, "si") != 0);
+	} while (stricmp(exit, "si") != 0 && returnExit==0);
 
+	printf("\n\n\t\t\t\t\t\t\t\t\t\tALGO SALIO MAL. INGRESE BIEN LOS DATOS LA PROXIMA. \n");
 	return EXIT_SUCCESS;
 }

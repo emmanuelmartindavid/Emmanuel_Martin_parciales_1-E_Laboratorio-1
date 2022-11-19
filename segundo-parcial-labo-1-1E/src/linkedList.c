@@ -607,7 +607,6 @@ int ll_count(LinkedList *this, int (*pFunc)(void*))
 	int counter = 0;
 	int lenList;
 	void *auxElement;
-
 	if (this != NULL && pFunc != NULL)
 	{
 		lenList = ll_len(this);  //INDEX DE ULTIMO ELEMENTO VA A SER MENOR AL TOTAL DE LOS ELEMENTOS.N-1
@@ -617,9 +616,9 @@ int ll_count(LinkedList *this, int (*pFunc)(void*))
 			{
 				auxElement = ll_get(this, i);
 
-				if (auxElement != NULL && pFunc(auxElement) == 1)
+				if (auxElement != NULL)
 				{
-					counter++;
+					counter+=pFunc(auxElement);
 				}
 			}
 		}

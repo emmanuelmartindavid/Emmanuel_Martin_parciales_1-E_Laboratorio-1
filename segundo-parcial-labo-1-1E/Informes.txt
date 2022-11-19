@@ -1,6 +1,0 @@
-==========================INFORME-DE-VENTAS==========================
-- Cantidad de unidades vendidas totales: 1
-- Cantidad de ventas por un monto mayor a $10000: 0
-- Cantidad de ventas por un monto mayor a $20000: 0
-- Cantidad de modelos Matrix vendidos: 0
-=====================================================================

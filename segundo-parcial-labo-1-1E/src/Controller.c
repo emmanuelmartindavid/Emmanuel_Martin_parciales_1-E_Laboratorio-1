@@ -163,7 +163,71 @@ int controllerSaveIdSaleTextMode(char *path, int *pIdSale)
 	}
 	return returnControllerSaveIdSaleTextMode;
 }
+/// @brief controllerLoadSalesFromBinary  			CARGA DATOS DE VENTAS DESDE ARCHIVO BIN EN MODO BINARIO.
+///
+/// @param path												PUNTERO STRING
+/// @param pListSale										 LINKEDLIST VENTAS.
+/// @return 												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerLoadSalesFromBinary(char *path, LinkedList *pListSale)
+{
+	int returncontrollerLoadSaleFromBinary = ERROR;
+	FILE *pFile = NULL;
 
+	if (path != NULL && pListSale != NULL)
+	{
+		pFile = fopen(path, "rb");
+		if (pFile != NULL)
+		{
+			if (parserSaleFromBinary(pFile, pListSale) == SUCCESS)
+			{
+				returncontrollerLoadSaleFromBinary = SUCCESS;
+			}
+			fclose(pFile);
+		}
+	}
+	return returncontrollerLoadSaleFromBinary;
+}
+/// @brief controllerSaveSalesBinarytMode   			   	 GUARDA DATOS DE JUGADORES DESDE ARCHIVO CSV EN MODO BINARIO.
+///
+/// @param path								 			 	 PUNTERO STRING
+/// @param pListSale										 LINKEDLIST VENTAS.
+/// @return									 				 RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSaveSalesBinarytMode(char *path, LinkedList *pListSale)
+{
+	int returnControllerSaveSalesBinarytMode = ERROR;
+	FILE *pFile = NULL;
+	int lenListSale;
+	sSale *pSale = NULL;
+	int returnFwrite;
+
+	if (path != NULL && pListSale != NULL)
+	{
+		pFile = fopen(path, "wb");
+		if (pFile != NULL)
+		{
+			lenListSale = ll_len(pListSale);
+			if (lenListSale > 0)
+			{
+				for (int i = 0; i < lenListSale; i++)
+				{
+					pSale = (sSale*) ll_get(pListSale, i);
+
+					if (pSale != NULL)
+					{
+						returnFwrite = fwrite(pSale, sizeof(sSale), 1, pFile);
+						if (returnFwrite == 1)
+						{
+							returnControllerSaveSalesBinarytMode = SUCCESS;
+						}
+					}
+				}
+				fclose(pFile);
+			}
+		}
+
+	}
+	return returnControllerSaveSalesBinarytMode;
+}
 /// @brief controllerAddSale		ALTA DE VENTA.
 ///
 /// @param pListSale				LINKEDLIST VENTAS.
@@ -178,11 +242,11 @@ int controllerAddSale(LinkedList *pListSale, int *pIdSale)
 	{
 		//&& editCreditCardNumber(pSale) == SUCCESS AGREGAR
 		pSale = newSale();
-		(*pIdSale)++;
 		if (pSale != NULL && editDaySale(pSale) == SUCCESS && editMonthSale(pSale) == SUCCESS && editYearSale(pSale) == SUCCESS && editModel(pSale) == SUCCESS && editAmountSale(pSale) == SUCCESS && editUnitPriceSale(pSale) == SUCCESS && setIdSale(pSale, *pIdSale) == SUCCESS)
 		{
 			if (ll_add(pListSale, pSale) == 0)
 			{
+				(*pIdSale)++;
 				returnControllerAddSale = SUCCESS;
 			}
 		}
@@ -283,135 +347,6 @@ int controllerRemoveSale(LinkedList *pListSale)
 
 	return returnControllerRemoveSale;
 }
-/// @brief controllerGetTotalAmountSale				OBTIENE TOTAL UNIDADES DE VENTA.
-///
-/// @param pListSale								LINKEDLIST VENTAS.
-/// @param pTotalAmount								PUNTERO ENTERO
-/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int controllerGetTotalAmountSale(LinkedList *pListSale, int *pTotalAmount)
-{
-	int returnControllerGetTotalAmountSale = ERROR;
-	int lenListPlayers;
-	short auxAmount;
-
-	sSale *pSale = NULL;
-	if (pListSale != NULL && pTotalAmount != NULL)
-	{
-		if (pListSale != NULL)
-		{
-			*pTotalAmount = 0;
-			lenListPlayers = ll_len(pListSale);
-			if (lenListPlayers > 0 && ll_isEmpty(pListSale) == 0)
-			{
-				for (int i = 0; i < lenListPlayers; i++)
-				{
-					pSale = (sSale*) ll_get(pListSale, i);
-					if (pSale != NULL)
-					{
-						if (getAmountSale(pSale, &auxAmount) == SUCCESS)
-						{
-							*pTotalAmount += auxAmount;
-							returnControllerGetTotalAmountSale=SUCCESS;
-						}
-					}
-				}
-			}
-		}
-	}
-	return returnControllerGetTotalAmountSale;
-}
-/// @brief 	controllerReportSale			FILTRA Y GENERA INFORMES DE VENTA.
-///
-/// @param path								PUNTERO STRING
-/// @param LinkedList						LINKEDLIST VENTAS.
-/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int controllerReportSale(char *path, LinkedList *pListSale)
-{
-	int returnControllerGenerateReportSale = ERROR;
-	int firstCriteriaCounter;
-	int secondCriteriaCounter;
-	int thirdCriteriaCounter;
-	int modelCarCriteria;
-	LinkedList *pAuxLinkedList = NULL;
-
-	if (path != NULL && pListSale != NULL)
-	{
-		pAuxLinkedList = ll_newLinkedList();
-
-		if (pAuxLinkedList != NULL && controllerGetTotalAmountSale(pListSale, &firstCriteriaCounter) == SUCCESS)
-		{
-			secondCriteriaCounter = ll_count(pListSale, getAmountSalesFirstCriteria);
-			thirdCriteriaCounter = ll_count(pListSale, getAmountSalesSecondCriteria);
-			modelCarCriteria = ll_count(pListSale, getModelCarCriteria);
-			pAuxLinkedList = ll_filter(pListSale, getModelCarCriteria);
-
-			if(controllerGenerateReportTxt(path, pAuxLinkedList, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria)==SUCCESS)
-		{
-			returnControllerGenerateReportSale=SUCCESS;
-		}
-		}
-	}
-	return returnControllerGenerateReportSale;
-}
-/// @brief	controllerSaveSalesTextMode		GUARDA DATOS DE VENTE EN ARCHIVO CSV EN MODO TEXTO.
-///
-/// @param path								PUNTERO STRING
-/// @param LinkedList						LINKEDLIST VENTAS.
-/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int controllerGenerateReportTxt(char *path, LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria)
-{
-	int returnControllerSaveSalesTextMode = ERROR;
-	FILE *pFile = NULL;
-	int lenListSale;
-	sSale *pSale = NULL;
-	int auxId;
-	short auxDay;
-	short auxMonth;
-	short auxYear;
-	char auxModel[50];
-	short auxAmount;
-	float auxUnitPrice;
-	char auxCreditCardNumber[17];
-	if (path != NULL)
-	{
-		pFile = fopen(path, "w");
-		if (pFile != NULL)
-		{
-			fprintf(pFile, "==========================INFORME-DE-VENTAS==========================\n"
-					"- Cantidad de unidades vendidas totales: %d\n"
-					"- Cantidad de ventas por un monto mayor a $10000: %d\n"
-					"- Cantidad de ventas por un monto mayor a $20000: %d\n"
-					"- Cantidad de modelos Matrix vendidos: %d\n"
-					"=====================================================================\n", firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
-			lenListSale = ll_len(pListSale);
-			if (lenListSale > 0)
-			{
-
-				fprintf(pFile, "=======================================LISTADO-MODELOS-MATRIX-VENDIDOS============================================\n"
-						"| ID  |  FECHA VENTA   |     MODELO DE AUTO      | CANTIDAD |   PRECIO UNITARIO   |      TARJETA DE CREDITO      |\n"
-						"==================================================================================================================\n");
-				for (int i = 0; i < lenListSale; i++)
-				{
-					pSale = (sSale*) ll_get(pListSale, i);
-					if (pSale != NULL)
-					{
-						if (getIdSale(pSale, &auxId) == SUCCESS && getDaySale(pSale, &auxDay) == SUCCESS && getMonthSale(pSale, &auxMonth) == SUCCESS && getYearSale(pSale, &auxYear) == SUCCESS && getModelSale(pSale, auxModel) == SUCCESS && getAmountSale(pSale, &auxAmount) == SUCCESS
-								&& getUnitPriceSale(pSale, &auxUnitPrice) == SUCCESS && getCreditCardNumber(pSale, auxCreditCardNumber) == SUCCESS)
-						{
-							if (fprintf(pFile, "|%-5d| %-.2hd / %-.2hd / %-2hd | %-24s|%-10hd|$%-20.2f|%-30s|\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmount, auxUnitPrice, auxCreditCardNumber) > 0)
-							{
-								returnControllerSaveSalesTextMode = SUCCESS;
-							}
-						}
-					}
-				}
-				fprintf(pFile, "==================================================================================================================\n");
-			}
-			fclose(pFile);
-		}
-	}
-	return returnControllerSaveSalesTextMode;
-}
 /// @brief  controllerListSales   	LISTADO VENTAS.
 ///
 /// @param pListSale				LINKEDLIST VENTAS.
@@ -443,3 +378,193 @@ int controllerListSales(LinkedList *pListSale)
 	}
 	return returncontrollerListPlayer;
 }
+/// @brief controllerListReportFirstCriteria		LISTA CANTIDAD TOTAL DE VENTAS Y SUS VENTAS.
+///
+/// @param pListSale								LINKEDLIST VENTAS.
+/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListReportFirstCriteria(LinkedList *pListSale)
+{
+	int returnControllerListReportFirstCriteria = ERROR;
+	int firstCriteriaCounter;
+	if (pListSale != NULL)
+	{
+		firstCriteriaCounter = ll_count(pListSale, getTotalAmountSaleCriteria);
+		printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d UNIDADES TOTALES VENDIDAS.\n", firstCriteriaCounter);
+		if (controllerListSales(pListSale) == SUCCESS)
+		{
+			returnControllerListReportFirstCriteria = SUCCESS;
+		}
+	}
+	return returnControllerListReportFirstCriteria;
+}
+/// @brief controllerListReportSecondtCriteria			LISTA CANTIDAD Y VENTAS MAYORES A $10000.
+///
+/// @param pListSale								LINKEDLIST VENTAS.
+/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListReportSecondtCriteria(LinkedList *pListSale)
+{
+	int returnControllerListReportSecondCriteria = ERROR;
+	int secondCriteriaCounter;
+	LinkedList *pAuxLinkedList = NULL;
+	if (pListSale != NULL)
+	{
+		pAuxLinkedList = ll_newLinkedList();
+		if (pAuxLinkedList != NULL)
+		{
+			secondCriteriaCounter = ll_count(pListSale, getAmountSalesFirstCriteria);
+			pAuxLinkedList = ll_filter(pListSale, getAmountSalesFirstCriteria);
+			printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d VENTAS MAYORES A $10000\n", secondCriteriaCounter);
+			if (controllerListSales(pAuxLinkedList) == SUCCESS)
+			{
+				returnControllerListReportSecondCriteria = SUCCESS;
+			}
+		}
+	}
+	return returnControllerListReportSecondCriteria;
+}
+/// @brief	controllerListReportthirdCriteria				LISTA CANTIDAD Y VENTAS MAYORES A $20000.
+///
+/// @param pListSale										LINKEDLIST VENTAS.
+/// @return 												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListReporthirdCriteria(LinkedList *pListSale)
+{
+	int returnControllerListReportThirdCriteria = ERROR;
+	int thirdCriteriaCounter;
+	LinkedList *pAuxLinkedList = NULL;
+	if (pListSale != NULL)
+	{
+		pAuxLinkedList = ll_newLinkedList();
+		if (pAuxLinkedList != NULL)
+		{
+			thirdCriteriaCounter = ll_count(pListSale, getAmountSalesSecondCriteria);
+			pAuxLinkedList = ll_filter(pListSale, getAmountSalesSecondCriteria);
+			printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d VENTAS MAYORES A $20000.\n", thirdCriteriaCounter);
+			if (controllerListSales(pAuxLinkedList) == SUCCESS)
+			{
+				returnControllerListReportThirdCriteria = SUCCESS;
+			}
+		}
+	}
+	return returnControllerListReportThirdCriteria;
+}
+/// @brief controllerListModelCarCriteria			LISTA CANTIDAD Y VENTAS DE MODELO MATRIX.
+///
+/// @param pListSale								LINKEDLIST VENTAS.
+/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListModelCarCriteria(LinkedList *pListSale)
+{
+	int returnControllerListReportModelCarCriteria = ERROR;
+	int modelCarCriteria;
+	LinkedList *pAuxLinkedList = NULL;
+	if (pListSale != NULL)
+	{
+		pAuxLinkedList = ll_newLinkedList();
+
+		if (pAuxLinkedList != NULL)
+		{
+
+			modelCarCriteria = ll_count(pListSale, getModelCarCriteria);
+			pAuxLinkedList = ll_filter(pListSale, getModelCarCriteriaMatrix);
+			printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d MODELOS MATRIX VENDIDOS.\n", modelCarCriteria);
+			if (controllerListSales(pAuxLinkedList) == SUCCESS)
+			{
+				returnControllerListReportModelCarCriteria = SUCCESS;
+			}
+		}
+	}
+	return returnControllerListReportModelCarCriteria;
+
+}
+/// @brief 	controllerGeneratesReportSale			FILTRA Y GENERA INFORMES DE VENTA.
+///
+/// @param path								PUNTERO STRING
+/// @param LinkedList						LINKEDLIST VENTAS.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerGeneratesReportSale(char *path, LinkedList *pListSale)
+{
+	int returnControllerGenerateReportSale = ERROR;
+	int firstCriteriaCounter;
+	int secondCriteriaCounter;
+	int thirdCriteriaCounter;
+	int modelCarCriteria;
+	LinkedList *pAuxLinkedList = NULL;
+
+	if (path != NULL && pListSale != NULL)
+	{
+		pAuxLinkedList = ll_newLinkedList();
+
+		if (pAuxLinkedList != NULL)
+		{
+			firstCriteriaCounter = ll_count(pListSale, getTotalAmountSaleCriteria);
+			secondCriteriaCounter = ll_count(pListSale, getAmountSalesFirstCriteria);
+			thirdCriteriaCounter = ll_count(pListSale, getAmountSalesSecondCriteria);
+			modelCarCriteria = ll_count(pListSale, getModelCarCriteria);
+			pAuxLinkedList = ll_filter(pListSale, getModelCarCriteriaMatrix);
+			if (controllerSaveReportTxt(path, pAuxLinkedList, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria) == SUCCESS)
+			{
+				returnControllerGenerateReportSale = SUCCESS;
+			}
+		}
+	}
+	return returnControllerGenerateReportSale;
+}
+/// @brief	controllerSaveReportTxt		GUARDA DATOS DE VENTE EN ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param path								PUNTERO STRING
+/// @param LinkedList						LINKEDLIST VENTAS.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSaveReportTxt(char *path, LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria)
+{
+	int returnControllerSaveSalesTextMode = ERROR;
+	FILE *pFile = NULL;
+	int lenListSale;
+	sSale *pSale = NULL;
+	int auxId;
+	short auxDay;
+	short auxMonth;
+	short auxYear;
+	char auxModel[50];
+	short auxAmount;
+	float auxUnitPrice;
+	char auxCreditCardNumber[17];
+	if (path != NULL)
+	{
+		pFile = fopen(path, "w");
+		if (pFile != NULL)
+		{
+			fprintf(pFile, "============================INFORME-DE-VENTAS============================\n"
+					"|\t- Cantidad de unidades vendidas totales: %d\t\t\t|\n"
+					"|\t- Cantidad de ventas por un monto mayor a $10000: %d\t\t|\n"
+					"|\t- Cantidad de ventas por un monto mayor a $20000: %d\t\t|\n"
+					"|\t- Cantidad de modelos Matrix vendidos: %d\t\t\t|\n"
+					"=========================================================================\n", firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+			lenListSale = ll_len(pListSale);
+			if (lenListSale > 0)
+			{
+
+				fprintf(pFile, "=======================================LISTADO-MODELOS-MATRIX-VENDIDOS============================================\n"
+						"| ID  |  FECHA VENTA   |     MODELO DE AUTO      | CANTIDAD |   PRECIO UNITARIO   |      TARJETA DE CREDITO      |\n"
+						"==================================================================================================================\n");
+				for (int i = 0; i < lenListSale; i++)
+				{
+					pSale = (sSale*) ll_get(pListSale, i);
+					if (pSale != NULL)
+					{
+						if (getIdSale(pSale, &auxId) == SUCCESS && getDaySale(pSale, &auxDay) == SUCCESS && getMonthSale(pSale, &auxMonth) == SUCCESS && getYearSale(pSale, &auxYear) == SUCCESS && getModelSale(pSale, auxModel) == SUCCESS && getAmountSale(pSale, &auxAmount) == SUCCESS
+								&& getUnitPriceSale(pSale, &auxUnitPrice) == SUCCESS && getCreditCardNumber(pSale, auxCreditCardNumber) == SUCCESS)
+						{
+							if (fprintf(pFile, "|%-5d| %-.2hd / %-.2hd / %-2hd | %-24s|%-10hd|$%-20.2f|%-30s|\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmount, auxUnitPrice, auxCreditCardNumber) > 0)
+							{
+								returnControllerSaveSalesTextMode = SUCCESS;
+							}
+						}
+					}
+				}
+				fprintf(pFile, "==================================================================================================================\n");
+			}
+			fclose(pFile);
+		}
+	}
+	return returnControllerSaveSalesTextMode;
+}
+

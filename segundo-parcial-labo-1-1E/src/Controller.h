@@ -40,7 +40,18 @@ int controllerLoadIdSaleFromText(char *path, int *pIdSale);
 /// @param pIdSale							 PUNTERO ENTERO.
 /// @return									 RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerSaveIdSaleTextMode(char *path, int *pIdSale);
-
+/// @brief controllerLoadSalesFromBinary  			CARGA DATOS DE VENTAS DESDE ARCHIVO BIN EN MODO BINARIO.
+///
+/// @param path												PUNTERO STRING
+/// @param pListSale										 LINKEDLIST VENTAS.
+/// @return 												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerLoadSalesFromBinary(char *path, LinkedList *pListSale);
+/// @brief controllerSaveSalesBinarytMode   			   	 GUARDA DATOS DE JUGADORES DESDE ARCHIVO CSV EN MODO BINARIO.
+///
+/// @param path								 			 	 PUNTERO STRING
+/// @param pListSale										 LINKEDLIST VENTAS.
+/// @return									 				 RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSaveSalesBinarytMode(char *path, LinkedList *pListSale);
 /// @brief controllerAddSale		ALTA DE VENTA.
 ///
 /// @param pListSale				LINKEDLIST VENTAS.
@@ -57,23 +68,42 @@ int controllerEditSale(LinkedList *pListSale);
 /// @param pArrayListPlayer			LINKEDLIST VENTAS.
 /// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerRemoveSale(LinkedList *pListSale);
-/// @brief controllerGetTotalAmountSale				OBTIENE TOTAL UNIDADES DE VENTA.
-///
-/// @param pListSale								LINKEDLIST VENTAS.
-/// @param pTotalAmount								PUNTERO ENTERO
-/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int controllerGetTotalAmountSale(LinkedList *pListSale, int *pTotalAmount);
-/// @brief 	controllerReportSale			FILTRA Y GENERA INFORMES DE VENTA.
-///
-/// @param path								PUNTERO STRING
-/// @param LinkedList						LINKEDLIST VENTAS.
-/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int controllerReportSale(char *path, LinkedList *pListSale);
-int controllerGenerateReportTxt(char *path, LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
 /// @brief  controllerListSales   	LISTADO VENTAS.
 ///
 /// @param pArrayListPlayer			LINKEDLIST VENTAS.
 /// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerListSales(LinkedList *pListSale);
+/// @brief controllerListReportFirstCriteria		LISTA CANTIDAD TOTAL DE VENTAS Y SUS VENTAS.
+///
+/// @param pListSale								LINKEDLIST VENTAS.
+/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListReportFirstCriteria(LinkedList *pListSale);
+/// @brief controllerListReportSecondtCriteria			LISTA CANTIDAD Y VENTAS MAYORES A $10000.
+///
+/// @param pListSale								LINKEDLIST VENTAS.
+/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListReportSecondtCriteria(LinkedList *pListSale);
+/// @brief	controllerListReportthirdCriteria			LISTA CANTIDAD Y VENTAS MAYORES A $20000.
+///
+/// @param pListSale								LINKEDLIST VENTAS.
+/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListReporthirdCriteria(LinkedList *pListSale);
+/// @brief controllerListModelCarCriteria			LISTA CANTIDAD Y VENTAS DE MODELO MATRIX.
+///
+/// @param pListSale								LINKEDLIST VENTAS.
+/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListModelCarCriteria(LinkedList *pListSale);
+/// @brief 	controllerGeneratesReportSale			FILTRA Y GENERA INFORMES DE VENTA.
+///
+/// @param path								PUNTERO STRING
+/// @param LinkedList						LINKEDLIST VENTAS.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerGeneratesReportSale(char *path, LinkedList *pListSale);
+/// @brief	controllerSaveReportTxt		GUARDA DATOS DE VENTE EN ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param path								PUNTERO STRING
+/// @param LinkedList						LINKEDLIST VENTAS.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSaveReportTxt(char *path, LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
 
 #endif /* CONTROLLER_H_ */
