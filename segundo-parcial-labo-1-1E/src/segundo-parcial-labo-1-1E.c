@@ -27,7 +27,7 @@ int main(void)
 	int returnEditSale;
 	int idSale;
 	char exit[3];
-	int returnExit=0;
+	int returnExit = 0;
 
 	do
 	{
@@ -54,6 +54,7 @@ int main(void)
 				}
 				break;
 			case 2:
+
 				if (ll_isEmpty(listSale) == 0)
 				{
 					if (controllerAddSale(listSale, &idSale) == SUCCESS)
@@ -125,7 +126,11 @@ int main(void)
 
 					if (controllerListReportFirstCriteria(listSale) == SUCCESS && controllerListReportSecondtCriteria(listSale) == SUCCESS && controllerListReporthirdCriteria(listSale) == SUCCESS && controllerListModelCarCriteria(listSale) == SUCCESS)
 					{
-						printf("\n\t\t\t\t\t\t\t\t\t\t\tINFORMES.\n");
+						printf("\n\t\t\t\t\t\t\t\t\t\t\t\tINFORMES.\n");
+					}
+					else
+					{
+						printf("\n\t\t\t\t\t\t\t\t\t\tHA OCURRIDO UN PROBLEMA.\n");
 					}
 				}
 				else
@@ -134,38 +139,59 @@ int main(void)
 				}
 				break;
 			case 6:
-				if (controllerGeneratesReportSale("Informes.txt", listSale) == SUCCESS)
+				if (ll_isEmpty(listSale) == 0)
 				{
-					printf("\n\t\t\t\t\t\t\t\t\t\tINFORME TXT GENERADO EXITOSAMENTE.\n");
+					if (controllerGeneratesReportSale("Informes.txt", listSale) == SUCCESS)
+					{
+						printf("\n\t\t\t\t\t\t\t\t\t\tINFORME TXT GENERADO EXITOSAMENTE.\n");
+					}
+					else
+					{
+						printf("\n\t\t\t\t\t\t\t\t\t\tHA OCURRIDO UN PROBLEMA AL GENERAR EL INFORME TXT.\n");
+					}
 				}
 				else
 				{
-					printf("\n\t\t\t\t\t\t\t\t\t\tHA OCURRIDO UN PROBLEMA AL GENERAR EL INFORME TXT.\n");
+					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR EL ARCHIVO DE TEXTO.\n");
 				}
 				break;
 			case 7:
-				if (controllerSaveSalesTextMode("data.csv", listSale) == SUCCESS && controllerSaveIdSaleTextMode("idAutoincremental.txt", &idSale) == SUCCESS && controllerSaveSalesBinarytMode("data-binario.bin", listSale) == SUCCESS)
+				if (ll_isEmpty(listSale) == 0)
 				{
-					flagExit=2;
-					printf("\n\t\t\t\t\t\t\t\t\t\tARCHIVO .CSV Y .BIN GUARDADOS CORRECTAMENTE.\n");
+					if (controllerSaveSalesTextMode("data.csv", listSale) == SUCCESS && controllerSaveIdSaleTextMode("idAutoincremental.txt", &idSale) == SUCCESS && controllerSaveSalesBinarytMode("data-binario.bin", listSale) == SUCCESS)
+					{
+						flagExit = 2;
+						printf("\n\t\t\t\t\t\t\t\t\t\tARCHIVO .CSV Y .BIN GUARDADOS CORRECTAMENTE.\n");
+					}
+					else
+					{
+						printf("\n\t\t\t\t\t\t\t\t\t\tHA OCURRIDO UN PROBLEMA AL GUARDAR LOS ARCHIVOS.\n");
+					}
 				}
 				else
 				{
-					printf("\n\t\t\t\t\t\t\t\t\t\tHA OCURRIDO UN PROBLEMA AL GUARDAR LOS ARCHIVOS.\n");
+					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR EL ARCHIVO DE TEXTO.\n");
 				}
 				break;
 			case 8:
-				if (flagExit != 2)
+				if (ll_isEmpty(listSale) == 0)
 				{
-					returnExit=utn_getDescriptionExit(exit, "\t\t\t\t\t\t\tVA A SALIR SIN GUARDAR CAMBIOS.\n"
-							"\t\t\t\t\t\t\tINGRESE SI PARA SALIR SIN GUARDAR.\n"
-							"\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
+					if (flagExit != 2)
+					{
+						returnExit = utn_getDescriptionExit(exit, "\t\t\t\t\t\t\tVA A SALIR SIN GUARDAR CAMBIOS.\n"
+								"\t\t\t\t\t\t\tINGRESE SI PARA SALIR SIN GUARDAR.\n"
+								"\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
 
+					}
+					else if (flagExit == 2)
+					{
+						returnExit = utn_getDescriptionExit(exit, "\t\t\t\t\t\t\tINGRESE SI PARA SALIR.\n"
+								"\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
+					}
 				}
-				else if (flagExit == 2)
+				else
 				{
-					returnExit=utn_getDescriptionExit(exit, "\t\t\t\t\t\t\tINGRESE SI PARA SALIR.\n"
-							"\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
+					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR EL ARCHIVO DE TEXTO.\n");
 				}
 				break;
 			}
@@ -175,8 +201,7 @@ int main(void)
 			printf("\t\t\t\t\t\t\t\t\t\tALGO SALIO MAL.\n");
 			break;
 		}
-	} while (stricmp(exit, "si") != 0 && returnExit==0);
-
-	printf("\n\n\t\t\t\t\t\t\t\t\t\tALGO SALIO MAL. INGRESE BIEN LOS DATOS LA PROXIMA. \n");
+	} while (stricmp(exit, "si") != 0 && returnExit == 0);
+	printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\tALGO SALIO MAL. INGRESE BIEN LOS DATOS LA PROXIMA. \n");
 	return EXIT_SUCCESS;
 }

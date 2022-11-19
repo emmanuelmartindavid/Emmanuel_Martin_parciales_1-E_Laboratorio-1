@@ -2741,3 +2741,20 @@ gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "sr
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
 gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+18:07:41 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+18:08:43 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+18:09:18 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+18:10:34 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
