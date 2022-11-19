@@ -63,6 +63,11 @@ int controllerRemoveSale(LinkedList *pListSale);
 /// @param pTotalAmount								PUNTERO ENTERO
 /// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerGetTotalAmountSale(LinkedList *pListSale, int *pTotalAmount);
+/// @brief 	controllerReportSale			FILTRA Y GENERA INFORMES DE VENTA.
+///
+/// @param path								PUNTERO STRING
+/// @param LinkedList						LINKEDLIST VENTAS.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerReportSale(char *path, LinkedList *pListSale);
 int controllerGenerateReportTxt(char *path, LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
 /// @brief  controllerListSales   	LISTADO VENTAS.

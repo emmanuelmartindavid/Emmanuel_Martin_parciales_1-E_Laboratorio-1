@@ -311,6 +311,7 @@ int controllerGetTotalAmountSale(LinkedList *pListSale, int *pTotalAmount)
 						if (getAmountSale(pSale, &auxAmount) == SUCCESS)
 						{
 							*pTotalAmount += auxAmount;
+							returnControllerGetTotalAmountSale=SUCCESS;
 						}
 					}
 				}
@@ -319,31 +320,38 @@ int controllerGetTotalAmountSale(LinkedList *pListSale, int *pTotalAmount)
 	}
 	return returnControllerGetTotalAmountSale;
 }
-
+/// @brief 	controllerReportSale			FILTRA Y GENERA INFORMES DE VENTA.
+///
+/// @param path								PUNTERO STRING
+/// @param LinkedList						LINKEDLIST VENTAS.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerReportSale(char *path, LinkedList *pListSale)
 {
-
 	int returnControllerGenerateReportSale = ERROR;
 	int firstCriteriaCounter;
 	int secondCriteriaCounter;
 	int thirdCriteriaCounter;
 	int modelCarCriteria;
-	LinkedList *otra = ll_newLinkedList();
+	LinkedList *pAuxLinkedList = NULL;
 
-	controllerGetTotalAmountSale(pListSale, &firstCriteriaCounter);
-	secondCriteriaCounter = ll_count(pListSale, getAmountSalesFirstCriteria);
-	thirdCriteriaCounter = ll_count(pListSale, getAmountSalesSecondCriteria);
-	modelCarCriteria = ll_count(pListSale, getModelCarCriteria);
-	otra = ll_filter(pListSale, getAmountSalesFirstCriteria);
-	otra = ll_filter(pListSale, getAmountSalesSecondCriteria);
-	otra = ll_filter(pListSale, getModelCarCriteria);
+	if (path != NULL && pListSale != NULL)
+	{
+		pAuxLinkedList = ll_newLinkedList();
 
-	controllerGenerateReportTxt(path, otra,firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+		if (pAuxLinkedList != NULL && controllerGetTotalAmountSale(pListSale, &firstCriteriaCounter) == SUCCESS)
+		{
+			secondCriteriaCounter = ll_count(pListSale, getAmountSalesFirstCriteria);
+			thirdCriteriaCounter = ll_count(pListSale, getAmountSalesSecondCriteria);
+			modelCarCriteria = ll_count(pListSale, getModelCarCriteria);
+			pAuxLinkedList = ll_filter(pListSale, getModelCarCriteria);
 
-
-
+			if(controllerGenerateReportTxt(path, pAuxLinkedList, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria)==SUCCESS)
+		{
+			returnControllerGenerateReportSale=SUCCESS;
+		}
+		}
+	}
 	return returnControllerGenerateReportSale;
-
 }
 /// @brief	controllerSaveSalesTextMode		GUARDA DATOS DE VENTE EN ARCHIVO CSV EN MODO TEXTO.
 ///
@@ -378,7 +386,10 @@ int controllerGenerateReportTxt(char *path, LinkedList *pListSale, int firstCrit
 			lenListSale = ll_len(pListSale);
 			if (lenListSale > 0)
 			{
-				fprintf(pFile, "ID_Venta ,Fecha_Venta,Modelo_Auto,Cantidad,Precio_Unitario,Tarjeta_De_Credito\n");
+
+				fprintf(pFile, "=======================================LISTADO-MODELOS-MATRIX-VENDIDOS============================================\n"
+						"| ID  |  FECHA VENTA   |     MODELO DE AUTO      | CANTIDAD |   PRECIO UNITARIO   |      TARJETA DE CREDITO      |\n"
+						"==================================================================================================================\n");
 				for (int i = 0; i < lenListSale; i++)
 				{
 					pSale = (sSale*) ll_get(pListSale, i);
@@ -387,16 +398,15 @@ int controllerGenerateReportTxt(char *path, LinkedList *pListSale, int firstCrit
 						if (getIdSale(pSale, &auxId) == SUCCESS && getDaySale(pSale, &auxDay) == SUCCESS && getMonthSale(pSale, &auxMonth) == SUCCESS && getYearSale(pSale, &auxYear) == SUCCESS && getModelSale(pSale, auxModel) == SUCCESS && getAmountSale(pSale, &auxAmount) == SUCCESS
 								&& getUnitPriceSale(pSale, &auxUnitPrice) == SUCCESS && getCreditCardNumber(pSale, auxCreditCardNumber) == SUCCESS)
 						{
-							if (fprintf(pFile, "%d,%.2hd/%.2hd/%hd,%s,%hd,$%.2f,%s\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmount, auxUnitPrice, auxCreditCardNumber) > 0)
+							if (fprintf(pFile, "|%-5d| %-.2hd / %-.2hd / %-2hd | %-24s|%-10hd|$%-20.2f|%-30s|\n", auxId, auxDay, auxMonth, auxYear, auxModel, auxAmount, auxUnitPrice, auxCreditCardNumber) > 0)
 							{
 								returnControllerSaveSalesTextMode = SUCCESS;
 							}
 						}
 					}
 				}
-
+				fprintf(pFile, "==================================================================================================================\n");
 			}
-
 			fclose(pFile);
 		}
 	}

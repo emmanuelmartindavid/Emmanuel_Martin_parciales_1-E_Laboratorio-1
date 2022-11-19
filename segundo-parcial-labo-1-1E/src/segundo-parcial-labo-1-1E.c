@@ -22,7 +22,6 @@ int main(void)
 	setbuf(stdout, NULL);
 
 	LinkedList *listSale = ll_newLinkedList();
-	LinkedList *otra = ll_newLinkedList();
 
 	int optionMainMenu;
 	int flagExit = 2;
@@ -41,7 +40,7 @@ int main(void)
 			case 1:
 				if (ll_isEmpty(listSale) == 1)
 				{
-					if (controllerLoadSaleFromText("Autos-3.csv", listSale) == SUCCESS && controllerLoadIdSaleFromText("idAutoincremental.txt", &idSale) == SUCCESS && controllerListSales(listSale) == SUCCESS)
+					if (controllerLoadSaleFromText("Autos.csv", listSale) == SUCCESS && controllerLoadIdSaleFromText("idAutoincremental.txt", &idSale) == SUCCESS && controllerListSales(listSale) == SUCCESS)
 					{
 						printf("\n\t\t\t\t\t\t\tSE HA CARGADO EXITOSAMENTE SU ARCHIVO DE TEXTO. EL CUAL CONTIENE LOS ELEMENTOS LISTADOS.\n");
 					}
@@ -139,21 +138,11 @@ int main(void)
 				}
 				break;
 			case 6:
-//				controllerGetTotalAmountSale(listSale, &cantidad);
-//				printf("CANTIDAD EN MAIN %d\n", cantidad);
-//				retcount = ll_count(listSale, getAmountSalesFirstCriteria);
-//				printf("CANTIDAD EN MAIN LL_COUNT %d\n", retcount);
-				controllerReportSale("Informes.txt", listSale);
-//				otra = ll_filter(listSale, getAmountSalesFirstCriteria);
-//				controllerListSales(otra);
-//				otra = ll_filter(listSale, getAmountSalesSecondCriteria);
-//				controllerListSales(otra);
-//				otra = ll_filter(listSale, getModelCarCriteria);
-//				controllerListSales(otra);
 
+				controllerReportSale("Informes.txt", listSale);
 				break;
 			case 7:
-				controllerSaveSalesTextMode("Autos-3.csv", listSale);
+				controllerSaveSalesTextMode("Autos.csv", listSale);
 				controllerSaveIdSaleTextMode("idAutoincremental.txt", &idSale);
 
 				break;

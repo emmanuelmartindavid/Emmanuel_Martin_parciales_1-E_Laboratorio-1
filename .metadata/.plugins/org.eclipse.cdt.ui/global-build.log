@@ -809,3 +809,1365 @@ Info: Nothing to build for segundo-parcial-labo-1-1E
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
 gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+21:25:54 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+22:09:24 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+22:11:09 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerAddSale':
+..\src\Controller.c:102:9: warning: type defaults to 'int' in declaration of 'auxId' [-Wimplicit-int]
+  102 |  static auxId = idSale;
+      |         ^~~~~
+..\src\Controller.c:102:17: error: initializer element is not constant
+  102 |  static auxId = idSale;
+      |                 ^~~~~~
+22:11:26 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerAddSale':
+..\src\Controller.c:102:21: error: initializer element is not constant
+  102 |  static int auxId = idSale;
+      |                     ^~~~~~
+22:12:58 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerAddSale':
+..\src\Controller.c:111:21: warning: passing argument 2 of 'setIdSale' makes integer from pointer without a cast [-Wint-conversion]
+  111 |    setIdSale(pSale, idSale);
+      |                     ^~~~~~
+      |                     |
+      |                     int *
+In file included from ..\src\Controller.c:13:
+..\src\venta.h:54:32: note: expected 'int' but argument is of type 'int *'
+   54 | int setIdSale(sSale *this, int id);
+      |                            ~~~~^~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:13:04 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:13:06 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+22:15:36 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:29:16 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'editOneSale':
+..\src\Venta.c:481:4: warning: implicit declaration of function 'showEditSaleMenu' [-Wimplicit-function-declaration]
+  481 |    showEditSaleMenu();
+      |    ^~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:77:23: warning: implicit declaration of function 'controllerEditPlayer' [-Wimplicit-function-declaration]
+   77 |      returnEditSale = controllerEditPlayer(listSale);
+      |                       ^~~~~~~~~~~~~~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c:80:14: warning: unknown escape sequence: '\V'
+   80 |       printf("\n\t\t\t\t\t\t\t\t\t\t\VENTA MODIFICADA EXITOSAMENTE.\n");
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c:88:14: warning: unknown escape sequence: '\N'
+   88 |       printf("\n\t\t\t\t\t\t\t\t\t\t\NO REALIZO MODIFICACIONES.\n");
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerEditSale':
+..\src\Controller.c:132:37: warning: implicit declaration of function 'controllerListPlayers'; did you mean 'controllerListSales'? [-Wimplicit-function-declaration]
+  132 |   if (ll_isEmpty(pListSale) == 0 && controllerListPlayers(pListSale) == SUCCESS && utn_getNumber(&auxId, "INGRESE ID DE VENTA A MODIFICAR.\n", "ERROR. REINTENTE.\n", 1, 500, 3) == 0)
+      |                                     ^~~~~~~~~~~~~~~~~~~~~
+      |                                     controllerListSales
+..\src\Controller.c:134:22: warning: implicit declaration of function 'controllerFindPlayerById'; did you mean 'controllerFindSaleById'? [-Wimplicit-function-declaration]
+  134 |    indexListPlayer = controllerFindPlayerById(pListSale, auxId);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                      controllerFindSaleById
+..\src\Controller.c:140:28: warning: implicit declaration of function 'editOnePlayer' [-Wimplicit-function-declaration]
+  140 |      returnEditOnePLayer = editOnePlayer(pPlayer);
+      |                            ^~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\Controller.o: in function `controllerEditSale':
+C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/Controller.c:132: undefined reference to `controllerListPlayers'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/Controller.c:134: undefined reference to `controllerFindPlayerById'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/Controller.c:140: undefined reference to `editOnePlayer'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\segundo-parcial-labo-1-1E.o: in function `main':
+C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/segundo-parcial-labo-1-1E.c:77: undefined reference to `controllerEditPlayer'
+collect2.exe: error: ld returned 1 exit status
+22:30:15 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerEditSale':
+..\src\Controller.c:140:28: warning: implicit declaration of function 'editOneSale'; did you mean 'listOneSale'? [-Wimplicit-function-declaration]
+  140 |      returnEditOnePLayer = editOneSale(pSale);
+      |                            ^~~~~~~~~~~
+      |                            listOneSale
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:77:23: warning: implicit declaration of function 'controllerEditPlayer'; did you mean 'controllerEditSale'? [-Wimplicit-function-declaration]
+   77 |      returnEditSale = controllerEditPlayer(listSale);
+      |                       ^~~~~~~~~~~~~~~~~~~~
+      |                       controllerEditSale
+..\src\segundo-parcial-labo-1-1E.c:80:14: warning: unknown escape sequence: '\V'
+   80 |       printf("\n\t\t\t\t\t\t\t\t\t\t\VENTA MODIFICADA EXITOSAMENTE.\n");
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c:88:14: warning: unknown escape sequence: '\N'
+   88 |       printf("\n\t\t\t\t\t\t\t\t\t\t\NO REALIZO MODIFICACIONES.\n");
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\segundo-parcial-labo-1-1E.o: in function `main':
+C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/segundo-parcial-labo-1-1E.c:77: undefined reference to `controllerEditPlayer'
+collect2.exe: error: ld returned 1 exit status
+22:30:40 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerEditSale':
+..\src\Controller.c:139:33: warning: implicit declaration of function 'editOneSale'; did you mean 'listOneSale'? [-Wimplicit-function-declaration]
+  139 |      returnControllerEditSale = editOneSale(pSale);
+      |                                 ^~~~~~~~~~~
+      |                                 listOneSale
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\segundo-parcial-labo-1-1E.o: in function `main':
+C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/segundo-parcial-labo-1-1E.c:77: undefined reference to `controllerEditPlayer'
+collect2.exe: error: ld returned 1 exit status
+22:31:19 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:77:23: warning: implicit declaration of function 'controllerEditPlayer'; did you mean 'controllerEditSale'? [-Wimplicit-function-declaration]
+   77 |      returnEditSale = controllerEditPlayer(listSale);
+      |                       ^~~~~~~~~~~~~~~~~~~~
+      |                       controllerEditSale
+..\src\segundo-parcial-labo-1-1E.c:80:14: warning: unknown escape sequence: '\V'
+   80 |       printf("\n\t\t\t\t\t\t\t\t\t\t\VENTA MODIFICADA EXITOSAMENTE.\n");
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c:88:14: warning: unknown escape sequence: '\N'
+   88 |       printf("\n\t\t\t\t\t\t\t\t\t\t\NO REALIZO MODIFICACIONES.\n");
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'editOneSale':
+..\src\Venta.c:481:4: warning: implicit declaration of function 'showEditSaleMenu' [-Wimplicit-function-declaration]
+  481 |    showEditSaleMenu();
+      |    ^~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\segundo-parcial-labo-1-1E.o: in function `main':
+C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/segundo-parcial-labo-1-1E.c:77: undefined reference to `controllerEditPlayer'
+collect2.exe: error: ld returned 1 exit status
+22:31:43 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:80:14: warning: unknown escape sequence: '\V'
+   80 |       printf("\n\t\t\t\t\t\t\t\t\t\t\VENTA MODIFICADA EXITOSAMENTE.\n");
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c:88:14: warning: unknown escape sequence: '\N'
+   88 |       printf("\n\t\t\t\t\t\t\t\t\t\t\NO REALIZO MODIFICACIONES.\n");
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:32:04 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+22:33:57 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:34:18 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:34:42 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:34:57 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:35:14 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:35:23 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:35:28 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:36:01 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'editOneSale':
+..\src\Venta.c:479:4: warning: implicit declaration of function 'showEditSaleMenu' [-Wimplicit-function-declaration]
+  479 |    showEditSaleMenu();
+      |    ^~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:36:23 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:36:55 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:37:19 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:51:18 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+..\src\LinkedList.c:568:48: error: expected ')' before '*' token
+  568 | LinkedList* ll_filter(LinkedList* this, int (fn*)(void* element))
+      |                                                ^
+      |                                                )
+22:52:17 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+..\src\LinkedList.c: In function 'll_filter':
+..\src\LinkedList.c:572:11: warning: unused variable 'auxElement' [-Wunused-variable]
+  572 |     void *auxElement;
+      |           ^~~~~~~~~~
+..\src\LinkedList.c:571:9: warning: unused variable 'lenList' [-Wunused-variable]
+  571 |     int lenList;
+      |         ^~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:52:29 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+23:58:26 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:577:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  577 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+..\src\LinkedList.c: In function 'll_filter':
+..\src\LinkedList.c:589:41: warning: implicit declaration of function 'fn' [-Wimplicit-function-declaration]
+  589 |                if(auxElement != NULL && fn(auxElement)==1)
+      |                                         ^~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+23:58:52 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+23:58:55 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+23:59:28 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:577:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  577 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:00:52 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:01:38 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:02:16 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:578:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  578 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:02:47 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:578:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  578 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:03:06 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:578:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  578 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:09:58 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'calculateTotalAmount':
+..\src\Venta.c:556:8: warning: unused variable 'auxAmount2' [-Wunused-variable]
+  556 |  short auxAmount2;
+      |        ^~~~~~~~~~
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:580:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  580 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:10:05 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+00:11:55 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGetTotalAmountSale':
+..\src\Controller.c:232:32: warning: passing argument 2 of 'getAmountSale' from incompatible pointer type [-Wincompatible-pointer-types]
+  232 |       if (getAmountSale(pSale, &totalAmount) == SUCCESS)
+      |                                ^~~~~~~~~~~~
+      |                                |
+      |                                int *
+In file included from ..\src\Controller.c:13:
+..\src\venta.h:120:39: note: expected 'short int *' but argument is of type 'int *'
+  120 | int getAmountSale(sSale *this, short *pAmount);
+      |                                ~~~~~~~^~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:12:11 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:13:22 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:13:26 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+00:17:28 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGetTotalAmountSale':
+..\src\Controller.c:218:8: warning: unused variable 'totalAmount2' [-Wunused-variable]
+  218 |  short totalAmount2;
+      |        ^~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:18:16 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'calculateTotalAmount':
+..\src\Venta.c:556:8: warning: unused variable 'auxAmount2' [-Wunused-variable]
+  556 |  short auxAmount2;
+      |        ^~~~~~~~~~
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:580:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  580 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGetTotalAmountSale':
+..\src\Controller.c:234:39: warning: passing argument 2 of 'calculateTotalAmount' from incompatible pointer type [-Wincompatible-pointer-types]
+  234 |       if (calculateTotalAmount(pSale, &totalAmount) == SUCCESS)
+      |                                       ^~~~~~~~~~~~
+      |                                       |
+      |                                       short int *
+In file included from ..\src\Controller.c:13:
+..\src\venta.h:180:44: note: expected 'int *' but argument is of type 'short int *'
+  180 | int calculateTotalAmount(sSale *this, int *pResult);
+      |                                       ~~~~~^~~~~~~
+..\src\Controller.c:218:8: warning: unused variable 'totalAmount2' [-Wunused-variable]
+  218 |  short totalAmount2;
+      |        ^~~~~~~~~~~~
+..\src\Controller.c:237:8: warning: 'amount' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  237 |        printf("\t\t\t\t\t\tCANTIDAD EN FOR %d\n", amount);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:18:29 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGetTotalAmountSale':
+..\src\Controller.c:242:5: warning: 'amount' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  242 |     printf("\t\t\t\t\t\tCANTIDAD %d\n", amount);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:18:36 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGetTotalAmountSale':
+..\src\Controller.c:219:6: warning: unused variable 'amount' [-Wunused-variable]
+  219 |  int amount;
+      |      ^~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:18:41 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:18:43 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+00:19:16 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'calculateTotalAmount':
+..\src\Venta.c:556:8: warning: unused variable 'auxAmount2' [-Wunused-variable]
+  556 |  short auxAmount2;
+      |        ^~~~~~~~~~
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:580:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  580 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:19:23 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:23:03 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'calculateTotalAmount':
+..\src\Venta.c:556:8: warning: unused variable 'auxAmount2' [-Wunused-variable]
+  556 |  short auxAmount2;
+      |        ^~~~~~~~~~
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:580:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  580 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:23:05 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:23:22 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'calculateTotalAmount':
+..\src\Venta.c:556:8: warning: unused variable 'auxAmount2' [-Wunused-variable]
+  556 |  short auxAmount2;
+      |        ^~~~~~~~~~
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:580:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  580 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:23:27 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:580:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  580 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:25:15 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:26:30 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+00:29:10 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c:213:5: error: conflicting types for 'controllerGetTotalAmountSale'
+  213 | int controllerGetTotalAmountSale(LinkedList *pListSale, int *pTotalAmount)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:47:5: note: previous declaration of 'controllerGetTotalAmountSale' was here
+   47 | int controllerGetTotalAmountSale(LinkedList *pListSale);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c: In function 'controllerGetTotalAmountSale':
+..\src\Controller.c:217:6: warning: unused variable 'totalAmount' [-Wunused-variable]
+  217 |  int totalAmount;
+      |      ^~~~~~~~~~~
+00:30:08 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGetTotalAmountSale':
+..\src\Controller.c:217:6: warning: unused variable 'totalAmount' [-Wunused-variable]
+  217 |  int totalAmount;
+      |      ^~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:30:13 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+00:30:44 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGetTotalAmountSale':
+..\src\Controller.c:217:6: warning: unused variable 'totalAmount' [-Wunused-variable]
+  217 |  int totalAmount;
+      |      ^~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:30:49 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:48:08 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:559:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  559 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+00:49:45 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+00:50:35 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:52:07 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:53:03 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:559:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  559 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:53:38 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:559:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  559 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:54:36 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:560:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  560 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:56:04 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+00:57:15 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+01:02:53 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerSaveIdSaleTextMode':
+..\src\Controller.c:159:25: warning: format '%d' expects argument of type 'int', but argument 3 has type 'int *' [-Wformat=]
+  159 |    if (fprintf(pFile, "%d\n", pIdSale) > 0)
+      |                        ~^     ~~~~~~~
+      |                         |     |
+      |                         int   int *
+      |                        %n
+..\src\Controller.c:152:6: warning: unused variable 'condition' [-Wunused-variable]
+  152 |  int condition;
+      |      ^~~~~~~~~
+..\src\Controller.c:151:6: warning: unused variable 'idIncremented' [-Wunused-variable]
+  151 |  int idIncremented;
+      |      ^~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+01:03:11 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+01:23:20 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+01:27:04 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+01:28:24 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+01:48:51 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:151:14: warning: implicit declaration of function 'll_count' [-Wimplicit-function-declaration]
+  151 |     retcount=ll_count(listSale, getTotalCostPerSalefirst);
+      |              ^~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+01:49:08 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+01:50:11 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getTotalCostPerSalefirst':
+..\src\Venta.c:560:9: warning: variable 'pSale' set but not used [-Wunused-but-set-variable]
+  560 |  sSale *pSale = NULL;
+      |         ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+01:51:33 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+01:51:36 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+01:52:26 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+01:52:47 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+01:53:49 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+01:54:37 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+01:56:19 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+01:57:22 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+02:00:11 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+02:00:14 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+02:11:02 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:152:33: error: 'getTotalCostPerSalefirst' undeclared (first use in this function)
+  152 |     retcount=ll_count(listSale, getTotalCostPerSalefirst);
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c:152:33: note: each undeclared identifier is reported only once for each function it appears in
+02:11:50 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGenerateReportSale':
+..\src\Controller.c:330:6: warning: unused variable 'thirdCriteriaCounter' [-Wunused-variable]
+  330 |  int thirdCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:329:6: warning: unused variable 'secondCriteriaCounter' [-Wunused-variable]
+  329 |  int secondCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:328:6: warning: unused variable 'firstCriteriaCounter' [-Wunused-variable]
+  328 |  int firstCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\segundo-parcial-labo-1-1E.o: in function `main':
+C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/segundo-parcial-labo-1-1E.c:148: undefined reference to `controllerGetAmountSalesFirstCriteria'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/segundo-parcial-labo-1-1E.c:150: undefined reference to `controllerGetAmountSalesSecondCriteria'
+collect2.exe: error: ld returned 1 exit status
+02:12:04 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:33:6: warning: unused variable 'otraCantidad' [-Wunused-variable]
+   33 |  int otraCantidad;
+      |      ^~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\segundo-parcial-labo-1-1E.o: in function `main':
+C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/segundo-parcial-labo-1-1E.c:148: undefined reference to `controllerGetAmountSalesSecondCriteria'
+collect2.exe: error: ld returned 1 exit status
+02:12:08 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\segundo-parcial-labo-1-1E.o: in function `main':
+C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\segundo-parcial-labo-1-1E\Debug/../src/segundo-parcial-labo-1-1E.c:148: undefined reference to `controllerGetAmountSalesSecondCriteria'
+collect2.exe: error: ld returned 1 exit status
+02:12:34 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:34:6: warning: unused variable 'unama' [-Wunused-variable]
+   34 |  int unama;
+      |      ^~~~~
+..\src\segundo-parcial-labo-1-1E.c:33:6: warning: unused variable 'otraCantidad' [-Wunused-variable]
+   33 |  int otraCantidad;
+      |      ^~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+02:15:51 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGenerateReportSale':
+..\src\Controller.c:330:6: warning: unused variable 'thirdCriteriaCounter' [-Wunused-variable]
+  330 |  int thirdCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:329:6: warning: unused variable 'secondCriteriaCounter' [-Wunused-variable]
+  329 |  int secondCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:328:6: warning: unused variable 'firstCriteriaCounter' [-Wunused-variable]
+  328 |  int firstCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:34:6: warning: unused variable 'unama' [-Wunused-variable]
+   34 |  int unama;
+      |      ^~~~~
+..\src\segundo-parcial-labo-1-1E.c:33:6: warning: unused variable 'otraCantidad' [-Wunused-variable]
+   33 |  int otraCantidad;
+      |      ^~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+02:18:35 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGenerateReportSale':
+..\src\Controller.c:330:6: warning: unused variable 'thirdCriteriaCounter' [-Wunused-variable]
+  330 |  int thirdCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:329:6: warning: unused variable 'secondCriteriaCounter' [-Wunused-variable]
+  329 |  int secondCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:328:6: warning: unused variable 'firstCriteriaCounter' [-Wunused-variable]
+  328 |  int firstCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:155:32: warning: passing argument 2 of 'll_filter' makes pointer from integer without a cast [-Wint-conversion]
+  155 |     otra = ll_filter(listSale, getModelCarCriteria(otra));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                |
+      |                                int
+In file included from ..\src\segundo-parcial-labo-1-1E.c:14:
+..\src\LinkedList.h:45:13: note: expected 'int (*)(void *)' but argument is of type 'int'
+   45 | LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*));
+      |             ^~~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c:34:6: warning: unused variable 'unama' [-Wunused-variable]
+   34 |  int unama;
+      |      ^~~~~
+..\src\segundo-parcial-labo-1-1E.c:33:6: warning: unused variable 'otraCantidad' [-Wunused-variable]
+   33 |  int otraCantidad;
+      |      ^~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getModelCarCriteria':
+..\src\Venta.c:622:9: warning: implicit declaration of function 'strcimp'; did you mean 'stricmp'? [-Wimplicit-function-declaration]
+  622 |     if (strcimp(auxModel,"Matrix")==0)
+      |         ^~~~~~~
+      |         stricmp
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+02:19:02 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+02:19:05 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+02:19:53 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'getModelCarCriteria':
+..\src\Venta.c:620:8: warning: 'auxModel' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  620 |    if (getModelSale(this, auxModel))
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+02:20:19 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+02:21:19 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+02:21:36 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+02:21:49 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:155:32: warning: passing argument 2 of 'll_filter' makes pointer from integer without a cast [-Wint-conversion]
+  155 |     otra = ll_filter(listSale, getModelCarCriteria(otra));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                |
+      |                                int
+In file included from ..\src\segundo-parcial-labo-1-1E.c:14:
+..\src\LinkedList.h:45:13: note: expected 'int (*)(void *)' but argument is of type 'int'
+   45 | LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*));
+      |             ^~~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c:34:6: warning: unused variable 'unama' [-Wunused-variable]
+   34 |  int unama;
+      |      ^~~~~
+..\src\segundo-parcial-labo-1-1E.c:33:6: warning: unused variable 'otraCantidad' [-Wunused-variable]
+   33 |  int otraCantidad;
+      |      ^~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+02:22:14 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:34:6: warning: unused variable 'unama' [-Wunused-variable]
+   34 |  int unama;
+      |      ^~~~~
+..\src\segundo-parcial-labo-1-1E.c:33:6: warning: unused variable 'otraCantidad' [-Wunused-variable]
+   33 |  int otraCantidad;
+      |      ^~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+02:22:18 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+02:23:06 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+02:23:08 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+02:34:09 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGenerateReportSale':
+..\src\Controller.c:293:6: warning: unused variable 'thirdCriteriaCounter' [-Wunused-variable]
+  293 |  int thirdCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:292:6: warning: unused variable 'secondCriteriaCounter' [-Wunused-variable]
+  292 |  int secondCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:291:6: warning: unused variable 'firstCriteriaCounter' [-Wunused-variable]
+  291 |  int firstCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'GetTotalAmountSaleCriteria':
+..\src\Venta.c:561:8: warning: unused variable 'auxUnitPrice' [-Wunused-variable]
+  561 |  float auxUnitPrice;
+      |        ^~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:34:6: warning: unused variable 'unama' [-Wunused-variable]
+   34 |  int unama;
+      |      ^~~~~
+..\src\segundo-parcial-labo-1-1E.c:33:6: warning: unused variable 'otraCantidad' [-Wunused-variable]
+   33 |  int otraCantidad;
+      |      ^~~~~~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c:32:6: warning: unused variable 'cantidad' [-Wunused-variable]
+   32 |  int cantidad;
+      |      ^~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+02:35:21 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGenerateReportSale':
+..\src\Controller.c:330:6: warning: unused variable 'thirdCriteriaCounter' [-Wunused-variable]
+  330 |  int thirdCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:329:6: warning: unused variable 'secondCriteriaCounter' [-Wunused-variable]
+  329 |  int secondCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:328:6: warning: unused variable 'firstCriteriaCounter' [-Wunused-variable]
+  328 |  int firstCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:34:6: warning: unused variable 'unama' [-Wunused-variable]
+   34 |  int unama;
+      |      ^~~~~
+..\src\segundo-parcial-labo-1-1E.c:33:6: warning: unused variable 'otraCantidad' [-Wunused-variable]
+   33 |  int otraCantidad;
+      |      ^~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+02:38:38 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerGenerateReportSale':
+..\src\Controller.c:330:6: warning: variable 'thirdCriteriaCounter' set but not used [-Wunused-but-set-variable]
+  330 |  int thirdCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:329:6: warning: variable 'secondCriteriaCounter' set but not used [-Wunused-but-set-variable]
+  329 |  int secondCriteriaCounter;
+      |      ^~~~~~~~~~~~~~~~~~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+02:38:48 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+02:42:18 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:35:6: warning: unused variable 'retcount' [-Wunused-variable]
+   35 |  int retcount;
+      |      ^~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c:34:6: warning: unused variable 'unama' [-Wunused-variable]
+   34 |  int unama;
+      |      ^~~~~
+..\src\segundo-parcial-labo-1-1E.c:33:6: warning: unused variable 'otraCantidad' [-Wunused-variable]
+   33 |  int otraCantidad;
+      |      ^~~~~~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c:32:6: warning: unused variable 'cantidad' [-Wunused-variable]
+   32 |  int cantidad;
+      |      ^~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+02:42:46 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+02:43:57 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+03:00:43 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+03:00:49 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+03:01:24 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+03:01:27 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+03:02:16 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+03:04:27 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+03:07:35 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerReportSale':
+..\src\Controller.c:331:14: warning: variable 'otra' set but not used [-Wunused-but-set-variable]
+  331 |  LinkedList *otra = ll_newLinkedList();
+      |              ^~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:25:14: warning: unused variable 'otra' [-Wunused-variable]
+   25 |  LinkedList *otra = ll_newLinkedList();
+      |              ^~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+03:07:51 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+03:07:54 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+03:13:23 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerReportSale':
+..\src\Controller.c:341:36: warning: passing argument 2 of 'controllerGenerateReportTxt' makes integer from pointer without a cast [-Wint-conversion]
+  341 |  controllerGenerateReportTxt(path, otra,firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |                                    ^~~~
+      |                                    |
+      |                                    LinkedList * {aka struct LinkedList *}
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:49: note: expected 'int' but argument is of type 'LinkedList *' {aka 'struct LinkedList *'}
+   67 | int controllerGenerateReportTxt(char *path, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:341:2: error: too many arguments to function 'controllerGenerateReportTxt'
+  341 |  controllerGenerateReportTxt(path, otra,firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:5: note: declared here
+   67 | int controllerGenerateReportTxt(char *path, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c: At top level:
+..\src\Controller.c:353:168: error: expected declaration specifiers or '...' before ')' token
+  353 | int controllerGenerateReportTxt(char *path, LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria,)
+      |                                                                                                                                                                        ^
+03:13:43 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:25:14: warning: unused variable 'otra' [-Wunused-variable]
+   25 |  LinkedList *otra = ll_newLinkedList();
+      |              ^~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+03:13:58 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+08:29:34 **** Rebuild of configuration Debug for project pruebaTp3 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Jugador.o "..\\Jugador.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Seleccion.o "..\\Seleccion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o menus.o "..\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o validaciones.o "..\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o pruebaTp3.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+08:29:36 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+08:31:28 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+08:31:31 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+08:32:19 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for pruebaTp3
+08:36:03 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+In file included from ..\src\segundo-parcial-labo-1-1E.c:15:
+..\src\Controller.h:67:79: error: redefinition of parameter 'pListSale'
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *pListSale,LinkedList *pListSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                                                   ~~~~~~~~~~~~^~~~~~~~~
+..\src\Controller.h:67:57: note: previous definition of 'pListSale' was here
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *pListSale,LinkedList *pListSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                             ~~~~~~~~~~~~^~~~~~~~~
+..\src\Controller.h:67:101: error: redefinition of parameter 'pListSale'
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *pListSale,LinkedList *pListSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                                                                         ~~~~~~~~~~~~^~~~~~~~~
+..\src\Controller.h:67:79: note: previous definition of 'pListSale' was here
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *pListSale,LinkedList *pListSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                                                   ~~~~~~~~~~~~^~~~~~~~~
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:25:14: warning: unused variable 'otra' [-Wunused-variable]
+   25 |  LinkedList *otra = ll_newLinkedList();
+      |              ^~~~
+08:36:43 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:25:14: warning: unused variable 'otra' [-Wunused-variable]
+   25 |  LinkedList *otra = ll_newLinkedList();
+      |              ^~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerReportSale':
+..\src\Controller.c:340:42: warning: passing argument 3 of 'controllerGenerateReportTxt' makes pointer from integer without a cast [-Wint-conversion]
+  340 |  controllerGenerateReportTxt(path, otra, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |                                          ^~~~~~~~~~~~~~~~~~~~
+      |                                          |
+      |                                          int
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:77: note: expected 'LinkedList *' {aka 'struct LinkedList *'} but argument is of type 'int'
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *istSale,LinkedList *itSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                                                 ~~~~~~~~~~~~^~~~~~
+..\src\Controller.c:340:64: warning: passing argument 4 of 'controllerGenerateReportTxt' makes pointer from integer without a cast [-Wint-conversion]
+  340 |  controllerGenerateReportTxt(path, otra, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |                                                                ^~~~~~~~~~~~~~~~~~~~~
+      |                                                                |
+      |                                                                int
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:96: note: expected 'LinkedList *' {aka 'struct LinkedList *'} but argument is of type 'int'
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *istSale,LinkedList *itSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                                                                    ~~~~~~~~~~~~^~~~~~~~~
+..\src\Controller.c:340:2: error: too few arguments to function 'controllerGenerateReportTxt'
+  340 |  controllerGenerateReportTxt(path, otra, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:5: note: declared here
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *istSale,LinkedList *itSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:342:43: warning: passing argument 3 of 'controllerGenerateReportTxt' makes pointer from integer without a cast [-Wint-conversion]
+  342 |  controllerGenerateReportTxt(path, otra2, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |                                           ^~~~~~~~~~~~~~~~~~~~
+      |                                           |
+      |                                           int
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:77: note: expected 'LinkedList *' {aka 'struct LinkedList *'} but argument is of type 'int'
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *istSale,LinkedList *itSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                                                 ~~~~~~~~~~~~^~~~~~
+..\src\Controller.c:342:65: warning: passing argument 4 of 'controllerGenerateReportTxt' makes pointer from integer without a cast [-Wint-conversion]
+  342 |  controllerGenerateReportTxt(path, otra2, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |                                                                 ^~~~~~~~~~~~~~~~~~~~~
+      |                                                                 |
+      |                                                                 int
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:96: note: expected 'LinkedList *' {aka 'struct LinkedList *'} but argument is of type 'int'
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *istSale,LinkedList *itSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                                                                    ~~~~~~~~~~~~^~~~~~~~~
+..\src\Controller.c:342:2: error: too few arguments to function 'controllerGenerateReportTxt'
+  342 |  controllerGenerateReportTxt(path, otra2, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:5: note: declared here
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *istSale,LinkedList *itSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c: At top level:
+..\src\Controller.c:355:80: error: redefinition of parameter 'pListSale'
+  355 | int controllerGenerateReportTxt(char *path, LinkedList *pListSale, LinkedList *pListSale, LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria)
+      |                                                                    ~~~~~~~~~~~~^~~~~~~~~
+..\src\Controller.c:355:57: note: previous definition of 'pListSale' was here
+  355 | int controllerGenerateReportTxt(char *path, LinkedList *pListSale, LinkedList *pListSale, LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria)
+      |                                             ~~~~~~~~~~~~^~~~~~~~~
+..\src\Controller.c:355:103: error: redefinition of parameter 'pListSale'
+  355 | int controllerGenerateReportTxt(char *path, LinkedList *pListSale, LinkedList *pListSale, LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria)
+      |                                                                                           ~~~~~~~~~~~~^~~~~~~~~
+..\src\Controller.c:355:80: note: previous definition of 'pListSale' was here
+  355 | int controllerGenerateReportTxt(char *path, LinkedList *pListSale, LinkedList *pListSale, LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria)
+      |                                                                    ~~~~~~~~~~~~^~~~~~~~~
+08:37:03 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerReportSale':
+..\src\Controller.c:340:42: warning: passing argument 3 of 'controllerGenerateReportTxt' makes pointer from integer without a cast [-Wint-conversion]
+  340 |  controllerGenerateReportTxt(path, otra, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |                                          ^~~~~~~~~~~~~~~~~~~~
+      |                                          |
+      |                                          int
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:77: note: expected 'LinkedList *' {aka 'struct LinkedList *'} but argument is of type 'int'
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *istSale,LinkedList *itSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                                                 ~~~~~~~~~~~~^~~~~~
+..\src\Controller.c:340:64: warning: passing argument 4 of 'controllerGenerateReportTxt' makes pointer from integer without a cast [-Wint-conversion]
+  340 |  controllerGenerateReportTxt(path, otra, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |                                                                ^~~~~~~~~~~~~~~~~~~~~
+      |                                                                |
+      |                                                                int
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:96: note: expected 'LinkedList *' {aka 'struct LinkedList *'} but argument is of type 'int'
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *istSale,LinkedList *itSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                                                                    ~~~~~~~~~~~~^~~~~~~~~
+..\src\Controller.c:340:2: error: too few arguments to function 'controllerGenerateReportTxt'
+  340 |  controllerGenerateReportTxt(path, otra, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:5: note: declared here
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *istSale,LinkedList *itSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Controller.c:342:43: warning: passing argument 3 of 'controllerGenerateReportTxt' makes pointer from integer without a cast [-Wint-conversion]
+  342 |  controllerGenerateReportTxt(path, otra2, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |                                           ^~~~~~~~~~~~~~~~~~~~
+      |                                           |
+      |                                           int
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:77: note: expected 'LinkedList *' {aka 'struct LinkedList *'} but argument is of type 'int'
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *istSale,LinkedList *itSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                                                 ~~~~~~~~~~~~^~~~~~
+..\src\Controller.c:342:65: warning: passing argument 4 of 'controllerGenerateReportTxt' makes pointer from integer without a cast [-Wint-conversion]
+  342 |  controllerGenerateReportTxt(path, otra2, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |                                                                 ^~~~~~~~~~~~~~~~~~~~~
+      |                                                                 |
+      |                                                                 int
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:96: note: expected 'LinkedList *' {aka 'struct LinkedList *'} but argument is of type 'int'
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *istSale,LinkedList *itSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |                                                                                    ~~~~~~~~~~~~^~~~~~~~~
+..\src\Controller.c:342:2: error: too few arguments to function 'controllerGenerateReportTxt'
+  342 |  controllerGenerateReportTxt(path, otra2, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\Controller.c:11:
+..\src\controller.h:67:5: note: declared here
+   67 | int controllerGenerateReportTxt(char *path, LinkedList *istSale,LinkedList *itSale,LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+08:37:14 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+08:50:09 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:25:14: warning: unused variable 'otra' [-Wunused-variable]
+   25 |  LinkedList *otra = ll_newLinkedList();
+      |              ^~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+08:50:27 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+08:51:44 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+08:51:46 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+08:54:04 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+08:58:53 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+09:03:18 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+09:04:04 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+09:08:32 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+09:09:29 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+09:10:22 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
