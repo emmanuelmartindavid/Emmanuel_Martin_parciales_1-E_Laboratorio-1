@@ -241,7 +241,7 @@ int controllerAddSale(LinkedList *pListSale, int *pIdSale)
 	{
 		//&& editCreditCardNumber(pSale) == SUCCESS AGREGAR
 		pSale = newSale();
-		if (pSale != NULL && editDaySale(pSale) == SUCCESS && editMonthSale(pSale) == SUCCESS && editYearSale(pSale) == SUCCESS && editModel(pSale) == SUCCESS && editAmountSale(pSale) == SUCCESS && editUnitPriceSale(pSale) == SUCCESS && setIdSale(pSale, *pIdSale) == SUCCESS)
+		if (pSale != NULL  && editCreditCardNumber(pSale) == SUCCESS && editDaySale(pSale) == SUCCESS && editMonthSale(pSale) == SUCCESS && editYearSale(pSale) == SUCCESS && editModel(pSale) == SUCCESS && editAmountSale(pSale) == SUCCESS && editUnitPriceSale(pSale) == SUCCESS && setIdSale(pSale, *pIdSale) == SUCCESS)
 		{
 			if (ll_add(pListSale, pSale) == 0)
 			{
@@ -252,7 +252,7 @@ int controllerAddSale(LinkedList *pListSale, int *pIdSale)
 	}
 	return returnControllerAddSale;
 }
-/// @brief controllerRemoveSale		EDITAR DE VENTA.
+/// @brief controllerRemoveSale		EDICION DE VENTA.
 ///
 /// @param pListSale				LINKEDLIST VENTAS.
 /// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO(MODIFICACION HECHA). ERROR(-1) EN CASO CONTRARIO. RETORNA NOEDIT(3) EN CASO DE NO HABER HECHO NINGUNA MODIFIACION.
@@ -384,7 +384,9 @@ int controllerListReportFirstCriteria(LinkedList *pListSale)
 	if (pListSale != NULL)
 	{
 		firstCriteriaCounter = ll_count(pListSale, getTotalAmountSaleCriteria);
-		printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d UNIDADES TOTALES VENDIDAS.\n", firstCriteriaCounter);
+		printf("\n\t\t\t\t\t\t\t\t\t\t-----------------------------------------"
+				"\n\t\t\t\t\t\t\t\t\t\t|CUENTA CON %d UNIDADES TOTALES VENDIDAS|\n"
+				"\t\t\t\t\t\t\t\t\t\t-----------------------------------------\n", firstCriteriaCounter);
 		if (controllerListSales(pListSale) == SUCCESS)
 		{
 			returnControllerListReportFirstCriteria = SUCCESS;
@@ -410,7 +412,9 @@ int controllerListReportSecondtCriteria(LinkedList *pListSale)
 			pAuxLinkedList = ll_filter(pListSale, getAmountSalesFirstCriteria);
 			if (secondCriteriaCounter > 0 && pAuxLinkedList != NULL)
 			{
-				printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d VENTAS MAYORES A $10000\n", secondCriteriaCounter);
+				printf("\n\t\t\t\t\t\t\t\t\t\t---------------------------------------"
+						"\n\t\t\t\t\t\t\t\t\t\t|CUENTA CON %d VENTAS MAYORES A $10000|\n"
+						"\t\t\t\t\t\t\t\t\t\t---------------------------------------\n", secondCriteriaCounter);
 				if (controllerListSales(pAuxLinkedList) == SUCCESS)
 				{
 					returnControllerListReportSecondCriteria = SUCCESS;
@@ -439,7 +443,9 @@ int controllerListReporthirdCriteria(LinkedList *pListSale)
 			pAuxLinkedList = ll_filter(pListSale, getAmountSalesSecondCriteria);
 			if (thirdCriteriaCounter > 0 && pAuxLinkedList != NULL)
 			{
-				printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d VENTAS MAYORES A $20000.\n", thirdCriteriaCounter);
+				printf("\n\t\t\t\t\t\t\t\t\t\t--------------------------------------"
+						"\n\t\t\t\t\t\t\t\t\t\t|CUENTA CON %d VENTAS MAYORES A $20000|\n"
+						"\t\t\t\t\t\t\t\t\t\t--------------------------------------\n", thirdCriteriaCounter);
 				if (controllerListSales(pAuxLinkedList) == SUCCESS)
 				{
 					returnControllerListReportThirdCriteria = SUCCESS;
@@ -469,7 +475,9 @@ int controllerListModelCarCriteria(LinkedList *pListSale)
 			pAuxLinkedList = ll_filter(pListSale, getModelCarCriteriaMatrix);
 			if (modelCarCriteria > 0 && pAuxLinkedList != NULL)
 			{
-				printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d MODELOS MATRIX VENDIDOS.\n", modelCarCriteria);
+				printf("\n\t\t\t\t\t\t\t\t\t\t---------------------------------------"
+						"\n\t\t\t\t\t\t\t\t\t\t|CUENTA CON %d MODELOS MATRIX VENDIDOS|\n"
+						"\t\t\t\t\t\t\t\t\t\t---------------------------------------\n", modelCarCriteria);
 				if (controllerListSales(pAuxLinkedList) == SUCCESS)
 				{
 					returnControllerListReportModelCarCriteria = SUCCESS;
@@ -480,7 +488,7 @@ int controllerListModelCarCriteria(LinkedList *pListSale)
 	ll_deleteLinkedList(pAuxLinkedList);
 	return returnControllerListReportModelCarCriteria;
 }
-/// @brief 	controllerGeneratesReportSale			FILTRA Y GENERA INFORMES DE VENTA.
+/// @brief controllerGeneratesReportSale			FILTRA Y GENERA INFORME DE VENTA.
 ///
 /// @param path										PUNTERO STRING
 /// @param LinkedList								LINKEDLIST VENTAS.
@@ -552,7 +560,6 @@ int controllerSaveReportTxt(char *path, LinkedList *pListSale, int firstCriteria
 			lenListSale = ll_len(pListSale);
 			if (lenListSale > 0)
 			{
-
 				fprintf(pFile, "=======================================LISTADO-MODELOS-MATRIX-VENDIDOS============================================\n"
 						"| ID  |  FECHA VENTA   |     MODELO DE AUTO      | CANTIDAD |   PRECIO UNITARIO   |      TARJETA DE CREDITO      |\n"
 						"==================================================================================================================\n");

@@ -649,7 +649,7 @@ int getModelCarCriteria(void *this)
 	}
 	return returnGetAmountSalesSecondCriteria;
 }
-/// @brief getModelCarCriteria						OBTIENE CRITERIO PARA OBTENER VENTAS DE TIPO DE MODELO MATRIX.
+/// @brief getModelCarCriteriaMatrix				OBTIENE CRITERIO PARA OBTENER VENTAS DE TIPO DE MODELO MATRIX.
 ///
 /// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.

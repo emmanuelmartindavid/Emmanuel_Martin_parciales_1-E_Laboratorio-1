@@ -93,7 +93,7 @@ int controllerListReporthirdCriteria(LinkedList *pListSale);
 /// @param pListSale								LINKEDLIST VENTAS.
 /// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerListModelCarCriteria(LinkedList *pListSale);
-/// @brief 	controllerGeneratesReportSale			FILTRA Y GENERA INFORMES DE VENTA.
+/// @brief 	controllerGeneratesReportSale			FILTRA Y GENERA INFORME DE VENTA.
 ///
 /// @param path								PUNTERO STRING
 /// @param LinkedList						LINKEDLIST VENTAS.
