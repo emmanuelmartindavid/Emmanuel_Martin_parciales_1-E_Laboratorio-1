@@ -224,7 +224,6 @@ int controllerSaveSalesBinarytMode(char *path, LinkedList *pListSale)
 				fclose(pFile);
 			}
 		}
-
 	}
 	return returnControllerSaveSalesBinarytMode;
 }
@@ -256,7 +255,7 @@ int controllerAddSale(LinkedList *pListSale, int *pIdSale)
 /// @brief controllerRemoveSale		EDITAR DE VENTA.
 ///
 /// @param pListSale				LINKEDLIST VENTAS.
-/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO(MODIFICACION HECHA). ERROR(-1) EN CASO CONTRARIO. RETORNA NOEDIT(3) EN CASO DE NO HABER HECHO NINGUNA MODIFIACION.
 int controllerEditSale(LinkedList *pListSale)
 {
 	int returnControllerEditSale = ERROR;
@@ -297,7 +296,7 @@ int controllerEditSale(LinkedList *pListSale)
 /// @brief controllerRemoveSale		BAJA DE VENTA.
 ///
 /// @param pListSale				LINKEDLIST VENTAS.
-/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO. RETORNA REMOVECANCEL(-2) EN CASO DE CANCELAR BAJA. RETORNA NOSALE(-2) EN CASO DE QUE NO EXISTA LA VENTA.
 int controllerRemoveSale(LinkedList *pListSale)
 {
 	int returnControllerRemoveSale = ERROR;
@@ -344,7 +343,6 @@ int controllerRemoveSale(LinkedList *pListSale)
 			}
 		}
 	}
-
 	return returnControllerRemoveSale;
 }
 /// @brief  controllerListSales   	LISTADO VENTAS.
@@ -365,12 +363,9 @@ int controllerListSales(LinkedList *pListSale)
 			for (int i = 0; i < lenListPlayers; i++)
 			{
 				pSale = (sSale*) ll_get(pListSale, i);
-				if (pSale != NULL)
+				if (pSale != NULL && listOneSale(pSale) == SUCCESS)
 				{
-					if (listOneSale(pSale) == SUCCESS)
-					{
-						returncontrollerListPlayer = SUCCESS;
-					}
+					returncontrollerListPlayer = SUCCESS;
 				}
 			}
 			printf("\t\t\t\t\t\t==================================================================================================================\n");
@@ -399,8 +394,8 @@ int controllerListReportFirstCriteria(LinkedList *pListSale)
 }
 /// @brief controllerListReportSecondtCriteria			LISTA CANTIDAD Y VENTAS MAYORES A $10000.
 ///
-/// @param pListSale								LINKEDLIST VENTAS.
-/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param pListSale									LINKEDLIST VENTAS.
+/// @return 											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerListReportSecondtCriteria(LinkedList *pListSale)
 {
 	int returnControllerListReportSecondCriteria = ERROR;
@@ -412,9 +407,9 @@ int controllerListReportSecondtCriteria(LinkedList *pListSale)
 		if (pAuxLinkedList != NULL)
 		{
 			secondCriteriaCounter = ll_count(pListSale, getAmountSalesFirstCriteria);
-			if (secondCriteriaCounter > 0)
+			pAuxLinkedList = ll_filter(pListSale, getAmountSalesFirstCriteria);
+			if (secondCriteriaCounter > 0 && pAuxLinkedList != NULL)
 			{
-				pAuxLinkedList = ll_filter(pListSale, getAmountSalesFirstCriteria);
 				printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d VENTAS MAYORES A $10000\n", secondCriteriaCounter);
 				if (controllerListSales(pAuxLinkedList) == SUCCESS)
 				{
@@ -423,6 +418,7 @@ int controllerListReportSecondtCriteria(LinkedList *pListSale)
 			}
 		}
 	}
+	ll_deleteLinkedList(pAuxLinkedList);
 	return returnControllerListReportSecondCriteria;
 }
 /// @brief	controllerListReportthirdCriteria				LISTA CANTIDAD Y VENTAS MAYORES A $20000.
@@ -440,9 +436,9 @@ int controllerListReporthirdCriteria(LinkedList *pListSale)
 		if (pAuxLinkedList != NULL)
 		{
 			thirdCriteriaCounter = ll_count(pListSale, getAmountSalesSecondCriteria);
-			if (thirdCriteriaCounter > 0)
+			pAuxLinkedList = ll_filter(pListSale, getAmountSalesSecondCriteria);
+			if (thirdCriteriaCounter > 0 && pAuxLinkedList != NULL)
 			{
-				pAuxLinkedList = ll_filter(pListSale, getAmountSalesSecondCriteria);
 				printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d VENTAS MAYORES A $20000.\n", thirdCriteriaCounter);
 				if (controllerListSales(pAuxLinkedList) == SUCCESS)
 				{
@@ -451,12 +447,13 @@ int controllerListReporthirdCriteria(LinkedList *pListSale)
 			}
 		}
 	}
+	ll_deleteLinkedList(pAuxLinkedList);
 	return returnControllerListReportThirdCriteria;
 }
-/// @brief controllerListModelCarCriteria			LISTA CANTIDAD Y VENTAS DE MODELO MATRIX.
+/// @brief controllerListModelCarCriteria						LISTA CANTIDAD Y VENTAS DE MODELO MATRIX.
 ///
-/// @param pListSale								LINKEDLIST VENTAS.
-/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param pListSale											LINKEDLIST VENTAS.
+/// @return 													RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerListModelCarCriteria(LinkedList *pListSale)
 {
 	int returnControllerListReportModelCarCriteria = ERROR;
@@ -469,9 +466,9 @@ int controllerListModelCarCriteria(LinkedList *pListSale)
 		if (pAuxLinkedList != NULL)
 		{
 			modelCarCriteria = ll_count(pListSale, getModelCarCriteria);
-			if (modelCarCriteria > 0)
+			pAuxLinkedList = ll_filter(pListSale, getModelCarCriteriaMatrix);
+			if (modelCarCriteria > 0 && pAuxLinkedList != NULL)
 			{
-				pAuxLinkedList = ll_filter(pListSale, getModelCarCriteriaMatrix);
 				printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d MODELOS MATRIX VENDIDOS.\n", modelCarCriteria);
 				if (controllerListSales(pAuxLinkedList) == SUCCESS)
 				{
@@ -480,14 +477,14 @@ int controllerListModelCarCriteria(LinkedList *pListSale)
 			}
 		}
 	}
+	ll_deleteLinkedList(pAuxLinkedList);
 	return returnControllerListReportModelCarCriteria;
-
 }
 /// @brief 	controllerGeneratesReportSale			FILTRA Y GENERA INFORMES DE VENTA.
 ///
-/// @param path								PUNTERO STRING
-/// @param LinkedList						LINKEDLIST VENTAS.
-/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param path										PUNTERO STRING
+/// @param LinkedList								LINKEDLIST VENTAS.
+/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerGeneratesReportSale(char *path, LinkedList *pListSale)
 {
 	int returnControllerGenerateReportSale = ERROR;
@@ -508,19 +505,25 @@ int controllerGeneratesReportSale(char *path, LinkedList *pListSale)
 			thirdCriteriaCounter = ll_count(pListSale, getAmountSalesSecondCriteria);
 			modelCarCriteria = ll_count(pListSale, getModelCarCriteria);
 			pAuxLinkedList = ll_filter(pListSale, getModelCarCriteriaMatrix);
+
 			if (controllerSaveReportTxt(path, pAuxLinkedList, firstCriteriaCounter, secondCriteriaCounter, thirdCriteriaCounter, modelCarCriteria) == SUCCESS)
 			{
 				returnControllerGenerateReportSale = SUCCESS;
 			}
 		}
 	}
+	ll_deleteLinkedList(pAuxLinkedList);
 	return returnControllerGenerateReportSale;
 }
-/// @brief	controllerSaveReportTxt		GUARDA DATOS DE VENTE EN ARCHIVO CSV EN MODO TEXTO.
+/// @brief	controllerSaveReportTxt						GUARDA DATOS DE VENTA EN ARCHIVO TXT EN MODO TEXTO.
 ///
-/// @param path								PUNTERO STRING
-/// @param LinkedList						LINKEDLIST VENTAS.
-/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param path											PUNTERO STRING
+/// @param LinkedList									LINKEDLIST VENTAS.
+/// @param firstCriteriaCounter							ENTERO.
+/// @param secondCriteriaCounter						ENTERO.
+/// @param thirdCriteriaCounter							ENTERO.
+/// @param modelCarCriteria								ENTERO.
+/// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerSaveReportTxt(char *path, LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria)
 {
 	int returnControllerSaveSalesTextMode = ERROR;

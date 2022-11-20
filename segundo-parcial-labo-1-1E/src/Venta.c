@@ -550,7 +550,7 @@ int editOneSale(sSale *this)
 ///
 /// @param pListSale								LINKEDLIST VENTAS.
 /// @param pTotalAmount								PUNTERO ENTERO
-/// @return 										RETORNA ACUMULADOR DE CANITDAD DE ELEMENTO VENTA A PASAR POR LL_COUNT.
+/// @return 										RETORNA  CANITDAD DE ELEMENTO VENTA A CONTAR POR LL_COUNT.
 int getTotalAmountSaleCriteria(void *this)
 {
 	int returnControllerGetTotalAmountSale=0;
@@ -563,7 +563,7 @@ int getTotalAmountSaleCriteria(void *this)
 		{
 				if (getAmountSale(pSale, &auxAmount) == SUCCESS)
 				{
-					returnControllerGetTotalAmountSale+= auxAmount;
+					returnControllerGetTotalAmountSale= auxAmount;
 
 				}
 		}
@@ -573,7 +573,7 @@ int getTotalAmountSaleCriteria(void *this)
 /// @brief getAmountSalesFirstCriteria				OBTIENE CRITERIO PARA OBTENER CANTIDAD DE VENTAS MAYORES A $10000
 ///
 /// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return											RETORNA ACUMULADOR DE CANITDAD DE ELEMENTO VENTA A PASAR POR LL_COUNT.
+/// @return											RETORNA SUCCESS(1) EN CASO CORRRECTO. 0 EN CASO CONTRARIO.
 int getAmountSalesFirstCriteria(void *this)
 {
 	int returnGetAmountSalesFirstCriteria = 0;
@@ -589,7 +589,7 @@ int getAmountSalesFirstCriteria(void *this)
 			{
 				if (auxAmount * auxUnitPrice > 10000)
 				{
-					returnGetAmountSalesFirstCriteria++;
+					returnGetAmountSalesFirstCriteria=SUCCESS;
 				}
 			}
 		}
@@ -599,7 +599,7 @@ int getAmountSalesFirstCriteria(void *this)
 /// @brief getAmountSalesSecondtCriteria			OBTIENE CRITERIO PARA OBTENER CANTIDAD DE VENTAS MAYORES A  $20000
 ///
 /// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return											RETORNA ACUMULADOR DE CANITDAD DE ELEMENTO VENTA A PASAR POR LL_COUNT.
+/// @return											RETORNA SUCCESS(1) EN CASO CORRRECTO. 0 EN CASO CONTRARIO.
 int getAmountSalesSecondCriteria(void *this)
 {
 	int returnGetAmountSalesSecondCriteria = 0;
@@ -615,7 +615,7 @@ int getAmountSalesSecondCriteria(void *this)
 			{
 				if (auxAmount * auxUnitPrice > 20000)
 				{
-					returnGetAmountSalesSecondCriteria++;
+					returnGetAmountSalesSecondCriteria=SUCCESS;
 				}
 			}
 		}
@@ -626,7 +626,7 @@ int getAmountSalesSecondCriteria(void *this)
 /// @brief getModelCarCriteria						OBTIENE CRITERIO PARA OBTENER CANTIDAD DE AUTO TIPO MATRIX.
 ///
 /// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return											RETORNA ACUMULADOR DE CANITDAD DE ELEMENTO VENTA A PASAR POR LL_COUNT.
+/// @return											RETORNA  CANITDAD DE ELEMENTO VENTA A CONTAR  POR LL_COUNT.
 int getModelCarCriteria(void *this)
 {
 	int returnGetAmountSalesSecondCriteria = 0;
@@ -642,7 +642,7 @@ int getModelCarCriteria(void *this)
 			{
 				if (stricmp(auxModel, "Matrix") == 0)
 				{
-					returnGetAmountSalesSecondCriteria += auxAmount;
+					returnGetAmountSalesSecondCriteria = auxAmount;
 				}
 			}
 		}

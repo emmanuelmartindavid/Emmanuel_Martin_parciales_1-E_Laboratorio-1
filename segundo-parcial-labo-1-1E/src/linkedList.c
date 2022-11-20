@@ -10,13 +10,9 @@
 
 static Node* getNode(LinkedList *this, int nodeIndex);
 static int addNode(LinkedList *this, int nodeIndex, void *pElement);
-
-/** \brief Crea un nuevo LinkedList en memoria de manera dinamica
- *
- *  \param void
- *  \return LinkedList* Retorna (NULL) en el caso de no conseguir espacio en memoria
- *                      o el puntero al espacio reservado
- */
+/// @brief ll_newLinkedList															CREA UNA NUEVA LINKEDLIST UTILIZANDO LA FUNCION MALLOC PARA PEDIR ESPACIO EN MEMORIA DINAMICA (HEAP).
+///
+/// @return																			RETORNA PUNTERO TIPO LINKEDLIST SI PUDO RESERVA ESPACIO EN MEMORIA PARA ESTE. RETORNA NULL EN CASO CONTRARIO.
 LinkedList* ll_newLinkedList(void)
 {
 	LinkedList *this = (LinkedList*) malloc(sizeof(LinkedList));
@@ -27,13 +23,10 @@ LinkedList* ll_newLinkedList(void)
 	}
 	return this;
 }
-
-/** \brief Retorna la cantidad de elementos de la lista
- *
- * \param this LinkedList* Puntero a la lista
- * \return int Retorna (-1) si el puntero es NULL o la cantidad de elementos de la lista
- *
- */
+/// @brief ll_len																	OBTIENE LA CANTIDAD DE ELEMENTOS QUE EXISTEN EN LA LINKEDLIST.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @return																			RETORNO EL SIZE DE LINKEDLIST. RETORNA -1 EN CASO CONTRARIO.
 int ll_len(LinkedList *this)
 {
 	int retorno = -1;
@@ -43,15 +36,12 @@ int ll_len(LinkedList *this)
 	}
 	return retorno;
 }
-
-/** \brief  Obtiene un nodo de la lista
- *
- * \param this LinkedList* Puntero a la lista
- * \param index int Indice del nodo a obtener
- * \return Node* Retorna  (NULL) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
- (pNode) Si funciono correctamente
- *
- */
+/// @brief getNode																	OBTIENE UN NODO DE LA LINKEDLIST DEPENDIENDO DEL INDICE RECIBIDO POR PARAMETRO.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @param nodeIndex																ENTERO(INDICE DE NODO A OBTENER).
+/// @return																			RETORNA EL PUNTERO NODO EN CASO DE ENCONTRARSE EN LA LINKEDLIST.
+/// 																				RETORNA NULL EN CASO CONTRARIO (SI EL INDICE ES MENOR A 0 O EL MAYOR AL SIZE DE LA LINKEDLIST).
 static Node* getNode(LinkedList *this, int nodeIndex)
 {
 
@@ -78,31 +68,13 @@ static Node* getNode(LinkedList *this, int nodeIndex)
 
 	return auxNode;
 }
-
-/** \brief  Permite realizar el test de la funcion getNode la cual es privada
- *
- * \param this LinkedList* Puntero a la lista
- * \param index int Indice del nodo a obtener
- * \return Node* Retorna  (NULL) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
- (pElement) Si funciono correctamente
- *
- */
-Node* test_getNode(LinkedList *this, int nodeIndex)
-{
-
-	return getNode(this, nodeIndex);
-
-}
-
-/** \brief Agrega y enlaza un nuevo nodo a la lista
- *
- * \param this LinkedList* Puntero a la lista
- * \param nodeIndex int Ubicacion donde se agregara el nuevo nodo
- * \param pElement void* Puntero al elemento a ser contenido por el nuevo nodo
- * \return int Retorna  (-1) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
- ( 0) Si funciono correctamente
- *
- */
+/// @brief addNode																		AGREGA Y ENLAZA UN NUEVO NODO A LA LINKEDLIST.
+///
+/// @param this																			PUNTERO TIPO LINKEDLIST.
+/// @param nodeIndex																	ENTERO. DONDE SE AGREGARA EL NUEVO NODO.
+/// @param pElement																		PUNTERO VOID AL ELEMENTO A SER CONTENIDO POR EL NUEVO NODO.
+/// @return																				RETORNA -1, SI EL PUNTERO A LA LISTA ES NULL O SI EL INDICE ES MENOR A 0 O MAYOR AL SIZE DE LINKEDLIST.
+/// 																					RETORNA 0 SI FUNCIONA CORRECTAMENTE.
 static int addNode(LinkedList *this, int nodeIndex, void *pElement)
 {
 	int returnAux = -1;
@@ -127,7 +99,6 @@ static int addNode(LinkedList *this, int nodeIndex, void *pElement)
 			}
 			else
 			{
-
 				auxPrevNode = getNode(this, nodeIndex - 1);
 
 				if (auxPrevNode != NULL)
@@ -145,28 +116,11 @@ static int addNode(LinkedList *this, int nodeIndex, void *pElement)
 
 	return returnAux;
 }
-
-/** \brief Permite realizar el test de la funcion addNode la cual es privada
- *
- * \param this LinkedList* Puntero a la lista
- * \param nodeIndex int Ubicacion donde se agregara el nuevo nodo
- * \param pElement void* Puntero al elemento a ser contenido por el nuevo nodo
- * \return int Retorna  (-1) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
- ( 0) Si funciono correctamente
- *
- */
-int test_addNode(LinkedList *this, int nodeIndex, void *pElement)
-{
-	return addNode(this, nodeIndex, pElement);
-}
-
-/** \brief  Agrega un elemento a la lista
- * \param pList LinkedList* Puntero a la lista
- * \param pElement void* Puntero al elemento a ser agregado
- * \return int Retorna  (-1) Error: si el puntero a la lista es NULL
- ( 0) Si funciono correctamente
- *
- */
+/// @brief ll_add																	AGREGA UN ELEMENTO A LINKEDLIST.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @param pElement																	PUNTERO VOID AL ELEMENTO A SER AGREGADO.
+/// @return																			RETORNA -1, SI EL PUNTERO A LA LISTA ES NULL. RETORNA 0 SI FUNCIONA CORRECTAMENTE.
 int ll_add(LinkedList *this, void *pElement)
 {
 	int returnAux = -1;
@@ -180,15 +134,11 @@ int ll_add(LinkedList *this, void *pElement)
 	}
 	return returnAux;
 }
-
-/** \brief Permite realizar el test de la funcion addNode la cual es privada
- *
- * \param this LinkedList* Puntero a la lista
- * \param nodeIndex int Ubicacion del elemento a obtener
- * \return void* Retorna    (NULL) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
- (pElement) Si funciono correctamente
- *
- */
+/// @brief ll_get																	OBTIENE UN ELEMENTO DE LA LISTA SEGUN EL INDICE ESPECIFICADO.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @param index																	ENTERO. INDICE DE UBICACION DE ELEMENTO A OBTENER.
+/// @return 																		RETORNA NULL SINO FUNCIONA CORRECTAMENTE. RETORNA EL ELEMENTO EN CASO CORRECTO.
 void* ll_get(LinkedList *this, int index)
 {
 	void *returnAux = NULL;
@@ -203,16 +153,13 @@ void* ll_get(LinkedList *this, int index)
 	}
 	return returnAux;
 }
-
-/** \brief Modifica un elemento de la lista
- *
- * \param this LinkedList* Puntero a la lista
- * \param nodeIndex int Ubicacion del elemento a modificar
- * \param pElement void* Puntero al nuevo elemento
- * \return int Retorna  (-1) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
- ( 0) Si funciono correctamente
- *
- */
+/// @brief ll_set																	ESTABLECE UNA MODIFICACION EN UN ELEMENTO DE LA LINKEDLIST.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @param index																	ENTERO. UBICACION DE ELEMENTO A SER MODIFICACIÓN.
+/// @param pElement																	PUNTERO VOID DE ELEMENTO A MODIFICAR.
+/// @return																			RETORNA -1, SI EL PUNTERO A LA LISTA ES NULL O SI EL INDICE ES MENOR A 0 O MAYOR AL SIZE DE LINKEDLIST.
+/// 																				RETORNA 0 SI FUNCIONA CORRECTAMENTE.
 int ll_set(LinkedList *this, int index, void *pElement)
 {
 	int returnAux = -1;
@@ -228,15 +175,12 @@ int ll_set(LinkedList *this, int index, void *pElement)
 	}
 	return returnAux;
 }
-
-/** \brief Elimina un elemento de la lista
- *
- * \param this LinkedList* Puntero a la lista
- * \param nodeIndex int Ubicacion del elemento a eliminar
- * \return int Retorna  (-1) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
- ( 0) Si funciono correctamente
- *
- */
+/// @brief 	ll_remove																ELIMINA UN ELEMENTO DE LA LINKEDLIST.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @param index																	ENTERO. INDICE DE ELEMENTO A SER ELIMINAR.
+/// @return																			RETORNA -1, SI EL PUNTERO A LA LISTA ES NULL O SI EL INDICE ES MENOR A 0 O MAYOR AL SIZE DE LINKEDLIST.
+/// 																				RETORNA 0 SI FUNCIONA CORRECTAMENTE.
 int ll_remove(LinkedList *this, int index)
 {
 	int returnAux = -1;
@@ -268,14 +212,10 @@ int ll_remove(LinkedList *this, int index)
 	}
 	return returnAux;
 }
-
-/** \brief Elimina todos los elementos de la lista
- *
- * \param this LinkedList* Puntero a la lista
- * \return int Retorna  (-1) Error: si el puntero a la lista es NULL
- ( 0) Si funciono correctamente
- *
- */
+/// @brief ll_clear																	ELEMIMINA TODOS LOS ELEMENTOS DE LA LINKEDLIST.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @return																			RETORNA -1, SI EL PUNTERO A LA LISTA ES NULL. RETORNA 0 SI FUNCIONA CORRECTAMENTE.
 int ll_clear(LinkedList *this)
 {
 	int returnAux = -1;
@@ -291,14 +231,10 @@ int ll_clear(LinkedList *this)
 
 	return returnAux;
 }
-
-/** \brief Elimina todos los elementos de la lista y la lista
- *
- * \param this LinkedList* Puntero a la lista
- * \return int Retorna  (-1) Error: si el puntero a la lista es NULL
- ( 0) Si funciono correctamente
- *
- */
+/// @brief ll_deleteLinkedList														ELIMINA TODOS LOS ELEMENTOS DE LA LINKEDLIST Y LA LINKEDLIST.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @return																			RETORNA -1, SI EL PUNTERO A LA LISTA ES NULL. RETORNA 0 SI FUNCIONA CORRECTAMENTE.
 int ll_deleteLinkedList(LinkedList *this)
 {
 	int returnAux = -1;
@@ -310,15 +246,11 @@ int ll_deleteLinkedList(LinkedList *this)
 	}
 	return returnAux;
 }
-
-/** \brief Busca el indice de la primer ocurrencia del elemento pasado como parametro
- *
- * \param this LinkedList* Puntero a la lista
- * \param pElement void* Puntero al elemento
- * \return int Retorna  (-1) Error: si el puntero a la lista es NULL
- (indice del elemento) Si funciono correctamente
- *
- */
+/// @brief ll_indexOf																OBTIENE INDICE DE ELEMENTO DE ELEMENTO DE LA LINKEDLIST.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @param pElement																	PUNTERO VOID DE ELEMENTO.
+/// @return																			RETORNA -1, SI EL PUNTERO A LA LISTA ES NULL. RETORNA POSICION BUSCADO EN CASO DE HABER FUNCIONADO CORRECTAMENTE.
 int ll_indexOf(LinkedList *this, void *pElement)
 {
 	int returnAux = -1;
@@ -338,15 +270,11 @@ int ll_indexOf(LinkedList *this, void *pElement)
 	}
 	return returnAux;
 }
-
-/** \brief Indica si la lista esta o no vacia
- *
- * \param this LinkedList* Puntero a la lista
- * \return int Retorna  (-1) Error: si el puntero a la lista es NULL
- ( 0) Si la lista NO esta vacia
- ( 1) Si la lista esta vacia
- *
- */
+/// @brief ll_isEmpty																VERIFICA SI HAY ELEMENTOS EN LA LINKEDLIST.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @return																			RETORNA -1, SI EL PUNTERO A LA LISTA ES NULL. RETORNA 0 LA LINKEDLIST NO ESTA VACIO.
+/// 																				RETORNA 1 SI LA LINKEDLIST ESTA VACIA.
 int ll_isEmpty(LinkedList *this)
 {
 	int returnAux = -1;
@@ -363,16 +291,12 @@ int ll_isEmpty(LinkedList *this)
 	}
 	return returnAux;
 }
-
-/** \brief Inserta un nuevo elemento en la lista en la posicion indicada
- *
- * \param this LinkedList* Puntero a la lista
- * \param nodeIndex int Ubicacion donde se agregara el nuevo elemento
- * \param pElement void* Puntero al nuevo elemento
- * \return int Retorna  (-1) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
- ( 0) Si funciono correctamente
- *
- */
+/// @brief ll_push																	AGREGA UN NUEVO ELEMENTO A LA LINKEDLIST EN UNA POSICION ESPECIFICADA.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @param index																	ENTERO. POSICION DONDE SE AGREGARA EL NUEVO ELEMENTO.
+/// @param pElement																	PUNTERO VOID DE NUEVO ELEMENTO.
+/// @return																			RETORNA -1, SI EL PUNTERO A LA LISTA ES NULL. RETORNA 0 SI FUNCIONA CORRECTAMENTE.
 int ll_push(LinkedList *this, int index, void *pElement)
 {
 	int returnAux = -1;
@@ -383,15 +307,12 @@ int ll_push(LinkedList *this, int index, void *pElement)
 	}
 	return returnAux;
 }
-
-/** \brief Elimina el elemento de la posicion indicada y retorna su puntero
- *
- * \param this LinkedList* Puntero a la lista
- * \param nodeIndex int Ubicacion del elemento eliminar
- * \return void* Retorna    (NULL) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
- (pElement) Si funciono correctamente
- *
- */
+/// @brief ll_pop																	ELIMINA ELEMENTO Y DE POSICION ESPECIFICADA Y RETORNA SU PUNTERO.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @param index																	ENTERO. POSICION DE ELEMENTO A ELIMINAR.
+/// @return 																		RETORNA NULL SI EL PUNTERO ES NULL O SI EL INDICE ES MENOR A 0 O MAYOR AL SIZE DE LINKEDLIST.
+/// 																				RETORNA EL PUNTERO ELEMENTO ELIMINADO SI FUNCIONO CORRECTAMENTE.
 void* ll_pop(LinkedList *this, int index)
 {
 	void *returnAux = NULL;
@@ -407,15 +328,11 @@ void* ll_pop(LinkedList *this, int index)
 	}
 	return returnAux;
 }
-
-/** \brief  Determina si la lista contiene o no el elemento pasado como parametro
- *
- * \param this LinkedList* Puntero a la lista
- * \param pElement void* Puntero del elemento a verificar
- * \return int Retorna  (-1) Error: si el puntero a la lista es NULL
- ( 1) Si contiene el elemento
- ( 0) si No contiene el elemento
- */
+/// @brief ll_contains																VERIFICA SI LA LINKEDLIST CONTIENE O NO UN ELEMENTO RECIBIDO POR PARAMETRO.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST.
+/// @param pElement																	PUNTERO VOID DE ELEMENTO VERIFICAR.
+/// @return																			RETORNA -1, SI EL PUNTERO A LA LISTA ES NULL  RETORNA 1 SI CONTIENE EL ELEMENTO. RETORNA 0 SI NO LO CONTIENE.
 int ll_contains(LinkedList *this, void *pElement)
 {
 	int returnAux = -1;
@@ -423,25 +340,22 @@ int ll_contains(LinkedList *this, void *pElement)
 	{
 		if (ll_indexOf(this, pElement) != -1)
 		{
-			returnAux = 1; //si contiene
+			returnAux = 1;
 		}
 		else
 		{
-			returnAux = 0; //si no contiene
+			returnAux = 0;
 		}
 	}
 	return returnAux;
 }
-
-/** \brief  Determina si todos los elementos de la lista (this2)
- estan contenidos en la lista (this)
- *
- * \param this LinkedList* Puntero a la lista
- * \param this2 LinkedList* Puntero a la lista
- * \return int Retorna  (-1) Error: si alguno de los punteros a las listas son NULL
- ( 1) Si los elementos de (this2) estan contenidos en la lista (this)
- ( 0) si los elementos de (this2) NO estan contenidos en la lista (this)
- */
+/// @brief ll_containsAll															VERIFICA SI TODOS ELELEMENTOS DE LINKEDLIST THIS 2 ESTAN CONTENIDO EN LA LINKEDLIST THIS.
+///
+/// @param this																		PUNTERO TIPO LINKEDLIST THIS.
+/// @param this2																	PUNTERO TIPO LINKEDLIST THIS 2.
+/// @return																			RETORNA -1 SI ALGUNO DE LOS ELEMENTOS DE LA LISTA SON NULL.
+/// 																				RETORNA 1 SI LOS ELEMENTOS DE THIS 2 ESTAN CONTENIDOS EN THIS.
+/// 																				RETORNA 0 SI LOS ELEMENTOS DE THIS 2 NO ESTAN CONTENDIDOS EN THIS.
 int ll_containsAll(LinkedList *this, LinkedList *this2)
 {
 	int returnAux = -1;
@@ -471,17 +385,15 @@ int ll_containsAll(LinkedList *this, LinkedList *this2)
 	}
 	return returnAux;
 }
-
-/** \brief Crea y retorna una nueva lista con los elementos indicados
- *
- * \param pList LinkedList* Puntero a la lista
- * \param from int Indice desde el cual se copian los elementos en la nueva lista
- * \param to int Indice hasta el cual se copian los elementos en la nueva lista (no incluido)
- * \return LinkedList* Retorna  (NULL) Error: si el puntero a la listas es NULL
- o (si el indice from es menor a 0 o mayor al len de la lista)
- o (si el indice to es menor o igual a from o mayor al len de la lista)
- (puntero a la nueva lista) Si ok
- */
+/// @brief ll_subList																					CREA Y RETORNA UNA NUEVA LINKEDLIST CON LOS ELEMENETOS INDICADOS.
+///
+/// @param this																							PUNTERO TIPO LINKEDLIST.
+/// @param from																							ENTERO. INDICE DESDE EL CUAL SE COPIAN LOS ELELEMENTOS A LA NUEVA LISTA.
+/// @param to																							ENTERO. INDICE HASTA EL CUAL SE COPIAN LOS ELEMENTOS A LA NUEVA LISTA (INDICE NO INCLUIDO).
+/// @return																								RETORNA NULL SI EL PUNTERO A LA LISTA ES NULL O
+/// 																									SI EL INDICE FROM ES MENOR A 0 O MAYOR AL LEN DE LA LINKEDLIST 0
+/// 																									SI EL INDICE TO ES MENOR O IGUAL A FROM O MAYOR AL LEN DE LA LISTA.
+/// 																									RETORNA PUNTERO A NUEVA LISTA SI SALIO DE FORMA CORRECTA.
 LinkedList* ll_subList(LinkedList *this, int from, int to)
 {
 	LinkedList *cloneArray = NULL;
@@ -503,13 +415,11 @@ LinkedList* ll_subList(LinkedList *this, int from, int to)
 	}
 	return cloneArray;
 }
-
-/** \brief Crea y retorna una nueva lista con los elementos de la lista pasada como parametro
- *
- * \param pList LinkedList* Puntero a la lista
- * \return LinkedList* Retorna  (NULL) Error: si el puntero a la listas es NULL
- (puntero a la nueva lista) Si ok
- */
+/// @brief ll_clone																			CREA Y RETORNA UNA NUEVA LINKEDLIST CON TODOS LOS ELEMENTOS DE LA LINKEDLIST RECIBIDA POR PARAMETRO.
+///
+/// @param this																				PUNTERO TIPO LINKEDLIST.
+/// @return																					RETORNA NULL SI EL PUNTERO A LINKEDLIST ES NULL.
+/// 																						RETORNA EL PUNTERO DE NUEVA LINKEDLIST EN CASO CORRECTO.
 LinkedList* ll_clone(LinkedList *this)
 {
 	LinkedList *cloneArray = NULL;
@@ -519,14 +429,15 @@ LinkedList* ll_clone(LinkedList *this)
 	}
 	return cloneArray;
 }
-
-/** \brief Ordena los elementos de la lista utilizando la funcion criterio recibida como parametro
- * \param pList LinkedList* Puntero a la lista
- * \param pFunc (*pFunc) Puntero a la funcion criterio
- * \param order int  [1] Indica orden ascendente - [0] Indica orden descendente
- * \return int Retorna  (-1) Error: si el puntero a la listas es NULL
- ( 0) Si ok
- */
+/// @brief ll_sort																			ORDENA LOS ELEMENTOS DE LA LINKEDLIST SEGUN FUNCION CRITERIO RECIBIDA POR PARAMETRO.
+///
+/// @param this																				PUNTERO TIPO LINKEDLIST.
+/// @param pFunc																			PUNTERO FUNCION CRITERIO.
+/// @param order																			ENTERO.
+/// 																						1 INDICA ORDEN ASCENDENTE.
+/// 																						0 INDICA ORDEN DESCENDENTE.
+/// @return																					RETORNA -1 SI EL PUNTERO A LINKEDLIST ES NULL.
+/// 																						RETORNA 0 SI FUNCIONO CORRECTAMENTE.
 int ll_sort(LinkedList *this, int (*pFunc)(void*, void*), int order)
 {
 	int returnAux = -1;
@@ -562,11 +473,12 @@ int ll_sort(LinkedList *this, int (*pFunc)(void*, void*), int order)
 	return returnAux;
 
 }
-/** \brief filtra por algun criterio y devuelve una nueva linkedList con los elementos cargados.
- * \param pList LinkedList* Puntero a la lista
- * \param pFunc (*pFunc) Puntero a la funcion criterio
- * \return retorna puntero tipo linkedList o NULL.
- */
+/// @brief ll_filter																				FILTRA SEGUN FUNCION CRITERIO Y DEVUELVE UNA NUEVA LINKEDLIST CON LOS ELELEMENTOS CARGADOS.
+///
+/// @param this																						PUNTERO TIPO LINKEDLIST.
+/// @param pFunc																					PUNTERO FUNCION CRITERIO.
+/// @return																							RETORNA NULL SI EL PUNTERO A LINKEDLIST ES NULL EN CASO ERROR.
+/// 																								RETORNA PUNTERO LINKEDLIST CON LA NUEVA LISTA EN CASO CORRECTO.
 LinkedList* ll_filter(LinkedList *this, int (*pFunc)(void*))
 {
 	LinkedList *filterList = NULL;
@@ -593,16 +505,17 @@ LinkedList* ll_filter(LinkedList *this, int (*pFunc)(void*))
 
 	return filterList;
 }
-/** \brief filtra por algun criterio y devuelde una nueva linkedList con todos los elementos modificados por ese criterio.
- * \param pList LinkedList* Puntero a la lista
- * \param pFunc (*pFunc) Puntero a la funcion criterio
- * \return retorna puntero tipo linkedList o NULL.
- */
-LinkedList* ll_map(LinkedList *this, void (*fn)(void*))
+/// @brief ll_map																				PERMITE A FUNCION CRITERIO MODIFICAR ALGUNO DE LOS CAMPOS DE ELEMENTO EN CASO DE SER NECESARIO.
+/// 																							QUEDANDO ASI AL FINAL DE LA ITERACION TODOS LOS ELEMENTOS MODIFICADOS SEGUN EL CRITERIO.
+/// @param this																					PUNTERO TIPO LINKEDLIST.
+/// @param pFunc																				PUNTERO FUNCION CRITERIO.
+/// @return																						RETORNA NULL SI EL PUNTERO A LINKEDLIST ES NULL EN CASO ERROR.
+/// 																							RETORNA PUNTERO LINKEDLIST CON LA NUEVA LISTA EN CASO CORRECTO.
+LinkedList* ll_map(LinkedList *this, void (*pFunc)(void*))
 {
 	int lenList;
 	void *auxElement;
-	if (this != NULL && fn != NULL)
+	if (this != NULL && pFunc != NULL)
 	{
 		lenList = ll_len(this);  //INDEX DE ULTIMO ELEMENTO VA A SER MENOR AL TOTAL DE LOS ELEMENTOS.N-1
 		if (lenList > 0)
@@ -612,22 +525,22 @@ LinkedList* ll_map(LinkedList *this, void (*fn)(void*))
 				auxElement = ll_get(this, i);
 				if (auxElement != NULL)
 				{
-					fn(auxElement);
+					pFunc(auxElement);
 				}
 			}
-
 		}
 	}
 	return this;
 }
-/** \brief cuenta elementos de la lista bajo algun criterio.
- * \param pList LinkedList* Puntero a la lista
- * \param pFunc (*pFunc) Puntero a la funcion criterio
- * \return retorna la cantidad contada.
- */
+/// @brief ll_count																				CUENTA ELEMENTOS DE LA LISTA SEGUN FUNCION CRITERIO.
+///
+/// @param this																					PUNTERO TIPO LINKEDLIST.
+/// @param pFunc																				PUNTERO FUNCION CRITERIO.
+/// @return																						RETORNA 0 SINO CONTO NADA.
+/// 																							RETORNA CONTADOR/ACUMULADOR DE ELEMENTOS CONTADOS.
 int ll_count(LinkedList *this, int (*pFunc)(void*))
 {
-	int counter = 0;
+	int returnLl_count = 0;
 	int lenList;
 	void *auxElement;
 	if (this != NULL && pFunc != NULL)
@@ -641,10 +554,10 @@ int ll_count(LinkedList *this, int (*pFunc)(void*))
 
 				if (auxElement != NULL)
 				{
-					counter += pFunc(auxElement);
+					returnLl_count += pFunc(auxElement);
 				}
 			}
 		}
 	}
-	return counter;
+	return returnLl_count;
 }

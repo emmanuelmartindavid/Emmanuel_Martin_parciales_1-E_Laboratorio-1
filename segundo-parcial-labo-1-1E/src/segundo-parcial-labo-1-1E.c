@@ -124,17 +124,17 @@ int main(void)
 				{
 					if (controllerListReportFirstCriteria(listSale) == SUCCESS)
 					{
-						if(controllerListReportSecondtCriteria(listSale)!=SUCCESS)
+						if (controllerListReportSecondtCriteria(listSale) != SUCCESS)
 						{
 							printf("\n\t\t\t\t\t\t\t\t\t\tNO CUENTA CON  VENTAS MAYORES A $10000\n");
 						}
-						if(controllerListReporthirdCriteria(listSale)!=SUCCESS)
+						if (controllerListReporthirdCriteria(listSale) != SUCCESS)
 						{
 							printf("\n\t\t\t\t\t\t\t\t\t\tNO CUENTA CON  VENTAS MAYORES A $20000\n");
 						}
-						if(controllerListModelCarCriteria(listSale)!=SUCCESS)
+						if (controllerListModelCarCriteria(listSale) != SUCCESS)
 						{
-							printf("\n\t\t\t\t\t\t\t\t\tSIN ELEMENTOS COINCIDENTES A MODELO MATRIX.\n");
+							printf("\n\t\t\t\t\t\t\t\t\t\tSIN ELEMENTOS COINCIDENTES A MODELO MATRIX.\n");
 						}
 					}
 				}
@@ -153,7 +153,7 @@ int main(void)
 					}
 					else
 					{
-						printf("\n\t\t\t\t\t\t\t\t\t\tHA OCURRIDO UN PROBLEMA AL GENERAR EL INFORME TXT.\n");
+						printf("\n\t\t\t\t\t\t\t\t\tINFORME TXT GENERADO. NO HAY MODELOS MATRIX EN SU TXT.\n");
 					}
 				}
 				else

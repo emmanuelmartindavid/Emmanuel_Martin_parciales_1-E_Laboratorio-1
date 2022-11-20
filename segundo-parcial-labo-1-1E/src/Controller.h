@@ -61,12 +61,12 @@ int controllerAddSale(LinkedList *pListSale, int *idSale);
 /// @brief controllerRemoveSale		EDITAR DE VENTA.
 ///
 /// @param pListSale				LINKEDLIST VENTAS.
-/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO(MODIFICACION HECHA). ERROR(-1) EN CASO CONTRARIO. RETORNA NOEDIT(3) EN CASO DE NO HABER HECHO NINGUNA MODIFIACION.
 int controllerEditSale(LinkedList *pListSale);
 /// @brief controllerRemoveSale		BAJA DE VENTA.
 ///
 /// @param pArrayListPlayer			LINKEDLIST VENTAS.
-/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO. RETORNA REMOVECANCEL(-2) EN CASO DE CANCELAR BAJA. RETORNA NOSALE(-2) EN CASO DE QUE NO EXISTA LA VENTA.
 int controllerRemoveSale(LinkedList *pListSale);
 /// @brief  controllerListSales   	LISTADO VENTAS.
 ///
@@ -99,11 +99,15 @@ int controllerListModelCarCriteria(LinkedList *pListSale);
 /// @param LinkedList						LINKEDLIST VENTAS.
 /// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerGeneratesReportSale(char *path, LinkedList *pListSale);
-/// @brief	controllerSaveReportTxt		GUARDA DATOS DE VENTE EN ARCHIVO CSV EN MODO TEXTO.
+/// @brief	controllerSaveReportTxt						GUARDA DATOS DE VENTA EN ARCHIVO TXT EN MODO TEXTO.
 ///
-/// @param path								PUNTERO STRING
-/// @param LinkedList						LINKEDLIST VENTAS.
-/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param path											PUNTERO STRING
+/// @param LinkedList									LINKEDLIST VENTAS.
+/// @param firstCriteriaCounter							ENTERO.
+/// @param secondCriteriaCounter						ENTERO.
+/// @param thirdCriteriaCounter							ENTERO.
+/// @param modelCarCriteria								ENTERO.
+/// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerSaveReportTxt(char *path, LinkedList *pListSale, int firstCriteriaCounter, int secondCriteriaCounter, int thirdCriteriaCounter, int modelCarCriteria);
 
 #endif /* CONTROLLER_H_ */
