@@ -554,22 +554,19 @@ int ll_sort(LinkedList *this, int (*pFunc)(void*, void*), int order)
 					ll_set(this, i + 1, auxElement);
 					estaOrdenado = 0;
 				}
-
 			}
 
 		} while (estaOrdenado == 0);
-
 		returnAux = 0;
 	}
-
 	return returnAux;
 
 }
-/// @brief
-///
-/// @param this
-/// @param pFunc
-/// @return
+/** \brief filtra por algun criterio y devuelve una nueva linkedList con los elementos cargados.
+ * \param pList LinkedList* Puntero a la lista
+ * \param pFunc (*pFunc) Puntero a la funcion criterio
+ * \return retorna puntero tipo linkedList o NULL.
+ */
 LinkedList* ll_filter(LinkedList *this, int (*pFunc)(void*))
 {
 	LinkedList *filterList = NULL;
@@ -596,12 +593,38 @@ LinkedList* ll_filter(LinkedList *this, int (*pFunc)(void*))
 
 	return filterList;
 }
+/** \brief filtra por algun criterio y devuelde una nueva linkedList con todos los elementos modificados por ese criterio.
+ * \param pList LinkedList* Puntero a la lista
+ * \param pFunc (*pFunc) Puntero a la funcion criterio
+ * \return retorna puntero tipo linkedList o NULL.
+ */
+LinkedList* ll_map(LinkedList *this, void (*fn)(void*))
+{
+	int lenList;
+	void *auxElement;
+	if (this != NULL && fn != NULL)
+	{
+		lenList = ll_len(this);  //INDEX DE ULTIMO ELEMENTO VA A SER MENOR AL TOTAL DE LOS ELEMENTOS.N-1
+		if (lenList > 0)
+		{
+			for (int i = 0; i < lenList; i++)
+			{
+				auxElement = ll_get(this, i);
+				if (auxElement != NULL)
+				{
+					fn(auxElement);
+				}
+			}
 
-/// @brief
-///
-/// @param this
-/// @param pFunc
-/// @return
+		}
+	}
+	return this;
+}
+/** \brief cuenta elementos de la lista bajo algun criterio.
+ * \param pList LinkedList* Puntero a la lista
+ * \param pFunc (*pFunc) Puntero a la funcion criterio
+ * \return retorna la cantidad contada.
+ */
 int ll_count(LinkedList *this, int (*pFunc)(void*))
 {
 	int counter = 0;
@@ -618,7 +641,7 @@ int ll_count(LinkedList *this, int (*pFunc)(void*))
 
 				if (auxElement != NULL)
 				{
-					counter+=pFunc(auxElement);
+					counter += pFunc(auxElement);
 				}
 			}
 		}

@@ -61,7 +61,7 @@ int getIdSale(sSale *this, int *pId);
 /// @brief setDaySale									SETEA DIA DE VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param 	day											PUNTERO ENTERO.
+/// @param 	day										    ENTERO.
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setDaySale(sSale *this, short day);
 /// @brief getDaySale									OBTIENE DIA DE VENTA.
@@ -85,13 +85,13 @@ int getMonthSale(sSale *this, short *pMonth);
 /// @brief setYearSale 									SETEA POSICION DE JUGADOR.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param pYear										ENTERO.
+/// @param year											ENTERO.
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setYearSale(sSale *this, short year);
 /// @brief getYearSale									OBTIENE POSICION DE JUGADOR.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param position										PUNTERO ENTERO.
+/// @param pYear										PUNTERO ENTERO.
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getYearSale(sSale *this, short *pYear);
 /// @brief setModelSale									SETEA NACIONALIDAD DE JUGADOR.
@@ -112,106 +112,106 @@ int getModelSale(sSale *this, char *pModel);
 /// @param amount										ENTERO
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setAmountSale(sSale *this, short amount);
-/// @brief getIdNationalTeamPLayer						OBTIENE CANTIDAD DE VENTA.
+/// @brief getAmountSale								OBTIENE CANTIDAD DE VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @param pAmount										PUNTERO ENTERO.
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getAmountSale(sSale *this, short *pAmount);
-/// @brief	setUnitPriceSale							SETEA PRECIO UNITARIO DE VENTA.
+/// @brief	setUnitPriceSale										SETEA PRECIO UNITARIO DE VENTA.
 ///
-/// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param idNationalTeam								FLOTANTE
-/// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this														PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @param unitPrice												FLOTANTE
+/// @return															RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setUnitPriceSale(sSale *this, float unitPrice);
-/// @brief getIdNationalTeamPLayer						OBTIENE PRECIO UNITARIO DE VENTA.
+/// @brief getUnitPriceSale											OBTIENE PRECIO UNITARIO DE VENTA.
 ///
-/// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param pUnitPrice									PUNTERO FLOTANTE.
-/// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this														PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @param pUnitPrice												PUNTERO FLOTANTE.
+/// @return															RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getUnitPriceSale(sSale *this, float *pUnitPrice);
-/// @brief	setIdNationalTeamPlayer						SETEA NUMERO DE TARJETA DE CREDITO DE VENTA.
+/// @brief	setCreditCardNumber										SETEA NUMERO DE TARJETA DE CREDITO DE VENTA.
 ///
-/// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param creditCardNumber								ENTERO
-/// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this														PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @param creditCardNumber											ENTERO
+/// @return															RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setCreditCardNumber(sSale *this, char *pCreditCardNumber);
-/// @brief getIdNationalTeamPLayer						OBTIENE NUMERO DE TARJETA DE CREDITO DE VENTA.
+/// @brief getCreditCardNumber										OBTIENE NUMERO DE TARJETA DE CREDITO DE VENTA.
 ///
-/// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param pCreditCardNumber							PUNTERO ENTERO.
-/// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this														PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @param pCreditCardNumber										PUNTERO ENTERO.
+/// @return															RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getCreditCardNumber(sSale *this, char *pCreditCardNumber);
-/// @brief editDaySale							EDICION DE CANTIDAD DE VENTA.
+/// @brief editDaySale											EDICION DE CANTIDAD DE VENTA.
 ///
-/// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editDaySale(sSale *this);
-/// @brief editMonthSale						EDICION DE MES DE VENTA.
+/// @brief editMonthSale										EDICION DE MES DE VENTA.
 ///
-/// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editMonthSale(sSale *this);
-/// @brief editYearSale							EDICION DE ANIO DE VENTA.
+/// @brief editYearSale											EDICION DE ANIO DE VENTA.
 ///
-/// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editYearSale(sSale *this);
-/// @brief editModel								EDICION DE MODELO DE VEHICULO.
+/// @brief editModel											EDICION DE MODELO DE VEHICULO.
 ///
-/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editModel(sSale *this);
-/// @brief editAmountSale						EDICION DE CANTIDAD DE VENTA.
+/// @brief editAmountSale										EDICION DE CANTIDAD DE VENTA.
 ///
-/// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editAmountSale(sSale *this);
-/// @brief editUnitPriceSale					EDICION DE PRECIO UNITARIO DE VENTA.
+/// @brief editUnitPriceSale									EDICION DE PRECIO UNITARIO DE VENTA.
 ///
-/// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editUnitPriceSale(sSale *this);
-/// @brief editCreditCardNumber					EDICION DE NUMERO DE TARJETA DE CREDITO.
+/// @brief editCreditCardNumber									EDICION DE NUMERO DE TARJETA DE CREDITO.
 ///
-/// @param this									PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editCreditCardNumber(sSale *this);
-/// @brief editOneSale				EDICION DE UNA VENTA.
+/// @brief editOneSale											EDICION DE UNA VENTA.
 ///
-/// @param this						PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return							RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO. RETORNO 3 EN CASO DE NO HABER REALIZADO MODIFICACIONES EN LA VENTA.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO. RETORNO 3 EN CASO DE NO HABER REALIZADO MODIFICACIONES EN LA VENTA.
 int editOneSale(sSale *this);
-/// @brief gtTotalAmountSaleCriteria				OBTIENE CRITERIO PARA OBTENER TOTAL DE  UNIDADES DE VENTA.
+/// @brief gtTotalAmountSaleCriteria							OBTIENE CRITERIO PARA OBTENER TOTAL DE  UNIDADES DE VENTA.
 ///
-/// @param pListSale								LINKEDLIST VENTAS.
-/// @param pTotalAmount								PUNTERO ENTERO
-/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param pListSale											LINKEDLIST VENTAS.
+/// @param pTotalAmount											PUNTERO ENTERO
+/// @return 													RETORNA ACUMULADOR DE CANITDAD DE ELEMENTO VENTA A PASAR POR LL_COUNT.
 int getTotalAmountSaleCriteria(void *this);
-/// @brief getAmountSalesFirstCriteria			OBTIENE CRITERIO DE PRECIOS POR VENTA MAYORES $10000
+/// @brief getAmountSalesFirstCriteria							OBTIENE CRITERIO DE PRECIOS POR VENTA MAYORES $10000
 ///
-/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNA ACUMULADOR DE CANITDAD DE ELEMENTO VENTA A PASAR POR LL_COUNT.
 int getAmountSalesFirstCriteria(void *this);
-/// @brief getGetAmountSalesSecondtCriteria			OBTIENE CRITERIO DE PRECIOS POR VENTA MAYORES $20000
+/// @brief getGetAmountSalesSecondtCriteria						OBTIENE CRITERIO DE PRECIOS POR VENTA MAYORES $20000
 ///
-/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNA ACUMULADOR DE CANITDAD DE ELEMENTO VENTA A PASAR POR LL_COUNT.
 int getAmountSalesSecondCriteria(void *this);
-/// @brief getModelCarCriteria						OBTIENE CRITERIO DE MODELO DE AUTO TIPO MATRIX.
+/// @brief getModelCarCriteria									OBTIENE CRITERIO DE MODELO DE AUTO TIPO MATRIX.
 ///
-/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNA ACUMULADOR DE CANITDAD DE ELEMENTO VENTA A PASAR POR LL_COUNT.
 int getModelCarCriteria(void *this);
-/// @brief getModelCarCriteria						OBTIENE CRITERIO PARA OBTENER VENTAS DE TIPO DE MODELO MATRIX.
+/// @brief getModelCarCriteria									OBTIENE CRITERIO PARA OBTENER VENTAS DE TIPO DE MODELO MATRIX.
 ///
-/// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getModelCarCriteriaMatrix(void *this);
-/// @brief	listOneSale								LISTA UNA VENTA.
+/// @brief	listOneSale											LISTA UNA VENTA.
 ///
-/// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
+/// @return														RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int listOneSale(sSale *this);
 /// @brief
 ///

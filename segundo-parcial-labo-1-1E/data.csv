@@ -29,3 +29,4 @@ ID_Venta ,Fecha_Venta,Modelo_Auto,Cantidad,Precio_Unitario,Tarjeta_De_Credito
 28,29/01/2022,Pagani,3,$3795.62,4017958748465558
 29,28/01/2021,Neon,4,$2147.84,4041596055798
 30,17/02/2021,Frontier,3,$7639.05,4017952376658758
+

@@ -412,11 +412,14 @@ int controllerListReportSecondtCriteria(LinkedList *pListSale)
 		if (pAuxLinkedList != NULL)
 		{
 			secondCriteriaCounter = ll_count(pListSale, getAmountSalesFirstCriteria);
-			pAuxLinkedList = ll_filter(pListSale, getAmountSalesFirstCriteria);
-			printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d VENTAS MAYORES A $10000\n", secondCriteriaCounter);
-			if (controllerListSales(pAuxLinkedList) == SUCCESS)
+			if (secondCriteriaCounter > 0)
 			{
-				returnControllerListReportSecondCriteria = SUCCESS;
+				pAuxLinkedList = ll_filter(pListSale, getAmountSalesFirstCriteria);
+				printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d VENTAS MAYORES A $10000\n", secondCriteriaCounter);
+				if (controllerListSales(pAuxLinkedList) == SUCCESS)
+				{
+					returnControllerListReportSecondCriteria = SUCCESS;
+				}
 			}
 		}
 	}
@@ -437,11 +440,14 @@ int controllerListReporthirdCriteria(LinkedList *pListSale)
 		if (pAuxLinkedList != NULL)
 		{
 			thirdCriteriaCounter = ll_count(pListSale, getAmountSalesSecondCriteria);
-			pAuxLinkedList = ll_filter(pListSale, getAmountSalesSecondCriteria);
-			printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d VENTAS MAYORES A $20000.\n", thirdCriteriaCounter);
-			if (controllerListSales(pAuxLinkedList) == SUCCESS)
+			if (thirdCriteriaCounter > 0)
 			{
-				returnControllerListReportThirdCriteria = SUCCESS;
+				pAuxLinkedList = ll_filter(pListSale, getAmountSalesSecondCriteria);
+				printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d VENTAS MAYORES A $20000.\n", thirdCriteriaCounter);
+				if (controllerListSales(pAuxLinkedList) == SUCCESS)
+				{
+					returnControllerListReportThirdCriteria = SUCCESS;
+				}
 			}
 		}
 	}
@@ -462,13 +468,15 @@ int controllerListModelCarCriteria(LinkedList *pListSale)
 
 		if (pAuxLinkedList != NULL)
 		{
-
 			modelCarCriteria = ll_count(pListSale, getModelCarCriteria);
-			pAuxLinkedList = ll_filter(pListSale, getModelCarCriteriaMatrix);
-			printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d MODELOS MATRIX VENDIDOS.\n", modelCarCriteria);
-			if (controllerListSales(pAuxLinkedList) == SUCCESS)
+			if (modelCarCriteria > 0)
 			{
-				returnControllerListReportModelCarCriteria = SUCCESS;
+				pAuxLinkedList = ll_filter(pListSale, getModelCarCriteriaMatrix);
+				printf("\n\t\t\t\t\t\t\t\t\t\tCUENTA CON %d MODELOS MATRIX VENDIDOS.\n", modelCarCriteria);
+				if (controllerListSales(pAuxLinkedList) == SUCCESS)
+				{
+					returnControllerListReportModelCarCriteria = SUCCESS;
+				}
 			}
 		}
 	}

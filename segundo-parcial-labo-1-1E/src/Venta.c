@@ -100,7 +100,7 @@ int getIdSale(sSale *this, int *pId)
 /// @brief setDaySale									SETEA DIA DE VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param 	day											PUNTERO ENTERO.
+/// @param day											ENTERO.
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setDaySale(sSale *this, short day)
 {
@@ -165,7 +165,7 @@ int getMonthSale(sSale *this, short *pMonth)
 /// @brief setYearSale 									SETEA POSICION DE JUGADOR.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param pYear										ENTERO.
+/// @param year										    ENTERO.
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setYearSale(sSale *this, short year)
 {
@@ -181,7 +181,7 @@ int setYearSale(sSale *this, short year)
 /// @brief getYearSale									OBTIENE POSICION DE JUGADOR.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param position										PUNTERO ENTERO.
+/// @param pYear										PUNTERO ENTERO.
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getYearSale(sSale *this, short *pYear)
 {
@@ -260,7 +260,7 @@ int getAmountSale(sSale *this, short *pAmount)
 /// @brief	setUnitPriceSale							SETEA PRECIO UNITARIO DE VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @param idNationalTeam								FLOTANTE
+/// @param unitPrice								    FLOTANTE
 /// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setUnitPriceSale(sSale *this, float unitPrice)
 {
@@ -273,7 +273,7 @@ int setUnitPriceSale(sSale *this, float unitPrice)
 
 	return returnSerUnitPriceSale;
 }
-/// @brief getIdNationalTeamPLayer						OBTIENE PRECIO UNITARIO DE VENTA.
+/// @brief getUnitPriceSale								OBTIENE PRECIO UNITARIO DE VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @param pUnitPrice									PUNTERO FLOTANTE.
@@ -289,7 +289,7 @@ int getUnitPriceSale(sSale *this, float *pUnitPrice)
 
 	return returnGetUnitPriceSale;
 }
-/// @brief	setIdNationalTeamPlayer						SETEA NUMERO DE TARJETA DE CREDITO DE VENTA.
+/// @brief	setCreditCardNumber							SETEA NUMERO DE TARJETA DE CREDITO DE VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @param creditCardNumber								PUNTERO SRING
@@ -305,7 +305,7 @@ int setCreditCardNumber(sSale *this, char *pCreditCardNumber)
 
 	return returnSetCreditCardNumber;
 }
-/// @brief getIdNationalTeamPLayer						OBTIENE NUMERO DE TARJETA DE CREDITO DE VENTA.
+/// @brief getCreditCardNumber						OBTIENE NUMERO DE TARJETA DE CREDITO DE VENTA.
 ///
 /// @param this											PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @param pCreditCardNumber							PUNTERO STRING.
@@ -550,7 +550,7 @@ int editOneSale(sSale *this)
 ///
 /// @param pListSale								LINKEDLIST VENTAS.
 /// @param pTotalAmount								PUNTERO ENTERO
-/// @return 										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @return 										RETORNA ACUMULADOR DE CANITDAD DE ELEMENTO VENTA A PASAR POR LL_COUNT.
 int getTotalAmountSaleCriteria(void *this)
 {
 	int returnControllerGetTotalAmountSale=0;
@@ -573,7 +573,7 @@ int getTotalAmountSaleCriteria(void *this)
 /// @brief getAmountSalesFirstCriteria				OBTIENE CRITERIO PARA OBTENER CANTIDAD DE VENTAS MAYORES A $10000
 ///
 /// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @return											RETORNA ACUMULADOR DE CANITDAD DE ELEMENTO VENTA A PASAR POR LL_COUNT.
 int getAmountSalesFirstCriteria(void *this)
 {
 	int returnGetAmountSalesFirstCriteria = 0;
@@ -599,7 +599,7 @@ int getAmountSalesFirstCriteria(void *this)
 /// @brief getAmountSalesSecondtCriteria			OBTIENE CRITERIO PARA OBTENER CANTIDAD DE VENTAS MAYORES A  $20000
 ///
 /// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @return											RETORNA ACUMULADOR DE CANITDAD DE ELEMENTO VENTA A PASAR POR LL_COUNT.
 int getAmountSalesSecondCriteria(void *this)
 {
 	int returnGetAmountSalesSecondCriteria = 0;
@@ -626,7 +626,7 @@ int getAmountSalesSecondCriteria(void *this)
 /// @brief getModelCarCriteria						OBTIENE CRITERIO PARA OBTENER CANTIDAD DE AUTO TIPO MATRIX.
 ///
 /// @param this										PUNTERO DE TIPO ESTRUCTURA VENTA.
-/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// @return											RETORNA ACUMULADOR DE CANITDAD DE ELEMENTO VENTA A PASAR POR LL_COUNT.
 int getModelCarCriteria(void *this)
 {
 	int returnGetAmountSalesSecondCriteria = 0;

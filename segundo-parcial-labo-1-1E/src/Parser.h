@@ -24,7 +24,7 @@ int parserSaleFromBinary(FILE *pFile, LinkedList *pListSale);
 /// @brief parserIdSaleFromText 	PARSEA DATO DE ID VENTA A DAR DE ALTA DESDE ARCHIVO CSV EN MODO TEXTO.
 ///
 /// @param pFile					PUNTERO A FILE.
-/// @param pIdSale				PUNTERO ENTERO.
+/// @param pIdSale					PUNTERO ENTERO.
 /// @return							RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int parserIdSaleFromText(FILE *pFile, int *pIdSale);
 

@@ -22,7 +22,8 @@ int main(void)
 
 	LinkedList *listSale = ll_newLinkedList();
 	int optionMainMenu;
-	int flagExit = 0;
+	int flagExit = 2;
+	int flagAdd = 0;
 	int returnRemoveSale;
 	int returnEditSale;
 	int idSale;
@@ -32,14 +33,14 @@ int main(void)
 	do
 	{
 		showMainMenu();
-		if (utn_getNumber(&optionMainMenu, "\nINGRESE OPCION.\n", "ERROR. REINTENTE.\n", 1, 8, 3) == 0)
+		if (utn_getNumber(&optionMainMenu, "\n\n\t\t\t\t\t\t\t\t\t\t\tINGRESE OPCION.\n", "\n\t\t\t\t\t\t\t\t\t\t\tERROR. REINTENTE.\n", 1, 8, 3) == 0)
 		{
 			switch (optionMainMenu)
 			{
 			case 1:
 				if (ll_isEmpty(listSale) == 1)
 				{
-					if (controllerLoadSaleFromText("data.csv", listSale) == SUCCESS && controllerLoadIdSaleFromText("idAutoincremental.txt", &idSale) == SUCCESS && controllerListSales(listSale) == SUCCESS)
+					if (controllerLoadSaleFromText("data.csv", listSale) == SUCCESS && controllerListSales(listSale) == SUCCESS)
 					{
 						printf("\n\t\t\t\t\t\t\tSE HA CARGADO EXITOSAMENTE SU ARCHIVO DE TEXTO. EL CUAL CONTIENE LOS ELEMENTOS LISTADOS.\n");
 					}
@@ -54,21 +55,17 @@ int main(void)
 				}
 				break;
 			case 2:
-
-				if (ll_isEmpty(listSale) == 0)
+				if ((ll_isEmpty(listSale) == 0 || flagAdd == 0) && controllerLoadIdSaleFromText("idAutoincremental.txt", &idSale) == SUCCESS)
 				{
 					if (controllerAddSale(listSale, &idSale) == SUCCESS)
 					{
 						printf("\n\t\t\t\t\t\t\t\t\t\t\tALTA DE VENTA EXITOSA.\n");
+						flagExit = 1;
 					}
 					else
 					{
 						printf("\n\t\t\t\t\t\t\t\t\t\t\tDATOS INVALIDOS. REINTENTE.\n");
 					}
-				}
-				else
-				{
-					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR EL ARCHIVO DE TEXTO.\n");
 				}
 				break;
 			case 3:
@@ -78,6 +75,7 @@ int main(void)
 					if (returnEditSale == SUCCESS)
 					{
 						printf("\n\t\t\t\t\t\t\t\t\t\tVENTA MODIFICADA EXITOSAMENTE.\n");
+						flagExit = 1;
 					}
 					else if (returnEditSale == ERROR)
 					{
@@ -90,7 +88,7 @@ int main(void)
 				}
 				else
 				{
-					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO.\n");
+					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO. O DAR AL MENOS UNA VENTA DE ALTA.\n");
 				}
 				break;
 			case 4:
@@ -100,6 +98,7 @@ int main(void)
 					if (returnRemoveSale == SUCCESS)
 					{
 						printf("\n\t\t\t\t\t\t\t\t\tVENTA DADA DE BAJA EXITOSAMENTE.\n");
+						flagExit = 1;
 
 					}
 					else if (returnRemoveSale == ERROR)
@@ -117,33 +116,40 @@ int main(void)
 				}
 				else
 				{
-					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR EL ARCHIVO DE TEXTO.\n");
+					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO. O DAR AL MENOS UNA VENTA DE ALTA.\n");
 				}
 				break;
 			case 5:
 				if (ll_isEmpty(listSale) == 0)
 				{
-
-					if (controllerListReportFirstCriteria(listSale) == SUCCESS && controllerListReportSecondtCriteria(listSale) == SUCCESS && controllerListReporthirdCriteria(listSale) == SUCCESS && controllerListModelCarCriteria(listSale) == SUCCESS)
+					if (controllerListReportFirstCriteria(listSale) == SUCCESS)
 					{
-						printf("\n\t\t\t\t\t\t\t\t\t\t\t\tINFORMES.\n");
-					}
-					else
-					{
-						printf("\n\t\t\t\t\t\t\t\t\t\tHA OCURRIDO UN PROBLEMA.\n");
+						if(controllerListReportSecondtCriteria(listSale)!=SUCCESS)
+						{
+							printf("\n\t\t\t\t\t\t\t\t\t\tNO CUENTA CON  VENTAS MAYORES A $10000\n");
+						}
+						if(controllerListReporthirdCriteria(listSale)!=SUCCESS)
+						{
+							printf("\n\t\t\t\t\t\t\t\t\t\tNO CUENTA CON  VENTAS MAYORES A $20000\n");
+						}
+						if(controllerListModelCarCriteria(listSale)!=SUCCESS)
+						{
+							printf("\n\t\t\t\t\t\t\t\t\tSIN ELEMENTOS COINCIDENTES A MODELO MATRIX.\n");
+						}
 					}
 				}
 				else
 				{
-					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR EL ARCHIVO DE TEXTO.\n");
+					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO. O DAR AL MENOS UNA VENTA DE ALTA.\n");
 				}
 				break;
 			case 6:
 				if (ll_isEmpty(listSale) == 0)
 				{
-					if (controllerGeneratesReportSale("Informes.txt", listSale) == SUCCESS)
+					if (controllerGeneratesReportSale("informe.txt", listSale) == SUCCESS)
 					{
 						printf("\n\t\t\t\t\t\t\t\t\t\tINFORME TXT GENERADO EXITOSAMENTE.\n");
+						flagExit = 1;
 					}
 					else
 					{
@@ -152,7 +158,7 @@ int main(void)
 				}
 				else
 				{
-					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR EL ARCHIVO DE TEXTO.\n");
+					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO. O DAR AL MENOS UNA VENTA DE ALTA.\n");
 				}
 				break;
 			case 7:
@@ -170,7 +176,7 @@ int main(void)
 				}
 				else
 				{
-					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR EL ARCHIVO DE TEXTO.\n");
+					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO. O DAR AL MENOS UNA VENTA DE ALTA.\n");
 				}
 				break;
 			case 8:
@@ -178,20 +184,20 @@ int main(void)
 				{
 					if (flagExit != 2)
 					{
-						returnExit = utn_getDescriptionExit(exit, "\t\t\t\t\t\t\tVA A SALIR SIN GUARDAR CAMBIOS.\n"
-								"\t\t\t\t\t\t\tINGRESE SI PARA SALIR SIN GUARDAR.\n"
-								"\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
+						returnExit = utn_getDescriptionExit(exit, "\t\t\t\t\t\t\t\t\tVA A SALIR SIN GUARDAR CAMBIOS.\n"
+								"\t\t\t\t\t\t\t\t\tINGRESE SI PARA SALIR SIN GUARDAR.\n"
+								"\t\t\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
 
 					}
 					else if (flagExit == 2)
 					{
-						returnExit = utn_getDescriptionExit(exit, "\t\t\t\t\t\t\tINGRESE SI PARA SALIR.\n"
-								"\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
+						returnExit = utn_getDescriptionExit(exit, "\t\t\t\t\t\t\t\t\tINGRESE SI PARA SALIR.\n"
+								"\t\t\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
 					}
 				}
 				else
 				{
-					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR EL ARCHIVO DE TEXTO.\n");
+					printf("\n\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO. O DAR AL MENOS UNA VENTA DE ALTA.\n");
 				}
 				break;
 			}
@@ -202,6 +208,13 @@ int main(void)
 			break;
 		}
 	} while (stricmp(exit, "si") != 0 && returnExit == 0);
-	printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\tALGO SALIO MAL. INGRESE BIEN LOS DATOS LA PROXIMA. \n");
+	if (returnExit != 0)
+	{
+		printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\tALGO SALIO MAL. INGRESE BIEN LOS DATOS LA PROXIMA. \n");
+	}
+	else
+	{
+		printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\tADIOS. QUE LE VAYA BIEN. \n");
+	}
 	return EXIT_SUCCESS;
 }
