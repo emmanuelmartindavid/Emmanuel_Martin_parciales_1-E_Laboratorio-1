@@ -211,7 +211,6 @@ int controllerSaveSalesBinarytMode(char *path, LinkedList *pListSale)
 				for (int i = 0; i < lenListSale; i++)
 				{
 					pSale = (sSale*) ll_get(pListSale, i);
-
 					if (pSale != NULL)
 					{
 						returnFwrite = fwrite(pSale, sizeof(sSale), 1, pFile);
@@ -241,7 +240,7 @@ int controllerAddSale(LinkedList *pListSale, int *pIdSale)
 	{
 		//&& editCreditCardNumber(pSale) == SUCCESS AGREGAR
 		pSale = newSale();
-		if (pSale != NULL  && editCreditCardNumber(pSale) == SUCCESS && editDaySale(pSale) == SUCCESS && editMonthSale(pSale) == SUCCESS && editYearSale(pSale) == SUCCESS && editModel(pSale) == SUCCESS && editAmountSale(pSale) == SUCCESS && editUnitPriceSale(pSale) == SUCCESS && setIdSale(pSale, *pIdSale) == SUCCESS)
+		if (pSale != NULL && editCreditCardNumber(pSale) == SUCCESS && editDaySale(pSale) == SUCCESS && editMonthSale(pSale) == SUCCESS && editYearSale(pSale) == SUCCESS && editModel(pSale) == SUCCESS && editAmountSale(pSale) == SUCCESS && editUnitPriceSale(pSale) == SUCCESS && setIdSale(pSale, *pIdSale) == SUCCESS)
 		{
 			if (ll_add(pListSale, pSale) == 0)
 			{
@@ -287,16 +286,22 @@ int controllerEditSale(LinkedList *pListSale)
 						returnControllerEditSale = NOEDIT;
 					}
 				}
+
+			}
+			else
+			{
+				returnControllerEditSale = NOSALE;
 			}
 		}
 	}
 	return returnControllerEditSale;
 }
-
 /// @brief controllerRemoveSale		BAJA DE VENTA.
 ///
 /// @param pListSale				LINKEDLIST VENTAS.
-/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO. RETORNA REMOVECANCEL(-2) EN CASO DE CANCELAR BAJA. RETORNA NOSALE(-2) EN CASO DE QUE NO EXISTA LA VENTA.
+/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+/// 								RETORNA REMOVECANCEL(-2) EN CASO DE CANCELAR BAJA.
+/// 								RETORNA NOSALE(-2) EN CASO DE QUE NO EXISTA LA VENTA.
 int controllerRemoveSale(LinkedList *pListSale)
 {
 	int returnControllerRemoveSale = ERROR;

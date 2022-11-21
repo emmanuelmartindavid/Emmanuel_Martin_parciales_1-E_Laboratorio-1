@@ -3394,3 +3394,53 @@ gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "sr
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
 gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+20:40:20 **** Rebuild of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:14:08 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+22:15:40 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+22:19:19 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controllerSaveIdSaleTextMode':
+..\src\Controller.c:152:30: warning: comparison between pointer and integer
+  152 |  if (path != NULL && pIdSale != NULL)
+      |                              ^~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:19:29 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file segundo-parcial-labo-1-1E.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:19:33 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+22:21:48 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E

@@ -80,27 +80,21 @@ static int addNode(LinkedList *this, int nodeIndex, void *pElement)
 	int returnAux = -1;
 	Node *auxNode = (Node*) malloc(sizeof(Node*));
 	Node *auxPrevNode = NULL;
-
 	if (this != NULL)
 	{
-
 		if (nodeIndex >= 0 && nodeIndex <= ll_len(this))
 		{
-
 			auxNode->pElement = pElement;
 			if (nodeIndex == 0)
 			{
-
 				auxNode->pNextNode = this->pFirstNode;
 				this->pFirstNode = auxNode;
 				this->size++;
 				returnAux = 0;
-
 			}
 			else
 			{
 				auxPrevNode = getNode(this, nodeIndex - 1);
-
 				if (auxPrevNode != NULL)
 				{
 					auxNode->pNextNode = auxPrevNode->pNextNode;
@@ -109,11 +103,8 @@ static int addNode(LinkedList *this, int nodeIndex, void *pElement)
 					returnAux = 0;
 				}
 			}
-
 		}
-
 	}
-
 	return returnAux;
 }
 /// @brief ll_add																	AGREGA UN ELEMENTO A LINKEDLIST.
@@ -502,7 +493,6 @@ LinkedList* ll_filter(LinkedList *this, int (*pFunc)(void*))
 			}
 		}
 	}
-
 	return filterList;
 }
 /// @brief ll_map																				PERMITE A FUNCION CRITERIO MODIFICAR ALGUNO DE LOS CAMPOS DE ELEMENTO EN CASO DE SER NECESARIO.

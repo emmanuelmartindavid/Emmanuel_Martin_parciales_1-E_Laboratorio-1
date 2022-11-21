@@ -40,7 +40,7 @@ int main(void)
 			case 1:
 				if (ll_isEmpty(listSale) == 1)
 				{
-					if (controllerLoadSaleFromText("data.csv", listSale) == SUCCESS && controllerListSales(listSale) == SUCCESS)
+					if (controllerLoadSaleFromText("data.csv", listSale) == SUCCESS && controllerListSales(listSale) == SUCCESS && controllerLoadIdSaleFromText("idAutoincremental.txt", &idSale) == SUCCESS)
 					{
 						printf("\n\t\t\t\t\t\t\tSE HA CARGADO EXITOSAMENTE SU ARCHIVO DE TEXTO. EL CUAL CONTIENE LOS ELEMENTOS LISTADOS.\n");
 					}
@@ -55,7 +55,7 @@ int main(void)
 				}
 				break;
 			case 2:
-				if ((ll_isEmpty(listSale) == 0 || flagAdd == 0) && controllerLoadIdSaleFromText("idAutoincremental.txt", &idSale) == SUCCESS)
+				if (flagAdd == 0)
 				{
 					if (controllerAddSale(listSale, &idSale) == SUCCESS)
 					{
@@ -84,6 +84,10 @@ int main(void)
 					else if (returnEditSale == NOEDIT)
 					{
 						printf("\n\t\t\t\t\t\t\t\t\t\t\tNO REALIZO MODIFICACIONES.\n");
+					}
+					else
+					{
+						printf("\n\t\t\t\t\t\t\t\t\tNO EXISTE ID DE VENTA. REINTENTE.\n");
 					}
 				}
 				else
