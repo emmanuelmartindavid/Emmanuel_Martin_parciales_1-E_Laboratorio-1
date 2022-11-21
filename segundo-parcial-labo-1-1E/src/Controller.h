@@ -68,6 +68,11 @@ int controllerEditSale(LinkedList *pListSale);
 /// @param pArrayListPlayer			LINKEDLIST VENTAS.
 /// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO. RETORNA REMOVECANCEL(-2) EN CASO DE CANCELAR BAJA. RETORNA NOSALE(-2) EN CASO DE QUE NO EXISTA LA VENTA.
 int controllerRemoveSale(LinkedList *pListSale);
+/// @brief controllerSortPerIdSale			ORDENA VENTAS POR ID.
+///
+/// @param pListSale						LINKEDLIST VENTAS.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSortPerIdSale(LinkedList *pListSale);
 /// @brief  controllerListSales   	LISTADO VENTAS.
 ///
 /// @param pArrayListPlayer			LINKEDLIST VENTAS.

@@ -350,6 +350,20 @@ int controllerRemoveSale(LinkedList *pListSale)
 	}
 	return returnControllerRemoveSale;
 }
+/// @brief controllerSortPerIdSale			ORDENA VENTAS POR ID.
+///
+/// @param pListSale						LINKEDLIST VENTAS.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSortPerIdSale(LinkedList *pListSale)
+{
+	int returnControllerSortPerIdSale=ERROR;
+
+	if(ll_sort(pListSale, compareSaleById, 1)==0)
+	{
+		returnControllerSortPerIdSale=SUCCESS;
+	}
+	return returnControllerSortPerIdSale;
+}
 /// @brief  controllerListSales   	LISTADO VENTAS.
 ///
 /// @param pListSale				LINKEDLIST VENTAS.

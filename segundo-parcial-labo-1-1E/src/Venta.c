@@ -553,19 +553,19 @@ int editOneSale(sSale *this)
 /// @return 										RETORNA  CANITDAD DE ELEMENTO VENTA A CONTAR POR LL_COUNT.
 int getTotalAmountSaleCriteria(void *this)
 {
-	int returnControllerGetTotalAmountSale=0;
+	int returnControllerGetTotalAmountSale = 0;
 	sSale *pSale = NULL;
-	short auxAmount=0;
+	short auxAmount = 0;
 	if (this != NULL)
 	{
 		pSale = (sSale*) this;
 		if (pSale != NULL)
 		{
-				if (getAmountSale(pSale, &auxAmount) == SUCCESS)
-				{
-					returnControllerGetTotalAmountSale= auxAmount;
+			if (getAmountSale(pSale, &auxAmount) == SUCCESS)
+			{
+				returnControllerGetTotalAmountSale = auxAmount;
 
-				}
+			}
 		}
 	}
 	return returnControllerGetTotalAmountSale;
@@ -589,7 +589,7 @@ int getAmountSalesFirstCriteria(void *this)
 			{
 				if (auxAmount * auxUnitPrice > 10000)
 				{
-					returnGetAmountSalesFirstCriteria=SUCCESS;
+					returnGetAmountSalesFirstCriteria = SUCCESS;
 				}
 			}
 		}
@@ -615,7 +615,7 @@ int getAmountSalesSecondCriteria(void *this)
 			{
 				if (auxAmount * auxUnitPrice > 20000)
 				{
-					returnGetAmountSalesSecondCriteria=SUCCESS;
+					returnGetAmountSalesSecondCriteria = SUCCESS;
 				}
 			}
 		}
@@ -638,7 +638,7 @@ int getModelCarCriteria(void *this)
 		pSale = (sSale*) this;
 		if (pSale != NULL)
 		{
-			if (getModelSale(this, auxModel) && getAmountSale(this, &auxAmount)==SUCCESS)
+			if (getModelSale(this, auxModel) && getAmountSale(this, &auxAmount) == SUCCESS)
 			{
 				if (stricmp(auxModel, "Matrix") == 0)
 				{
@@ -664,16 +664,46 @@ int getModelCarCriteriaMatrix(void *this)
 		pSale = (sSale*) this;
 		if (pSale != NULL)
 		{
-			if (getModelSale(this, auxModel)==SUCCESS)
+			if (getModelSale(this, auxModel) == SUCCESS)
 			{
 				if (stricmp(auxModel, "Matrix") == 0)
 				{
-					returnGetAmountSalesSecondCriteria=SUCCESS;
+					returnGetAmountSalesSecondCriteria = SUCCESS;
 				}
 			}
 		}
 	}
 	return returnGetAmountSalesSecondCriteria;
+}
+/// @brief compareSaleById						COMPARA VENTAS POR ID.
+///
+/// @param pPlayerOne							PUNTERO TIPO VOID.
+/// @param pPlayerTwo							PUNTERO TIPO VOID.
+/// @return										RETORNA COMPARACION DE ID.
+int compareSaleById(void *thisOne, void *thisTwo)
+{
+	int returncompareSaleById = 0;
+	int idSaleOne;
+	int idSaleTwo;
+	sSale *pSaleOne = NULL;
+	sSale *pSaleTwo = NULL;
+	if (thisOne != NULL && thisTwo != NULL)
+	{
+		pSaleOne = (sSale*) thisOne;
+		pSaleTwo = (sSale*) thisTwo;
+		if (pSaleOne != NULL && pSaleTwo != NULL)
+		{
+			getIdSale(pSaleOne, &idSaleOne);
+			getIdSale(pSaleTwo, &idSaleTwo);
+
+			if (idSaleOne > idSaleTwo)
+			{
+				returncompareSaleById = 1;
+			}
+
+		}
+	}
+	return returncompareSaleById;
 }
 /// @brief	listOneSale									LISTA UNA VENTA.
 ///

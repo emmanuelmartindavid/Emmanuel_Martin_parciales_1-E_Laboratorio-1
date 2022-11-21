@@ -22,6 +22,7 @@ int main(void)
 
 	LinkedList *listSale = ll_newLinkedList();
 	int optionMainMenu;
+	int flagLoad=0;
 	int flagExit = 2;
 	int flagAdd = 0;
 	int returnRemoveSale;
@@ -29,6 +30,7 @@ int main(void)
 	int idSale;
 	char exit[3];
 	int returnExit = 0;
+	controllerLoadIdSaleFromText("idAutoincremental.txt", &idSale);
 
 	do
 	{
@@ -38,11 +40,12 @@ int main(void)
 			switch (optionMainMenu)
 			{
 			case 1:
-				if (ll_isEmpty(listSale) == 1)
+				if (flagLoad == 0)
 				{
-					if (controllerLoadSaleFromText("data.csv", listSale) == SUCCESS && controllerListSales(listSale) == SUCCESS && controllerLoadIdSaleFromText("idAutoincremental.txt", &idSale) == SUCCESS)
+					if (controllerLoadSaleFromText("data.csv", listSale) == SUCCESS && controllerSortPerIdSale(listSale)==SUCCESS && controllerListSales(listSale) == SUCCESS )
 					{
 						printf("\n\t\t\t\t\t\t\tSE HA CARGADO EXITOSAMENTE SU ARCHIVO DE TEXTO. EL CUAL CONTIENE LOS ELEMENTOS LISTADOS.\n");
+						flagLoad=1;
 					}
 					else
 					{
@@ -51,7 +54,7 @@ int main(void)
 				}
 				else
 				{
-					printf("\n\t\t\t\t\t\t\tYA REALIZO LA CARGA DE ARCHIVOS.\n");
+					printf("\n\t\t\t\t\t\t\t\t\t\tYA REALIZO LA CARGA DE ARCHIVOS.\n");
 				}
 				break;
 			case 2:

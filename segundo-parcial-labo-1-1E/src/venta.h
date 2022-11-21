@@ -208,6 +208,12 @@ int getModelCarCriteria(void *this);
 /// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
 /// @return														RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getModelCarCriteriaMatrix(void *this);
+/// @brief compareSaleById						COMPARA VENTAS POR ID.
+///
+/// @param pPlayerOne							PUNTERO TIPO VOID.
+/// @param pPlayerTwo							PUNTERO TIPO VOID.
+/// @return										RETORNA COMPARACION DE ID.
+int compareSaleById(void *thisOne, void *thisTwo);
 /// @brief	listOneSale											LISTA UNA VENTA.
 ///
 /// @param this													PUNTERO DE TIPO ESTRUCTURA VENTA.
