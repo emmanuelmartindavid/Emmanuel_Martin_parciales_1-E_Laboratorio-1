@@ -44,12 +44,9 @@ int ll_len(LinkedList *this)
 /// 																				RETORNA NULL EN CASO CONTRARIO (SI EL INDICE ES MENOR A 0 O EL MAYOR AL SIZE DE LA LINKEDLIST).
 static Node* getNode(LinkedList *this, int nodeIndex)
 {
-
 	Node *auxNode = NULL;
-
 	if (this != NULL)
 	{
-
 		if (nodeIndex >= 0 && nodeIndex < ll_len(this))
 		{
 			auxNode = this->pFirstNode;
@@ -57,21 +54,17 @@ static Node* getNode(LinkedList *this, int nodeIndex)
 			{
 				for (int i = 0; i < nodeIndex; i++)
 				{
-
 					auxNode = auxNode->pNextNode;
 				}
 			}
-
 		}
-
 	}
-
 	return auxNode;
 }
 /// @brief addNode																		AGREGA Y ENLAZA UN NUEVO NODO A LA LINKEDLIST.
 ///
 /// @param this																			PUNTERO TIPO LINKEDLIST.
-/// @param nodeIndex																	ENTERO. DONDE SE AGREGARA EL NUEVO NODO.
+/// @param nodeIndex																	ENTERO. POSICION DONDE SE AGREGARA EL NUEVO NODO.
 /// @param pElement																		PUNTERO VOID AL ELEMENTO A SER CONTENIDO POR EL NUEVO NODO.
 /// @return																				RETORNA -1, SI EL PUNTERO A LA LISTA ES NULL O SI EL INDICE ES MENOR A 0 O MAYOR AL SIZE DE LINKEDLIST.
 /// 																					RETORNA 0 SI FUNCIONA CORRECTAMENTE.
@@ -80,7 +73,7 @@ static int addNode(LinkedList *this, int nodeIndex, void *pElement)
 	int returnAux = -1;
 	Node *auxNode = (Node*) malloc(sizeof(Node*));
 	Node *auxPrevNode = NULL;
-	if (this != NULL)
+	if (this != NULL && auxNode != NULL)
 	{
 		if (nodeIndex >= 0 && nodeIndex <= ll_len(this))
 		{
@@ -187,15 +180,18 @@ int ll_remove(LinkedList *this, int index)
 				this->pFirstNode = auxNode->pNextNode;
 				free(auxNode);
 				this->size--;
+
 			}
 			else
 			{
 				Node *auxPrevNode = getNode(this, index - 1);
 				if (auxPrevNode != NULL)
 				{
+
 					auxPrevNode->pNextNode = auxNode->pNextNode;
 					free(auxNode);
 					this->size--;
+
 				}
 			}
 		}
