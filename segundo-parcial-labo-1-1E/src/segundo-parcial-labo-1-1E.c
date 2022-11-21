@@ -19,23 +19,23 @@
 int main(void)
 {
 	setbuf(stdout, NULL);
-
 	LinkedList *listSale = ll_newLinkedList();
+	LinkedList *ListFromBinary = ll_newLinkedList();
 	int optionMainMenu;
 	int flagLoad = 0;
 	int flagExit = 2;
 	int flagAdd = 0;
+	int flagBinary = 0;
 	int returnRemoveSale;
 	int returnEditSale;
 	int idSale;
 	char exit[3];
 	int returnExit = 0;
 	controllerLoadIdSaleFromText("idAutoincremental.txt", &idSale);
-
 	do
 	{
 		showMainMenu();
-		if (utn_getNumber(&optionMainMenu, "\n\n\t\t\t\t\t\t\t\t\t\t\tINGRESE OPCION.\n", "\n\t\t\t\t\t\t\t\t\t\t\tERROR. REINTENTE.\n", 1, 8, 3) == 0)
+		if (utn_getNumber(&optionMainMenu, "\n\n\t\t\t\t\t\t\t\t\t\t\tINGRESE OPCION.\n", "\n\t\t\t\t\t\t\t\t\t\t\tERROR. REINTENTE.\n", 1, 10, 3) == 0)
 		{
 			switch (optionMainMenu)
 			{
@@ -143,6 +143,7 @@ int main(void)
 						{
 							printf("\n\t\t\t\t\t\t\t\t\t\tSIN ELEMENTOS COINCIDENTES A MODELO MATRIX.\n");
 						}
+						flagExit = 1;
 					}
 				}
 				else
@@ -171,10 +172,44 @@ int main(void)
 			case 7:
 				if (ll_isEmpty(listSale) == 0)
 				{
-					if (controllerSaveSalesTextMode("data.csv", listSale) == SUCCESS && controllerSaveIdSaleTextMode("idAutoincremental.txt", &idSale) == SUCCESS && controllerSaveSalesBinarytMode("data-binario.bin", listSale) == SUCCESS)
+					if (controllerSaveSalesBinarytMode("data-binario.bin", listSale) == SUCCESS)
+					{
+						flagBinary = 1;
+						printf("\n\t\t\t\t\t\t\t\t\t\tARCHIVO .BIN GENERADO CORRECTAMENTE.\n");
+					}
+				}
+				else
+				{
+					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO. O DAR AL MENOS UNA VENTA DE ALTA.\n");
+				}
+				break;
+			case 8:
+				if (ll_isEmpty(listSale) == 0 && flagBinary == 1)
+				{
+
+					if (controllerLoadSalesFromBinary("data-binario.bin", ListFromBinary) == SUCCESS && controllerSortPerIdSale(ListFromBinary) == SUCCESS && controllerListSales(ListFromBinary) == SUCCESS)
+					{
+						printf("\n\t\t\t\t\t\t\t\t\tLISTADO ARCHIVO DESDE BINARIO.\n");
+						flagExit = 1;
+					}
+					else
+					{
+						printf("\n\t\t\t\t\t\t\t\tERROR AL CARGAR EL ARCHIVO .BIN. PRIMERO DEBE GENERARO EL MISMO.\n");
+					}
+				}
+				else
+				{
+					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO. O DAR AL MENOS UNA VENTA DE ALTA.\n");
+				}
+				break;
+			case 9:
+
+				if (ll_isEmpty(listSale) == 0)
+				{
+					if (controllerSaveSalesTextMode("data.csv", listSale) == SUCCESS && controllerSaveIdSaleTextMode("idAutoincremental.txt", &idSale) == SUCCESS)
 					{
 						flagExit = 2;
-						printf("\n\t\t\t\t\t\t\t\t\t\tARCHIVO .CSV Y .BIN GUARDADOS CORRECTAMENTE.\n");
+						printf("\n\t\t\t\t\t\t\t\t\t\tARCHIVO .CSV GUARDADO CORRECTAMENTE.\n");
 					}
 					else
 					{
@@ -186,25 +221,18 @@ int main(void)
 					printf("\n\t\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO. O DAR AL MENOS UNA VENTA DE ALTA.\n");
 				}
 				break;
-			case 8:
-				if (ll_isEmpty(listSale) == 0)
+			case 10:
+				if (flagExit != 2)
 				{
-					if (flagExit != 2)
-					{
-						returnExit = utn_getDescriptionExit(exit, "\t\t\t\t\t\t\t\t\tVA A SALIR SIN GUARDAR CAMBIOS.\n"
-								"\t\t\t\t\t\t\t\t\tINGRESE SI PARA SALIR SIN GUARDAR.\n"
-								"\t\t\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
+					returnExit = utn_getDescriptionExit(exit, "\t\t\t\t\t\t\t\t\tVA A SALIR SIN GUARDAR CAMBIOS.\n"
+							"\t\t\t\t\t\t\t\t\tINGRESE SI PARA SALIR SIN GUARDAR.\n"
+							"\t\t\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
 
-					}
-					else if (flagExit == 2)
-					{
-						returnExit = utn_getDescriptionExit(exit, "\t\t\t\t\t\t\t\t\tINGRESE SI PARA SALIR.\n"
-								"\t\t\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
-					}
 				}
-				else
+				else if (flagExit == 2)
 				{
-					printf("\n\t\t\t\t\t\t\t\tPRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO. O DAR AL MENOS UNA VENTA DE ALTA.\n");
+					returnExit = utn_getDescriptionExit(exit, "\t\t\t\t\t\t\t\t\tINGRESE SI PARA SALIR.\n"
+							"\t\t\t\t\t\t\t\t\tINGRESE NO PARA SEGUIR EN EL MENU.\n", "\t\t\t\t\t\t\t\t\tERROR. REINTENTE. SOLO SI O NO\n", 3);
 				}
 				break;
 			}
@@ -221,7 +249,7 @@ int main(void)
 	}
 	else
 	{
-		printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\tADIOS. QUE LE VAYA BIEN. \n");
+		printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\tADIOS C. QUE LE VAYA BIEN. GRACIAS. \n");
 	}
 	return EXIT_SUCCESS;
 }

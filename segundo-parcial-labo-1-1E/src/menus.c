@@ -19,8 +19,10 @@ void showMainMenu()
 			"\n\t\t\t\t\t\t\t\t|\t\t 4. BAJA DE VENTA.\t\t\t\t\t|"
 			"\n\t\t\t\t\t\t\t\t|\t\t 5. INFORMES CON SUS LISTADOS.\t\t\t\t|"
 			"\n\t\t\t\t\t\t\t\t|\t\t 6. GENERAR INFORME .TXT.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t\t|\t\t 7. GUARDAR ARCHIVOS. .CSV Y .BIN.\t\t\t|"
-			"\n\t\t\t\t\t\t\t\t|\t\t 8. SALIR.\t\t\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t\t|\t\t 7. GENERAR ARCHIVO .BIN.\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t\t|\t\t 8. CARGA Y LISTA DE ARCHIVO .BIN.\t\t\t|"
+			"\n\t\t\t\t\t\t\t\t|\t\t 9. GUARDAR ARCHIVO .CSV.\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t\t|\t\t 10. SALIR.\t\t\t\t\t\t|"
 			"\n\t\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
 			"\t\t\t\t\t\t\t\t=========================================================================\n\n\n");
 }

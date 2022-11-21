@@ -63,19 +63,10 @@ int parserSaleFromText(FILE *pFile, LinkedList *pListSale)
 int parserSaleFromBinary(FILE *pFile, LinkedList *pListSale)
 {
 	int returnParserSaleFromBinary = ERROR;
-	int auxId;
-	short auxDay;
-	short auxMonth;
-	short auxYear;
-	char auxModel[2000];
-	short auxAmmount;
-	float auxUnitPrice;
-	char auxCreditCardNumber[2000];
 	sSale *pSale;
 	int returnFread;
 	if (pFile != NULL && pListSale != NULL)
 	{
-		ll_clear(pListSale);
 		do
 		{
 			pSale = newSale();
@@ -84,19 +75,11 @@ int parserSaleFromBinary(FILE *pFile, LinkedList *pListSale)
 				returnFread = fread(pSale, sizeof(sSale), 1, pFile);
 				if (returnFread == 1)
 				{
-					if (getIdSale(pSale, &auxId) == SUCCESS && getDaySale(pSale, &auxDay) == SUCCESS && getMonthSale(pSale, &auxMonth) == SUCCESS && getYearSale(pSale, &auxYear) == SUCCESS && getModelSale(pSale, auxModel) == SUCCESS && getAmountSale(pSale, &auxAmmount) == SUCCESS
-							&& getUnitPriceSale(pSale, &auxUnitPrice) == SUCCESS && getCreditCardNumber(pSale, auxCreditCardNumber) == SUCCESS)
-					{
 						if (ll_add(pListSale, pSale) == 0)
 						{
+
 							returnParserSaleFromBinary = SUCCESS;
 						}
-					}
-				}
-				else
-				{
-					returnParserSaleFromBinary = ERROR;
-					break;
 				}
 			}
 		} while (!feof(pFile));

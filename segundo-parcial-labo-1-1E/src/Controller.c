@@ -286,7 +286,6 @@ int controllerEditSale(LinkedList *pListSale)
 						returnControllerEditSale = NOEDIT;
 					}
 				}
-
 			}
 			else
 			{
@@ -387,7 +386,8 @@ int controllerListSales(LinkedList *pListSale)
 					returncontrollerListPlayer = SUCCESS;
 				}
 			}
-			printf("\t\t\t\t\t\t==================================================================================================================\n");
+			//printf("\t\t\t\t\t\t==================================================================================================================\n");
+			showLine();
 		}
 	}
 	return returncontrollerListPlayer;

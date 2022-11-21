@@ -27,7 +27,6 @@ sSale* newSale()
 		newSale->amount = 0;
 		newSale->unitPrice = 0;
 		strcpy(newSale->creditCardNumber, " ");
-
 	}
 	return newSale;
 }
@@ -45,16 +44,16 @@ sSale* newSale()
 sSale* newSaleParameters(char *pIdStr, char *pDayStr, char *pMonthStr, char *pYearStr, char *pModelStr, char *pAmountStr, char *pUnitPriceStr, char *pCreditCardNumberStr)
 {
 	sSale *auxNewSale = NULL;
-	if (pIdStr != NULL && pDayStr != NULL && pDayStr != NULL && pMonthStr != NULL && pYearStr != NULL && pModelStr != NULL && pAmountStr != NULL && pUnitPriceStr != NULL && pCreditCardNumberStr != NULL)
+	auxNewSale = newSale();
+	if (auxNewSale != NULL && pIdStr != NULL && pDayStr != NULL && pDayStr != NULL && pMonthStr != NULL && pYearStr != NULL && pModelStr != NULL && pAmountStr != NULL && pUnitPriceStr != NULL && pCreditCardNumberStr != NULL)
 	{
-		auxNewSale = newSale();
-		if (auxNewSale != NULL)
+		if (setIdSale(auxNewSale, atoi(pIdStr))!=SUCCESS || setDaySale(auxNewSale, atoi(pDayStr)) !=SUCCESS || setMonthSale(auxNewSale, atoi(pMonthStr))!=SUCCESS
+				|| setYearSale(auxNewSale, atoi(pYearStr))!=SUCCESS || setModelSale(auxNewSale, pModelStr) !=SUCCESS
+				|| setAmountSale(auxNewSale, atoi(pAmountStr))!=SUCCESS || setUnitPriceSale(auxNewSale, atof(pUnitPriceStr))!=SUCCESS
+						 || setCreditCardNumber(auxNewSale, pCreditCardNumberStr)!=SUCCESS)
 		{
-			if (!(setIdSale(auxNewSale, atoi(pIdStr)) && setDaySale(auxNewSale, atoi(pDayStr)) && setMonthSale(auxNewSale, atoi(pMonthStr)) && setYearSale(auxNewSale, atoi(pYearStr)) && setModelSale(auxNewSale, pModelStr) && setAmountSale(auxNewSale, atoi(pAmountStr))
-					&& setUnitPriceSale(auxNewSale, atof(pUnitPriceStr)) && setCreditCardNumber(auxNewSale, pCreditCardNumberStr)))
-			{
-				deleteSale(auxNewSale);
-			}
+			deleteSale(auxNewSale);
+			auxNewSale = NULL;
 		}
 	}
 	return auxNewSale;
@@ -66,6 +65,7 @@ sSale* newSaleParameters(char *pIdStr, char *pDayStr, char *pMonthStr, char *pYe
 void deleteSale(sSale *this)
 {
 	free(this);
+
 }
 /// @brief setIdSale									SETEA ID DE VENTA.
 ///
@@ -143,7 +143,6 @@ int setMonthSale(sSale *this, short month)
 		this->date.month = month;
 		returnSetMonthSale = SUCCESS;
 	}
-
 	return returnSetMonthSale;
 }
 /// @brief getMonthSale									OBTIENE MES DE VENTA.
@@ -159,7 +158,6 @@ int getMonthSale(sSale *this, short *pMonth)
 		*pMonth = this->date.month;
 		returnGetMonthSale = SUCCESS;
 	}
-
 	return returnGetMonthSale;
 }
 /// @brief setYearSale 									SETEA POSICION DE JUGADOR.
@@ -175,7 +173,6 @@ int setYearSale(sSale *this, short year)
 		this->date.year = year;
 		returnSetYearSale = SUCCESS;
 	}
-
 	return returnSetYearSale;
 }
 /// @brief getYearSale									OBTIENE POSICION DE JUGADOR.
@@ -191,7 +188,6 @@ int getYearSale(sSale *this, short *pYear)
 		*pYear = this->date.year;
 		returnGetYearSale = SUCCESS;
 	}
-
 	return returnGetYearSale;
 }
 /// @brief setModelSale									SETEA NACIONALIDAD DE JUGADOR.
@@ -207,7 +203,6 @@ int setModelSale(sSale *this, char *pModel)
 		strcpy(this->model, pModel);
 		returnSetModelSale = SUCCESS;
 	}
-
 	return returnSetModelSale;
 }
 /// @brief	getModelSale								OBTIENE MODELO DE VENTA.
@@ -223,7 +218,6 @@ int getModelSale(sSale *this, char *pModel)
 		strcpy(pModel, this->model);
 		returnGetModelSale = SUCCESS;
 	}
-
 	return returnGetModelSale;
 }
 /// @brief	setAmmountSale								SETEA CANTIDAD DE VENTA.
@@ -239,7 +233,6 @@ int setAmountSale(sSale *this, short amount)
 		this->amount = amount;
 		returnSetAmmountSale = SUCCESS;
 	}
-
 	return returnSetAmmountSale;
 }
 /// @brief getAmmountSale								OBTIENE CANTIDAD DE VENTA.
@@ -270,7 +263,6 @@ int setUnitPriceSale(sSale *this, float unitPrice)
 		this->unitPrice = unitPrice;
 		returnSerUnitPriceSale = SUCCESS;
 	}
-
 	return returnSerUnitPriceSale;
 }
 /// @brief getUnitPriceSale								OBTIENE PRECIO UNITARIO DE VENTA.
@@ -286,7 +278,6 @@ int getUnitPriceSale(sSale *this, float *pUnitPrice)
 		*pUnitPrice = this->unitPrice;
 		returnGetUnitPriceSale = SUCCESS;
 	}
-
 	return returnGetUnitPriceSale;
 }
 /// @brief	setCreditCardNumber							SETEA NUMERO DE TARJETA DE CREDITO DE VENTA.
@@ -302,7 +293,6 @@ int setCreditCardNumber(sSale *this, char *pCreditCardNumber)
 		strcpy(this->creditCardNumber, pCreditCardNumber);
 		returnSetCreditCardNumber = SUCCESS;
 	}
-
 	return returnSetCreditCardNumber;
 }
 /// @brief getCreditCardNumber						OBTIENE NUMERO DE TARJETA DE CREDITO DE VENTA.
@@ -318,7 +308,6 @@ int getCreditCardNumber(sSale *this, char *pCreditCardNumber)
 		strcpy(pCreditCardNumber, this->creditCardNumber);
 		returnGetCreditCard = SUCCESS;
 	}
-
 	return returnGetCreditCard;
 }
 /// @brief editDaySale							EDICION DE DIA DE VENTA.

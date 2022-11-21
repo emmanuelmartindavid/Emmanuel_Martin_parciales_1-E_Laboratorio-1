@@ -3734,3 +3734,375 @@ gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "sr
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
 gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:16:35 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+12:18:31 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:19:10 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:25:42 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+12:30:45 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+12:31:31 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:32:51 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+..\src\Venta.c: In function 'newSaleParameters':
+..\src\Venta.c:53:27: error: 'S' undeclared (first use in this function)
+   53 |    deleteSale(auxNewSale);S
+      |                           ^
+..\src\Venta.c:53:27: note: each undeclared identifier is reported only once for each function it appears in
+..\src\Venta.c:53:28: error: expected ';' before '}' token
+   53 |    deleteSale(auxNewSale);S
+      |                            ^
+      |                            ;
+   54 |   }
+      |   ~                         
+12:32:55 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:34:26 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+12:38:56 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:39:51 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:40:35 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:42:01 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+12:42:46 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:43:32 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:43:56 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:44:06 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:45:20 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:46:03 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:47:06 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+12:48:11 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+12:50:03 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+12:51:32 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+13:57:49 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+13:58:42 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Venta.o" "..\\src\\Venta.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+13:59:06 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+Info: Nothing to build for segundo-parcial-labo-1-1E
+15:28:55 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:29:07 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:29:19 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:30:20 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:32:31 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:32:48 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:33:17 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+..\src\Parser.c: In function 'parserSaleFromBinary':
+..\src\Parser.c:73:7: warning: unused variable 'auxCreditCardNumber' [-Wunused-variable]
+   73 |  char auxCreditCardNumber[2000];
+      |       ^~~~~~~~~~~~~~~~~~~
+..\src\Parser.c:72:8: warning: unused variable 'auxUnitPrice' [-Wunused-variable]
+   72 |  float auxUnitPrice;
+      |        ^~~~~~~~~~~~
+..\src\Parser.c:71:8: warning: unused variable 'auxAmmount' [-Wunused-variable]
+   71 |  short auxAmmount;
+      |        ^~~~~~~~~~
+..\src\Parser.c:70:7: warning: unused variable 'auxModel' [-Wunused-variable]
+   70 |  char auxModel[2000];
+      |       ^~~~~~~~
+..\src\Parser.c:69:8: warning: unused variable 'auxYear' [-Wunused-variable]
+   69 |  short auxYear;
+      |        ^~~~~~~
+..\src\Parser.c:68:8: warning: unused variable 'auxMonth' [-Wunused-variable]
+   68 |  short auxMonth;
+      |        ^~~~~~~~
+..\src\Parser.c:67:8: warning: unused variable 'auxDay' [-Wunused-variable]
+   67 |  short auxDay;
+      |        ^~~~~~
+..\src\Parser.c:66:6: warning: unused variable 'auxId' [-Wunused-variable]
+   66 |  int auxId;
+      |      ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
+15:34:09 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+..\src\Parser.c: In function 'parserSaleFromBinary':
+..\src\Parser.c:73:7: warning: unused variable 'auxCreditCardNumber' [-Wunused-variable]
+   73 |  char auxCreditCardNumber[2000];
+      |       ^~~~~~~~~~~~~~~~~~~
+..\src\Parser.c:72:8: warning: unused variable 'auxUnitPrice' [-Wunused-variable]
+   72 |  float auxUnitPrice;
+      |        ^~~~~~~~~~~~
+..\src\Parser.c:71:8: warning: unused variable 'auxAmmount' [-Wunused-variable]
+   71 |  short auxAmmount;
+      |        ^~~~~~~~~~
+..\src\Parser.c:70:7: warning: unused variable 'auxModel' [-Wunused-variable]
+   70 |  char auxModel[2000];
+      |       ^~~~~~~~
+..\src\Parser.c:69:8: warning: unused variable 'auxYear' [-Wunused-variable]
+   69 |  short auxYear;
+      |        ^~~~~~~
+..\src\Parser.c:68:8: warning: unused variable 'auxMonth' [-Wunused-variable]
+   68 |  short auxMonth;
+      |        ^~~~~~~~
+..\src\Parser.c:67:8: warning: unused variable 'auxDay' [-Wunused-variable]
+   67 |  short auxDay;
+      |        ^~~~~~
+..\src\Parser.c:66:6: warning: unused variable 'auxId' [-Wunused-variable]
+   66 |  int auxId;
+      |      ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:34:34 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+..\src\Parser.c: In function 'parserSaleFromBinary':
+..\src\Parser.c:73:7: warning: unused variable 'auxCreditCardNumber' [-Wunused-variable]
+   73 |  char auxCreditCardNumber[2000];
+      |       ^~~~~~~~~~~~~~~~~~~
+..\src\Parser.c:72:8: warning: unused variable 'auxUnitPrice' [-Wunused-variable]
+   72 |  float auxUnitPrice;
+      |        ^~~~~~~~~~~~
+..\src\Parser.c:71:8: warning: unused variable 'auxAmmount' [-Wunused-variable]
+   71 |  short auxAmmount;
+      |        ^~~~~~~~~~
+..\src\Parser.c:70:7: warning: unused variable 'auxModel' [-Wunused-variable]
+   70 |  char auxModel[2000];
+      |       ^~~~~~~~
+..\src\Parser.c:69:8: warning: unused variable 'auxYear' [-Wunused-variable]
+   69 |  short auxYear;
+      |        ^~~~~~~
+..\src\Parser.c:68:8: warning: unused variable 'auxMonth' [-Wunused-variable]
+   68 |  short auxMonth;
+      |        ^~~~~~~~
+..\src\Parser.c:67:8: warning: unused variable 'auxDay' [-Wunused-variable]
+   67 |  short auxDay;
+      |        ^~~~~~
+..\src\Parser.c:66:6: warning: unused variable 'auxId' [-Wunused-variable]
+   66 |  int auxId;
+      |      ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:35:16 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:36:16 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:36:52 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:37:43 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:38:10 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:38:28 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:39:07 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+..\src\Parser.c: In function 'parserSaleFromBinary':
+..\src\Parser.c:73:7: warning: unused variable 'auxCreditCardNumber' [-Wunused-variable]
+   73 |  char auxCreditCardNumber[2000];
+      |       ^~~~~~~~~~~~~~~~~~~
+..\src\Parser.c:72:8: warning: unused variable 'auxUnitPrice' [-Wunused-variable]
+   72 |  float auxUnitPrice;
+      |        ^~~~~~~~~~~~
+..\src\Parser.c:71:8: warning: unused variable 'auxAmmount' [-Wunused-variable]
+   71 |  short auxAmmount;
+      |        ^~~~~~~~~~
+..\src\Parser.c:70:7: warning: unused variable 'auxModel' [-Wunused-variable]
+   70 |  char auxModel[2000];
+      |       ^~~~~~~~
+..\src\Parser.c:69:8: warning: unused variable 'auxYear' [-Wunused-variable]
+   69 |  short auxYear;
+      |        ^~~~~~~
+..\src\Parser.c:68:8: warning: unused variable 'auxMonth' [-Wunused-variable]
+   68 |  short auxMonth;
+      |        ^~~~~~~~
+..\src\Parser.c:67:8: warning: unused variable 'auxDay' [-Wunused-variable]
+   67 |  short auxDay;
+      |        ^~~~~~
+..\src\Parser.c:66:6: warning: unused variable 'auxId' [-Wunused-variable]
+   66 |  int auxId;
+      |      ^~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:39:32 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+..\src\Parser.c: In function 'parserSaleFromBinary':
+..\src\Parser.c:73:7: warning: unused variable 'auxCreditCardNumber' [-Wunused-variable]
+   73 |  char auxCreditCardNumber[2000];
+      |       ^~~~~~~~~~~~~~~~~~~
+..\src\Parser.c:72:8: warning: unused variable 'auxUnitPrice' [-Wunused-variable]
+   72 |  float auxUnitPrice;
+      |        ^~~~~~~~~~~~
+..\src\Parser.c:71:8: warning: unused variable 'auxAmmount' [-Wunused-variable]
+   71 |  short auxAmmount;
+      |        ^~~~~~~~~~
+..\src\Parser.c:70:7: warning: unused variable 'auxModel' [-Wunused-variable]
+   70 |  char auxModel[2000];
+      |       ^~~~~~~~
+..\src\Parser.c:69:8: warning: unused variable 'auxYear' [-Wunused-variable]
+   69 |  short auxYear;
+      |        ^~~~~~~
+..\src\Parser.c:68:8: warning: unused variable 'auxMonth' [-Wunused-variable]
+   68 |  short auxMonth;
+      |        ^~~~~~~~
+..\src\Parser.c:67:8: warning: unused variable 'auxDay' [-Wunused-variable]
+   67 |  short auxDay;
+      |        ^~~~~~
+..\src\Parser.c:66:6: warning: unused variable 'auxId' [-Wunused-variable]
+   66 |  int auxId;
+      |      ^~~~~
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:43:55 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+..\src\segundo-parcial-labo-1-1E.c: In function 'main':
+..\src\segundo-parcial-labo-1-1E.c:221:4: error: duplicate case value
+  221 |    case 9:
+      |    ^~~~
+..\src\segundo-parcial-labo-1-1E.c:203:4: note: previously used here
+  203 |    case 9:
+      |    ^~~~
+15:45:19 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:46:14 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:46:30 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:46:53 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:47:38 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+15:49:13 **** Incremental Build of configuration Debug for project segundo-parcial-labo-1-1E ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\segundo-parcial-labo-1-1E.o" "..\\src\\segundo-parcial-labo-1-1E.c" 
+gcc -o segundo-parcial-labo-1-1E.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Parser.o" "src\\Venta.o" "src\\menus.o" "src\\segundo-parcial-labo-1-1E.o" "src\\validaciones.o" 
+Info: Nothing to build for segundo-parcial-labo-1-1E
